@@ -7,7 +7,7 @@
     
 
     <title>
-      page小球弹跳之原生js | Ballon&#39;blog 
+       
     </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -16,16 +16,58 @@
     
     
 
-    <meta name="description" content="点击查看详情">
-<meta property="og:type" content="article">
-<meta property="og:title" content="page小球弹跳之原生js | Ballon'blog">
-<meta property="og:url" content="http://yoursite.com/2016/03/18/page小球弹跳之原生js/index.html">
+    <meta name="description" content="&amp;lt;!DOCTYPE html&amp;gt;
+
+
+	
+	Document
+	
+		*{padding:0;margin:0;}
+		#ball{
+			width: 20px;
+			height: 20px;
+			border-radius:50%;
+			border: 1px solid black;
+			background: black;
+			position: absolute;
+		}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ballon'blog">
+<meta property="og:url" content="http://yoursite.com/pages/小球弹跳之原生js.html">
 <meta property="og:site_name" content="Ballon'blog">
-<meta property="og:description" content="点击查看详情">
-<meta property="og:updated_time" content="2016-03-18T14:01:00.000Z">
+<meta property="og:description" content="&amp;lt;!DOCTYPE html&amp;gt;
+
+
+	
+	Document
+	
+		*{padding:0;margin:0;}
+		#ball{
+			width: 20px;
+			height: 20px;
+			border-radius:50%;
+			border: 1px solid black;
+			background: black;
+			position: absolute;
+		}">
+<meta property="og:updated_time" content="2016-03-18T13:50:43.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="page小球弹跳之原生js | Ballon'blog">
-<meta name="twitter:description" content="点击查看详情">
+<meta name="twitter:title" content="Ballon'blog">
+<meta name="twitter:description" content="&amp;lt;!DOCTYPE html&amp;gt;
+
+
+	
+	Document
+	
+		*{padding:0;margin:0;}
+		#ball{
+			width: 20px;
+			height: 20px;
+			border-radius:50%;
+			border: 1px solid black;
+			background: black;
+			position: absolute;
+		}">
     
     
     
@@ -154,29 +196,79 @@ classes that you can use:
 
   <header class="post-header">
     
-    <h1 class="post-title">page小球弹跳之原生js</h1>
+    <h1 class="post-title"></h1>
 
-    
-
-    <div class="post-meta">
-      <time datetime="2016-03-18" class="post-meta__date date">2016-03-18</time> 
-
-      <span class="post-meta__tags tags">
-
-          
-
-          
-
-      </span>
-    </div>
-    
     
 
   </header>
 
   <section id="post-content" class="article-content post">
-    <p><a href="/../pages/小球弹跳之原生js.html">点击查看详情</a></p>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{padding:0;margin:0;}
+		#ball{
+			width: 20px;
+			height: 20px;
+			border-radius:50%;
+			border: 1px solid black;
+			background: black;
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<div id="ball" style="top: 0px;"></div>
+</body>
+<script>
+	var ball = document.getElementById('ball');
+	
+	function animate(move) {
+		speed = 0;
+		speedno = 0;
+		lastdown = parseFloat(ball.style.top) + move;
 
+		function flash(move){		
+			flashdown(move);		
+		}
+		flash();
+	}
+	animate(320);
+
+	function flashdown(move){
+		speed = (speed + 0.015);console.log(speed);
+		ball.style.top = parseFloat(ball.style.top) + speed + 'px';
+		console.log(ball.style.top)
+		if (parseFloat(ball.style.top) < lastdown) {
+			setTimeout(flashdown, 1);
+		}
+		else{
+			if (speed == 0.015) {
+				
+			}
+			else{
+				speedno = -speed + 0.5;
+				flashup();
+			}
+			
+		}	
+	}
+	function flashup(){
+		speedno = speedno + 0.015;
+		ball.style.top = parseFloat(ball.style.top) + speedno + 'px';
+		if (speedno < 0) {
+			setTimeout(flashup,1);
+		}
+		else{
+			speed = 0;
+			flashdown();
+		}
+	}
+</script>
+</html>
   </section>
 
   
@@ -210,18 +302,6 @@ classes that you can use:
 
 
     
-
-    <script src="/js/awesome-toc.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $.awesome_toc({
-                overlay: true,
-                contentId: "post-content",
-            });
-        });
-    </script>
-
-
     
     
     <!--kill ie6 -->
