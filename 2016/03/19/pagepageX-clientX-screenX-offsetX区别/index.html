@@ -7,7 +7,7 @@
     
 
     <title>
-       
+      pagepageX,clientX,screenX,offsetX区别 | Ballon&#39;blog 
     </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -16,55 +16,22 @@
     
     
 
-    <meta name="description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-	
-	Document
-	
-		*{padding:0;margin:0;}
-		body,html{height: 100%;}
-		#ball{
-			width: 20px;
-			height: 20px;
-			border-radius:50%;
-			border: 1px solid black;
-			background: black;">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Ballon'blog">
-<meta property="og:url" content="http://yoursite.com/pages/小球弹跳之原生js.html">
+    <meta name="description" content="pageX/pageY:鼠标相对于整个页面的X/Y坐标。注意，整个页面的意思就是你整个网页的全部，比如说网页很宽很长，宽2000px，高3000px，那pageX,pageY的最大值就是它们了。
+特别说明：IE不支持！
+clientX/clientY：事件发生时鼠标在浏览器内容区域的X/Y坐标（不包含滚动条）。浏览器内容区域即浏览器窗口中用来显示网页的可视区域，注意这个可视，也就是说需要拖动滚动条">
+<meta property="og:type" content="article">
+<meta property="og:title" content="pagepageX,clientX,screenX,offsetX区别 | Ballon'blog">
+<meta property="og:url" content="http://yoursite.com/2016/03/19/pagepageX-clientX-screenX-offsetX区别/index.html">
 <meta property="og:site_name" content="Ballon'blog">
-<meta property="og:description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-	
-	Document
-	
-		*{padding:0;margin:0;}
-		body,html{height: 100%;}
-		#ball{
-			width: 20px;
-			height: 20px;
-			border-radius:50%;
-			border: 1px solid black;
-			background: black;">
-<meta property="og:updated_time" content="2016-03-19T03:15:24.000Z">
+<meta property="og:description" content="pageX/pageY:鼠标相对于整个页面的X/Y坐标。注意，整个页面的意思就是你整个网页的全部，比如说网页很宽很长，宽2000px，高3000px，那pageX,pageY的最大值就是它们了。
+特别说明：IE不支持！
+clientX/clientY：事件发生时鼠标在浏览器内容区域的X/Y坐标（不包含滚动条）。浏览器内容区域即浏览器窗口中用来显示网页的可视区域，注意这个可视，也就是说需要拖动滚动条">
+<meta property="og:updated_time" content="2016-03-19T03:33:53.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ballon'blog">
-<meta name="twitter:description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-	
-	Document
-	
-		*{padding:0;margin:0;}
-		body,html{height: 100%;}
-		#ball{
-			width: 20px;
-			height: 20px;
-			border-radius:50%;
-			border: 1px solid black;
-			background: black;">
+<meta name="twitter:title" content="pagepageX,clientX,screenX,offsetX区别 | Ballon'blog">
+<meta name="twitter:description" content="pageX/pageY:鼠标相对于整个页面的X/Y坐标。注意，整个页面的意思就是你整个网页的全部，比如说网页很宽很长，宽2000px，高3000px，那pageX,pageY的最大值就是它们了。
+特别说明：IE不支持！
+clientX/clientY：事件发生时鼠标在浏览器内容区域的X/Y坐标（不包含滚动条）。浏览器内容区域即浏览器窗口中用来显示网页的可视区域，注意这个可视，也就是说需要拖动滚动条">
     
     
     
@@ -193,95 +160,36 @@ classes that you can use:
 
   <header class="post-header">
     
-    <h1 class="post-title"></h1>
+    <h1 class="post-title">pagepageX,clientX,screenX,offsetX区别</h1>
 
+    
+
+    <div class="post-meta">
+      <time datetime="2016-03-19" class="post-meta__date date">2016-03-19</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+
+      </span>
+    </div>
+    
     
 
   </header>
 
   <section id="post-content" class="article-content post">
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	<style>
-		*{padding:0;margin:0;}
-		body,html{height: 100%;}
-		#ball{
-			width: 20px;
-			height: 20px;
-			border-radius:50%;
-			border: 1px solid black;
-			background: black;
-			position: relative;
-		}
-		.container{
-			width: 1200px;
-			height:500px;
-			margin: 0 auto;
-		}
-	</style>
-</head>
-<body>
-<div class="container">
-	<div id="ball" style="top: 0px;left: 0px"></div>
-</div>
-	
-</body>
-<script>
-	var ball = document.getElementById('ball');
-	var	speedno = 0;
-	var xspeed = 0.8;
-	var yspeed = 0;
-	function animate(move) {
-		lastdown = parseFloat(ball.style.top) + move;
-		flashdown();
-	}
-	animate(320,0,0.8);
+    <h3 id="pageX/pageY_3A"><a href="#pageX/pageY_3A" class="headerlink" title="pageX/pageY:"></a>pageX/pageY:</h3><p>鼠标相对于整个页面的X/Y坐标。<br>注意，整个页面的意思就是你整个网页的全部，比如说网页很宽很长，宽2000px，高3000px，那pageX,pageY的最大值就是它们了。</p>
+<p>特别说明：IE不支持！</p>
+<h3 id="clientX/clientY_uFF1A"><a href="#clientX/clientY_uFF1A" class="headerlink" title="clientX/clientY："></a>clientX/clientY：</h3><p>事件发生时鼠标在浏览器内容区域的X/Y坐标（不包含滚动条）。<br>浏览器内容区域即浏览器窗口中用来显示网页的可视区域，注意这个可视，也就是说需要拖动滚动条才能看到的区域不算。<br>当你将浏览器窗口缩小时，clientX/clientY的最大值也会缩小，但始终，它们的最大值不会超过你浏览器可视区域。</p>
+<p>特别说明：IE下此属性不规范，它们的最小值不是0而是2，也就是说IE下的clientX/clientY比火狐下始终大2px。</p>
+<h3 id="screenX/screenY"><a href="#screenX/screenY" class="headerlink" title="screenX/screenY"></a>screenX/screenY</h3><p>鼠标在屏幕上的坐标。screenX,screenY的最大值不会超过屏幕分辨率。</p>
+<h3 id="offsetX/offsetY_3A"><a href="#offsetX/offsetY_3A" class="headerlink" title="offsetX/offsetY:"></a>offsetX/offsetY:</h3><p>得出的结果跟pageX/pageY一样，既然如此，它有什么存在价值？因为：</p>
+<p>特别说明：只有IE支持！相当于IE下的pageX,pageY。</p>
+<p>e.clientX + document.documentElement.scrollLeft -document.documentElement.clientLeft = e.pageX<br>e.clientY + document.documentElement.scrollTop  - document.documentElement.clientTop = e.pageY</p>
 
-	function flashdown(){
-		yspeed = yspeed + 0.015;
-		console.log(xspeed);
-		ball.style.top = parseFloat(ball.style.top) + yspeed + 'px';
-		ball.style.left = parseFloat(ball.style.left) + xspeed + 'px';
-		//console.log(ball.style.left)
-		if (parseFloat(ball.style.top) < lastdown) {
-			setTimeout(flashdown, 1);
-		}
-		else{
-			if (yspeed == 0.015) {
-				var stop = setInterval(function(){
-					xspeed = xspeed - 0.007;
-					ball.style.left = parseFloat(ball.style.left) + xspeed + 'px';
-					console.log(xspeed)
-					if (xspeed <=0 ) {
-						clearInterval(stop);
-					}
-				},1);
-				
-			}
-			else{
-				speedno = -yspeed + 0.5;
-				flashup();
-			}
-			
-		}	
-	}
-	function flashup(){
-		speedno = speedno + 0.015;
-		ball.style.top = parseFloat(ball.style.top) + speedno + 'px';
-		ball.style.left = parseFloat(ball.style.left) + xspeed + 'px';
-		if (speedno < 0) {
-			setTimeout(flashup,1);
-		}
-		else{
-			yspeed = 0;
-			flashdown();
-		}
-	}
-</script>
-</html>
   </section>
 
   
@@ -315,6 +223,18 @@ classes that you can use:
 
 
     
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
     
     
     <!--kill ie6 -->
