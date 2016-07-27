@@ -256,6 +256,13 @@
 
           
             
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/15/请求方式/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/15/请求方式/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -277,20 +284,26 @@
       
         
           
-            <pre><code>实际上我们展示的仅仅是最为简单的Simple Request的执行流程。而CORS则将导致跨域访问的请求分为三种：Simple Request，Preflighted Request以及Requests with Credential。
-</code></pre><p><br></p>
-<pre><code>如果一个请求没有包含任何自定义请求头，而且它所使用HTTP动词是GET，HEAD或POST之一，那么它就是一个Simple Request。但是在使用POST作为请求的动词时，该请求的Content-Type需要是application/x-www-form-urlencoded，multipart/form-data或text/plain之一。
-</code></pre><p><br></p>
-<pre><code>如果一个请求包含了任何自定义请求头，或者它所使用的HTTP动词是GET，HEAD或POST之外的任何一个动词，那么它就是一个Preflighted Request。如果POST请求的Content-Type并不是application/x-www-form-urlencoded，multipart/form-data或text/plain之一，那么其也是Preflighted Request。
-</code></pre><p><br></p>
-<pre><code>浏览器为了安全起见，会先发送一个 options 请求，确保请求发送是安全的，一般 POST DELETE PUT 等请求都会修改服务器资源，所以浏览器会先发一个请求，问问服务器是否会正确（允许）请求。
-</code></pre><h4 id="u51FA_u73B0_OPTIONS__u7684_u60C5_u51B5_u4E00_u822C_u4E3A_uFF1A"><a href="#u51FA_u73B0_OPTIONS__u7684_u60C5_u51B5_u4E00_u822C_u4E3A_uFF1A" class="headerlink" title="出现 OPTIONS 的情况一般为："></a>出现 OPTIONS 的情况一般为：</h4><p><li>非 GET | POST 请求</li></p>
+            <blockquote>
+<p>CORS则将导致跨域访问的请求分为三种：</p>
+<p><ul style="font-weight:bolder"><br>    <li>Simple Request</li><br>    <li>Preflighted Request</li><br>    <li>Requests with Credential</li></ul></p>
+</blockquote>
+<p></p>
+<p style="text-indent:2em">如果一个请求没有包含任何自定义请求头，而且它所使用HTTP动词是GET，HEAD或POST之一，那么它就是一个Simple Request。但是在使用POST作为请求的动词时，该请求的Content-Type需要是application/x-www-form-urlencoded，multipart/form-data或text/plain之一。</p>
+
+<p style="text-indent:2em">如果一个请求包含了任何自定义请求头，或者它所使用的HTTP动词是GET，HEAD或POST之外的任何一个动词，那么它就是一个Preflighted Request。如果POST请求的Content-Type并不是application/x-www-form-urlencoded，multipart/form-data或text/plain之一，那么其也是Preflighted Request。</p>
+
+<p style="text-indent:2em">浏览器为了安全起见，会先发送一个 options 请求，确保请求发送是安全的，一般 POST DELETE PUT 等请求都会修改服务器资源，所以浏览器会先发一个请求，问问服务器是否会正确（允许）请求。</p>
+
+
+<blockquote>
+<p>出现 OPTIONS 的情况一般为：</p>
+<p><li>非 GET | POST 请求</li></p>
 <p><li>POST 请求的 content-type 不是常规的那三个</li></p>
 <p><li>POST 请求的 payload 为 text/xml</li></p>
-<hr>
-<p></p><p>我的请求倒是很常规啊，不存在上面3条的问题</p><br>quto:<p></p>
-<p>跨域了呀，浏览器也会为了试探服务器是否会接受请求，先发送一个 options 请求。即便是服务器允许程序跨域访问，若不支持 options 请求，请求也会死掉。</p>
-
+</blockquote>
+<p>question:</p><p style="text-indent:2em">如果请求依然很常规啊，不存在上面3条的问题，那么原因是什么?</p><br>quto:<p></p>
+<p style="text-indent:2em">跨域了呀，浏览器也会为了试探服务器是否会接受请求，先发送一个 options 请求。即便是服务器允许程序跨域访问，若不支持 options 请求，请求也会死掉。</p>
           
         
       
@@ -362,6 +375,13 @@
 
           
             
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/29/pagejquery-ajax-POST-例子详解/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/29/pagejquery-ajax-POST-例子详解/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -383,9 +403,35 @@
       
         
           
-            <p> function test(){<br>   $.ajax({<br>            //提交数据的类型 POST GET<br>            type:”POST”,<br>            //提交的网址<br>            url:”testLogin.aspx”,<br>            //提交的数据<br>            data:{Name:”sanmao”,Password:”sanmaoword”},<br>            //返回数据的格式<br>            datatype: “html”,//“xml”, “html”, “script”, “json”, “jsonp”, “text”.<br>            //在请求之前调用的函数<br>            beforeSend:function(){$(“#msg”).html(“logining”);},<br>            //成功返回之后调用的函数<br>            success:function(data){<br>           $(“#msg”).html(decodeURI(data));<br>            }   ,<br>            //调用执行后调用的函数<br>            complete: function(XMLHttpRequest, textStatus){<br>               alert(XMLHttpRequest.responseText);<br>               alert(textStatus);<br>                //HideLoading();<br>            },<br>            //调用出错执行的函数<br>            error: function(){<br>                //请求出错处理<br>            }<br>         });</p>
-<p>  }</p>
-
+            <pre><code>function test(){
+$.ajax({
+        //提交数据的类型 POST GET
+        type:&quot;POST&quot;,
+        //提交的网址
+        url:&quot;testLogin.aspx&quot;,
+        //提交的数据
+        data:{Name:&quot;sanmao&quot;,Password:&quot;sanmaoword&quot;},
+        //返回数据的格式
+        datatype: &quot;html&quot;,//&quot;xml&quot;, &quot;html&quot;, &quot;script&quot;, &quot;json&quot;, &quot;jsonp&quot;, &quot;text&quot;.
+        //在请求之前调用的函数
+        beforeSend:function(){$(&quot;#msg&quot;).html(&quot;logining&quot;);},
+        //成功返回之后调用的函数             
+        success:function(data){
+       $(&quot;#msg&quot;).html(decodeURI(data));            
+        }   ,
+        //调用执行后调用的函数
+        complete: function(XMLHttpRequest, textStatus){
+           alert(XMLHttpRequest.responseText);
+           alert(textStatus);
+            //HideLoading();
+        },
+        //调用出错执行的函数
+        error: function(){
+            //请求出错处理
+        }         
+     });
+}
+</code></pre>
           
         
       
@@ -456,6 +502,13 @@
           
 
           
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/21/JQuery-mouseover与mouseenter-mouseout与mouseleave的区别/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/21/JQuery-mouseover与mouseenter-mouseout与mouseleave的区别/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
@@ -553,6 +606,13 @@
           
 
           
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/19/pagepageX-clientX-screenX-offsetX区别/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/19/pagepageX-clientX-screenX-offsetX区别/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
@@ -654,6 +714,13 @@
           
 
           
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/18/page小球弹跳之原生js/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/18/page小球弹跳之原生js/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
@@ -954,9 +1021,28 @@
 
   
 
+  
+    
+  
 
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"babypig"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
 
   
+    
+  
+
+
 
 
 

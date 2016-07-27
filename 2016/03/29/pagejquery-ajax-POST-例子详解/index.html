@@ -84,16 +84,37 @@
 
 
 
-<meta name="description" content="function test(){   $.ajax({            //提交数据的类型 POST GET            type:”POST”,            //提交的网址            url:”testLogin.aspx”,            //提交的数据            data:{Name:”sanmao”,Password:”sanmao">
+<meta name="description" content="function test(){
+$.ajax({
+        //提交数据的类型 POST GET
+        type:&amp;quot;POST&amp;quot;,
+        //提交的网址
+        url:&amp;quot;testLogin.aspx&amp;quot;,
+        //提交的数据
+        data:{Name:&amp;quot;sanmao&amp;quot;,Passwo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="pagejquery ajax POST 例子详解">
 <meta property="og:url" content="http://yoursite.com/2016/03/29/pagejquery-ajax-POST-例子详解/index.html">
 <meta property="og:site_name" content="Ballon'blog">
-<meta property="og:description" content="function test(){   $.ajax({            //提交数据的类型 POST GET            type:”POST”,            //提交的网址            url:”testLogin.aspx”,            //提交的数据            data:{Name:”sanmao”,Password:”sanmao">
-<meta property="og:updated_time" content="2016-03-29T11:43:56.000Z">
+<meta property="og:description" content="function test(){
+$.ajax({
+        //提交数据的类型 POST GET
+        type:&amp;quot;POST&amp;quot;,
+        //提交的网址
+        url:&amp;quot;testLogin.aspx&amp;quot;,
+        //提交的数据
+        data:{Name:&amp;quot;sanmao&amp;quot;,Passwo">
+<meta property="og:updated_time" content="2016-07-27T11:25:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="pagejquery ajax POST 例子详解">
-<meta name="twitter:description" content="function test(){   $.ajax({            //提交数据的类型 POST GET            type:”POST”,            //提交的网址            url:”testLogin.aspx”,            //提交的数据            data:{Name:”sanmao”,Password:”sanmao">
+<meta name="twitter:description" content="function test(){
+$.ajax({
+        //提交数据的类型 POST GET
+        type:&amp;quot;POST&amp;quot;,
+        //提交的网址
+        url:&amp;quot;testLogin.aspx&amp;quot;,
+        //提交的数据
+        data:{Name:&amp;quot;sanmao&amp;quot;,Passwo">
 
 
 
@@ -252,6 +273,13 @@
 
           
             
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/29/pagejquery-ajax-POST-例子详解/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/29/pagejquery-ajax-POST-例子详解/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -271,9 +299,35 @@
       
 
       
-        <p> function test(){<br>   $.ajax({<br>            //提交数据的类型 POST GET<br>            type:”POST”,<br>            //提交的网址<br>            url:”testLogin.aspx”,<br>            //提交的数据<br>            data:{Name:”sanmao”,Password:”sanmaoword”},<br>            //返回数据的格式<br>            datatype: “html”,//“xml”, “html”, “script”, “json”, “jsonp”, “text”.<br>            //在请求之前调用的函数<br>            beforeSend:function(){$(“#msg”).html(“logining”);},<br>            //成功返回之后调用的函数<br>            success:function(data){<br>           $(“#msg”).html(decodeURI(data));<br>            }   ,<br>            //调用执行后调用的函数<br>            complete: function(XMLHttpRequest, textStatus){<br>               alert(XMLHttpRequest.responseText);<br>               alert(textStatus);<br>                //HideLoading();<br>            },<br>            //调用出错执行的函数<br>            error: function(){<br>                //请求出错处理<br>            }<br>         });</p>
-<p>  }</p>
-
+        <pre><code>function test(){
+$.ajax({
+        //提交数据的类型 POST GET
+        type:&quot;POST&quot;,
+        //提交的网址
+        url:&quot;testLogin.aspx&quot;,
+        //提交的数据
+        data:{Name:&quot;sanmao&quot;,Password:&quot;sanmaoword&quot;},
+        //返回数据的格式
+        datatype: &quot;html&quot;,//&quot;xml&quot;, &quot;html&quot;, &quot;script&quot;, &quot;json&quot;, &quot;jsonp&quot;, &quot;text&quot;.
+        //在请求之前调用的函数
+        beforeSend:function(){$(&quot;#msg&quot;).html(&quot;logining&quot;);},
+        //成功返回之后调用的函数             
+        success:function(data){
+       $(&quot;#msg&quot;).html(decodeURI(data));            
+        }   ,
+        //调用执行后调用的函数
+        complete: function(XMLHttpRequest, textStatus){
+           alert(XMLHttpRequest.responseText);
+           alert(textStatus);
+            //HideLoading();
+        },
+        //调用出错执行的函数
+        error: function(){
+            //请求出错处理
+        }         
+     });
+}
+</code></pre>
       
     </div>
 
@@ -332,6 +386,10 @@
 
           
   <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/03/29/pagejquery-ajax-POST-例子详解/"
+           data-title="pagejquery ajax POST 例子详解" data-url="http://yoursite.com/2016/03/29/pagejquery-ajax-POST-例子详解/">
+      </div>
     
   </div>
 
@@ -521,9 +579,28 @@
 
   
 
+  
+    
+  
 
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"babypig"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
 
   
+    
+  
+
+
 
 
 
