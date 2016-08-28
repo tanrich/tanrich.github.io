@@ -84,25 +84,37 @@
 
 
 
-<meta name="description" content="offset:获取元素相对于文档（document）的当前坐标  
-注意:使用offset()方法不管该元素如何定位，也不管其父元素如何定位，都是获取的该元素相对于当前视口的偏移。  
- position : 获取元素相对父元素的偏移
-注意:1，使用position()方法时事实上是把该元素当绝对定位来处理，获取的是该元素相当于最近的一个拥有绝对或者相对定位的父元素的偏移位置。2，使用positi">
+<meta name="description" content="1.元素选择器p{
+    font-size:5px;
+}
+2.关系选择器E F：后代选择器，该选择器定位元素E的后代中所有元素F：
+ul li {margin-bottom:0.5em;}
+E &amp;gt; F：子选择器，该选择器定位元素E的直接子元素中的所有元素F，它将忽略任何进一步的嵌套：
+ul &amp;gt; li {list-style:none;} 
+E + F：相邻兄弟选择器，该选择器定位与">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JQ之offset和position的用法与区别">
-<meta property="og:url" content="http://yoursite.com/2016/03/18/JQ之-offset-和-position-的用法与区别/index.html">
+<meta property="og:title" content="css选择器">
+<meta property="og:url" content="http://yoursite.com/2016/08/27/css选择器/index.html">
 <meta property="og:site_name" content="Ballon'blog">
-<meta property="og:description" content="offset:获取元素相对于文档（document）的当前坐标  
-注意:使用offset()方法不管该元素如何定位，也不管其父元素如何定位，都是获取的该元素相对于当前视口的偏移。  
- position : 获取元素相对父元素的偏移
-注意:1，使用position()方法时事实上是把该元素当绝对定位来处理，获取的是该元素相当于最近的一个拥有绝对或者相对定位的父元素的偏移位置。2，使用positi">
-<meta property="og:updated_time" content="2016-03-18T03:24:40.000Z">
+<meta property="og:description" content="1.元素选择器p{
+    font-size:5px;
+}
+2.关系选择器E F：后代选择器，该选择器定位元素E的后代中所有元素F：
+ul li {margin-bottom:0.5em;}
+E &amp;gt; F：子选择器，该选择器定位元素E的直接子元素中的所有元素F，它将忽略任何进一步的嵌套：
+ul &amp;gt; li {list-style:none;} 
+E + F：相邻兄弟选择器，该选择器定位与">
+<meta property="og:updated_time" content="2016-08-28T16:41:09.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JQ之offset和position的用法与区别">
-<meta name="twitter:description" content="offset:获取元素相对于文档（document）的当前坐标  
-注意:使用offset()方法不管该元素如何定位，也不管其父元素如何定位，都是获取的该元素相对于当前视口的偏移。  
- position : 获取元素相对父元素的偏移
-注意:1，使用position()方法时事实上是把该元素当绝对定位来处理，获取的是该元素相当于最近的一个拥有绝对或者相对定位的父元素的偏移位置。2，使用positi">
+<meta name="twitter:title" content="css选择器">
+<meta name="twitter:description" content="1.元素选择器p{
+    font-size:5px;
+}
+2.关系选择器E F：后代选择器，该选择器定位元素E的后代中所有元素F：
+ul li {margin-bottom:0.5em;}
+E &amp;gt; F：子选择器，该选择器定位元素E的直接子元素中的所有元素F，它将忽略任何进一步的嵌套：
+ul &amp;gt; li {list-style:none;} 
+E + F：相邻兄弟选择器，该选择器定位与">
 
 
 
@@ -120,7 +132,7 @@
   };
 </script>
 
-  <title> JQ之offset和position的用法与区别 | Ballon'blog </title>
+  <title> css选择器 | Ballon'blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -240,7 +252,7 @@
             
             
               
-                JQ之offset和position的用法与区别
+                css选择器
               
             
           </h1>
@@ -252,8 +264,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-18T11:14:14+08:00" content="2016-03-18">
-              2016-03-18
+            <time itemprop="dateCreated" datetime="2016-08-27T20:53:41+08:00" content="2016-08-27">
+              2016-08-27
             </time>
           </span>
 
@@ -263,8 +275,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/18/JQ之-offset-和-position-的用法与区别/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/18/JQ之-offset-和-position-的用法与区别/" itemprop="commentsCount"></span>
+                <a href="/2016/08/27/css选择器/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/27/css选择器/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -287,17 +299,77 @@
       
 
       
-        <p>offset:获取元素相对于文档（document）的当前坐标  </p>
-<h4 id="u6CE8_u610F_3A"><a href="#u6CE8_u610F_3A" class="headerlink" title="注意:"></a><font color="red">注意:</font></h4><p>使用offset()方法不管该元素如何定位，也不管其父元素如何定位，都是获取的该元素相对于当前视口的偏移。  </p>
-<p> position : 获取元素相对父元素的偏移</p>
-<h4 id="u6CE8_u610F_3A-1"><a href="#u6CE8_u610F_3A-1" class="headerlink" title="注意:"></a><font color="red">注意:</font></h4><p>1，使用position()方法时事实上是把该元素当绝对定位来处理，获取的是该元素相当于最近的一个拥有绝对或者相对定位的父元素的偏移位置。<br>2，使用position()方法时如果其所有的父元素都为默认定位（static）方式，则其处理方式和offset()一样，是当前窗口的相对偏移。  </p>
-<h4 id="u7528_u6CD5_3A"><a href="#u7528_u6CD5_3A" class="headerlink" title="用法:"></a><font color="red">用法:</font></h4><p>如  </p>
-<pre><code>var position=$(this).position()//定义当前元素,而且当前元素
-position:absolute;
-alert(position.top);
-alert(position.left);
-</code></pre><p>输出当前元素距离最近的父元素的垂直距离值和水平距离值.<br>注意,当前元素的父亲元素的CSS最好为 position:relative  </p>
-
+        <h3 id="1-_u5143_u7D20_u9009_u62E9_u5668"><a href="#1-_u5143_u7D20_u9009_u62E9_u5668" class="headerlink" title="1.元素选择器"></a>1.元素选择器</h3><pre><code>p{
+    font-size:5px;
+}
+</code></pre><h3 id="2-_u5173_u7CFB_u9009_u62E9_u5668"><a href="#2-_u5173_u7CFB_u9009_u62E9_u5668" class="headerlink" title="2.关系选择器"></a>2.关系选择器</h3><p>E F：后代选择器，该选择器定位元素E的后代中所有元素F：</p>
+<pre><code>ul li {margin-bottom:0.5em;}
+</code></pre><p>E &gt; F：子选择器，该选择器定位元素E的直接子元素中的所有元素F，它将忽略任何进一步的嵌套：</p>
+<pre><code>ul &gt; li {list-style:none;} 
+</code></pre><p>E + F：相邻兄弟选择器，该选择器定位与元素E具有相同父元素且在标记中紧邻E的元素F：</p>
+<pre><code>li + li {border-top:1px solid #ddd;} 
+//定位具有相同父元素ul里除第一个li之外的所有li
+</code></pre><p>E ~ F：一般兄弟选择器，该选择器定位与元素E具有相同父元素且在标记中位于E之后的所有元素F：</p>
+<pre><code>h1 ~ p {color:#f00;} 
+//定位具有相同父元素的，h1标签之后的所有p标签
+</code></pre><h3 id="3-_u5C5E_u6027_u9009_u62E9_u5668"><a href="#3-_u5C5E_u6027_u9009_u62E9_u5668" class="headerlink" title="3.属性选择器"></a>3.属性选择器</h3><p>E[attr]：该选择器定位具有属性attr的任何元素E：</p>
+<pre><code>input[required] {border:1px solid #f00;} 
+//定位页面里所有具有必填属性&quot;required&quot;的input
+</code></pre><p>E[attr=val]：该选择器定位具有属性attr且属性值为val的任何元素E：</p>
+<pre><code>input[type=password] {border:1px solid #aaa;} 
+//定位页面里的密码输入框
+</code></pre><p>E[attr|=avl]：该选择器定位具有属性attr且属性值为val或以val-开始的任何元素E：</p>
+<pre><code>p[class|=a] {color:#333;} 
+//定位页面里所有的P段落里具有class属性且属性值为a或是a-开始的
+比如class=&quot;a&quot;以及class=&quot;a-b&quot;
+</code></pre><p>E[attr~=val]：该选择器定位具有属性attr且属性值为完整单词 val 的任何元素E：</p>
+<pre><code>div[title~=english] {color:#f88;} 
+//定位页面里所有具有属性title且属性值里拥有完整单词english的div容器
+比如title=&quot;english&quot;以及title=&quot;a english&quot;
+</code></pre><p>E[attr^=val]：该选择器定位具有属性attr且属性值以val开头的任何元素E：</p>
+<pre><code>div[class^=a] {color:#666;} 
+//定位页面里具有属性class且属性值以a开头的div容器
+比如class=&quot;a&quot;以及class=&quot;ab&quot;
+</code></pre><p>E[attr$=val]：该选择器与E[attr^=val]正好相反，定位具有属性attr且属性值以val结尾的任何元素E：</p>
+<pre><code>div[class$=a] {color:#f00;} 
+//定位页面里具有属性class且属性值以a结尾的div窗口
+比如class=&quot;nba&quot;以及class=&quot;cba&quot;
+</code></pre><p>E[attr*=val]：该选择器与E[attr~=val]相似，但更进一步，定位具有属性attr且属性值任意位置包含val的元素E，val可以是一个完整的单词，也可以是一个单词中的一部分：</p>
+<pre><code>a[title*=link] {text-decoration:underline;} 
+//定位所有title里具有link字符串的a链接
+</code></pre><h3 id="4-_u4F2A_u7C7B"><a href="#4-_u4F2A_u7C7B" class="headerlink" title="4.伪类"></a>4.伪类</h3><p>:link：未访问的链接；</p>
+<p>:visited：已访问的链接，不建议使用；</p>
+<p>:hover：鼠标移动到容器，不仅限于链接，可用于页面中的任何元素；</p>
+<p>:active：被激活时的状态，不仅限于链接，可用于任何具有tabindex属性的元素；</p>
+<p>:focus：获得焦点时状态，不仅限于链接，可用于任何具有tabindex属性的无线：</p>
+<p>input:focus {border:1px solid #333;} //输入框获得焦点时的样式</p>
+<p>:enabled：已启用的界面元素：</p>
+<p>input:enabled {border:1px solid #899;}</p>
+<p>:disabled：已禁用的界面元素：</p>
+<p>input:disabled {background:#eee;}</p>
+<p>:target：该选择器定位当前活动页面内定位点的目标元素：</p>
+<pre><code>#info:target {font-size:24px;} 
+//当访问的URL网址为 123.html#info 时，id=&quot;info&quot;将加载这个字体样式
+</code></pre><p>E:nth-of-type(n)：该选择器定位元素E的第n个指定类型子元素；</p>
+<p>E:nth-lash-of-type(n)：该选择器定位元素E的导数第n个指定类型子元素：</p>
+<blockquote>
+<p>.class p:nth-child(2) 与 .class p:nth-of-type(2) 的区别在于，如果.class里的第2个子元素不是P元素时，.class p:nth-child(2) 的样式将无效，而.class p:nth-of-type(2) 将定位在 .class 里的第2个p元素</p>
+<p>nth-child(n)、nth-last-child(n)、nth-of-type(n)、nth-last-of-type(n)，这其中的 n 可以使用数字静态式，比如 .nth-child(2n+1) 将匹配第1、3、5…个元素</p>
+</blockquote>
+<p><span style="color:red">建议用nth-of-type</span></p>
+<p>E:not(exception)：该选择器将选择与括号内的选择器不匹配的元素：</p>
+<pre><code>p:not(.info) {font-size:12px;} 
+//匹配所有class值不为info的p元素
+</code></pre><h3 id="5-_u4F2A_u5143_u7D20"><a href="#5-_u4F2A_u5143_u7D20" class="headerlink" title="5.伪元素"></a>5.伪元素</h3><p>伪元素可用于定位文档中包含的文本，为与伪类进行区分，伪元素使用双冒号 :: 定义，但单冒号 : 也能被识别。</p>
+<p>::first-line：匹配文本首行；</p>
+<p>::first-letter：匹配文本首字母；</p>
+<p>::before 与 ::after ：使用 contnet 属性生成额外的内容并插入在标记中：</p>
+<pre><code>a[href^=http]::after {content:&quot;link&quot;} 
+//在页面的a链接的后面插入文字link
+</code></pre><p>::selection：匹配突出显示的文本：</p>
+<pre><code>::selection {background:#444; color:#fff;} 
+//定义选中的文本颜色与背景色
+</code></pre>
       
     </div>
 
@@ -321,16 +393,16 @@ alert(position.left);
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/02/14/canvas七巧板/" rel="next" title="canvas七巧板">
-                <i class="fa fa-chevron-left"></i> canvas七巧板
+              <a href="/2016/08/27/跨域/" rel="next" title="跨域">
+                <i class="fa fa-chevron-left"></i> 跨域
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/03/18/page小球弹跳之原生js/" rel="prev" title="page小球弹跳之原生js">
-                page小球弹跳之原生js <i class="fa fa-chevron-right"></i>
+              <a href="/2016/08/28/排序/" rel="prev" title="排序">
+                排序 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -357,8 +429,8 @@ alert(position.left);
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/03/18/JQ之-offset-和-position-的用法与区别/"
-           data-title="JQ之offset和position的用法与区别" data-url="http://yoursite.com/2016/03/18/JQ之-offset-和-position-的用法与区别/">
+      <div class="ds-thread" data-thread-key="2016/08/27/css选择器/"
+           data-title="css选择器" data-url="http://yoursite.com/2016/08/27/css选择器/">
       </div>
     
   </div>
@@ -435,7 +507,7 @@ alert(position.left);
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#u6CE8_u610F_3A"><span class="nav-number">1.</span> <span class="nav-text">注意:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u6CE8_u610F_3A-1"><span class="nav-number">2.</span> <span class="nav-text">注意:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u7528_u6CD5_3A"><span class="nav-number">3.</span> <span class="nav-text">用法:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-_u5143_u7D20_u9009_u62E9_u5668"><span class="nav-number">1.</span> <span class="nav-text">1.元素选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-_u5173_u7CFB_u9009_u62E9_u5668"><span class="nav-number">2.</span> <span class="nav-text">2.关系选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-_u5C5E_u6027_u9009_u62E9_u5668"><span class="nav-number">3.</span> <span class="nav-text">3.属性选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-_u4F2A_u7C7B"><span class="nav-number">4.</span> <span class="nav-text">4.伪类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-_u4F2A_u5143_u7D20"><span class="nav-number">5.</span> <span class="nav-text">5.伪元素</span></a></li></ol></div>
             
           </div>
         </section>

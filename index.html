@@ -233,8 +233,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/07/15/请求方式/" itemprop="url">
-                  请求方式
+                <a class="post-title-link" href="/2016/08/28/正则表达式/" itemprop="url">
+                  正则表达式
                 </a>
               
             
@@ -247,8 +247,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-15T22:23:10+08:00" content="2016-07-15">
-              2016-07-15
+            <time itemprop="dateCreated" datetime="2016-08-28T23:09:34+08:00" content="2016-08-28">
+              2016-08-28
             </time>
           </span>
 
@@ -258,8 +258,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/07/15/请求方式/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/15/请求方式/" itemprop="commentsCount"></span>
+                <a href="/2016/08/28/正则表达式/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/28/正则表达式/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -284,26 +284,137 @@
       
         
           
-            <blockquote>
-<p>CORS则将导致跨域访问的请求分为三种：</p>
-<p><ul style="font-weight:bolder"><br>    <li>Simple Request</li><br>    <li>Preflighted Request</li><br>    <li>Requests with Credential</li></ul></p>
+            <h3 id="1-_u6B63_u5219_u8868_u8FBE_u5F0F_u57FA_u672C_u8BED_u6CD5"><a href="#1-_u6B63_u5219_u8868_u8FBE_u5F0F_u57FA_u672C_u8BED_u6CD5" class="headerlink" title="1.正则表达式基本语法"></a>1.正则表达式基本语法</h3><blockquote>
+<p>两个特殊的符号’^’和’$’。他们的作用是分别指出一个字符串的开始和结束。</p>
 </blockquote>
-<p></p>
-<p style="text-indent:2em">如果一个请求没有包含任何自定义请求头，而且它所使用HTTP动词是GET，HEAD或POST之一，那么它就是一个Simple Request。但是在使用POST作为请求的动词时，该请求的Content-Type需要是application/x-www-form-urlencoded，multipart/form-data或text/plain之一。</p>
+<pre><code>&quot;^The&quot;：表示所有以&quot;The&quot;开始的字符串（&quot;There&quot;，&quot;The cat&quot;等）；
 
-<p style="text-indent:2em">如果一个请求包含了任何自定义请求头，或者它所使用的HTTP动词是GET，HEAD或POST之外的任何一个动词，那么它就是一个Preflighted Request。如果POST请求的Content-Type并不是application/x-www-form-urlencoded，multipart/form-data或text/plain之一，那么其也是Preflighted Request。</p>
+&quot;of despair$&quot;：表示所以以&quot;of despair&quot;结尾的字符串；
 
-<p style="text-indent:2em">浏览器为了安全起见，会先发送一个 options 请求，确保请求发送是安全的，一般 POST DELETE PUT 等请求都会修改服务器资源，所以浏览器会先发一个请求，问问服务器是否会正确（允许）请求。</p>
+&quot;^abc$&quot;：表示开始和结尾都是&quot;abc&quot;的字符串——呵呵，只有&quot;abc&quot;自己了；
 
-
-<blockquote>
-<p>出现 OPTIONS 的情况一般为：</p>
-<p><li>非 GET | POST 请求</li></p>
-<p><li>POST 请求的 content-type 不是常规的那三个</li></p>
-<p><li>POST 请求的 payload 为 text/xml</li></p>
+&quot;notice&quot;：表示任何包含&quot;notice&quot;的字符串。
+</code></pre><blockquote>
+<p>‘*’，’+’，’?’</p>
+<p>分别表示“没有或更多”，“一次或更多”还有“没有或一次”。</p>
+<p>相当于”{0,}”，”{1,}”和”{0,1}”</p>
 </blockquote>
-<p>question:</p><p style="text-indent:2em">如果请求依然很常规啊，不存在上面3条的问题，那么原因是什么?</p><br>quto:<p></p>
-<p style="text-indent:2em">跨域了呀，浏览器也会为了试探服务器是否会接受请求，先发送一个 options 请求。即便是服务器允许程序跨域访问，若不支持 options 请求，请求也会死掉。</p>
+<pre><code>&quot;ab*&quot;：表示一个字符串有一个a后面跟着零个或若干个b。（&quot;a&quot;, &quot;ab&quot;, &quot;abbb&quot;,……）；
+
+&quot;ab+&quot;：表示一个字符串有一个a后面跟着至少一个b或者更多；
+
+&quot;ab?&quot;：表示一个字符串有一个a后面跟着零个或者一个b；
+
+&quot;a?b+$&quot;：表示在字符串的末尾有零个或一个a跟着一个或几个b。
+</code></pre><blockquote>
+<p>你也可以使用范围，用大括号括起，用以表示重复次数的范围。</p>
+<p>请注意，你必须指定范围的下限（如：”{0,2}”而不是”{,2}”）。</p>
+</blockquote>
+<pre><code>&quot;ab{2}&quot;：表示一个字符串有一个a跟着2个b（&quot;abb&quot;）；
+
+&quot;ab{2,}&quot;：表示一个字符串有一个a跟着至少2个b；
+
+&quot;ab{3,5}&quot;：表示一个字符串有一个a跟着3到5个b。
+</code></pre><blockquote>
+<p>还有一个’¦’，表示“或”操作：</p>
+</blockquote>
+<pre><code>&quot;hi¦hello&quot;：表示一个字符串里有&quot;hi&quot;或者&quot;hello&quot;；
+
+&quot;(b¦cd)ef&quot;：表示&quot;bef&quot;或&quot;cdef&quot;；
+
+&quot;(a¦b)*c&quot;：表示一串&quot;a&quot;&quot;b&quot;混合的字符串后面跟一个&quot;c&quot;；
+</code></pre><blockquote>
+<p>‘.’可以替代任何字符：</p>
+</blockquote>
+<pre><code>&quot;a.[0-9]&quot;：表示一个字符串有一个&quot;a&quot;后面跟着一个任意字符和一个数字；
+
+&quot;^.{3}$&quot;：表示有任意三个字符的字符串（长度为3个字符）；
+</code></pre><blockquote>
+<p>方括号表示某些字符允许在一个字符串中的某一特定位置出现：</p>
+</blockquote>
+<pre><code>&quot;[ab]&quot;：表示一个字符串有一个&quot;a&quot;或&quot;b&quot;（相当于&quot;a¦b&quot;）；
+
+&quot;[a-d]&quot;：表示一个字符串包含小写的&apos;a&apos;到&apos;d&apos;中的一个（相当于&quot;a¦b¦c¦d&quot;或者&quot;[abcd]&quot;）；
+
+&quot;^[a-zA-Z]&quot;：表示一个以字母开头的字符串；
+
+&quot;[0-9]%&quot;：表示一个百分号前有一位的数字；
+
+&quot;,[a-zA-Z0-9]$&quot;：表示一个字符串以一个逗号后面跟着一个字母或数字结束。
+
+你也可以在方括号里用&apos;^&apos;表示不希望出现的字符，&apos;^&apos;应在方括号里的第一位。
+（如：&quot;%[^a-zA-Z]%&quot;表示两个百分号中不应该出现字母）。
+</code></pre><blockquote>
+<p>预定义类</p>
+</blockquote>
+<p><img src="/images/预定义类.png" alt=""></p>
+<h3 id="2-_u6B63_u5219_u8868_u8FBE_u5F0F_u7684_u5E94_u7528_u5B9E_u4F8B_u901A_u4FD7_u8BF4_u660E"><a href="#2-_u6B63_u5219_u8868_u8FBE_u5F0F_u7684_u5E94_u7528_u5B9E_u4F8B_u901A_u4FD7_u8BF4_u660E" class="headerlink" title="2.正则表达式的应用实例通俗说明"></a>2.正则表达式的应用实例通俗说明</h3><p>校验是否全由数字组成</p>
+<pre><code>/^[0-9]{1,20}$/
+
+^ 表示打头的字符要匹配紧跟^后面的规则
+
+$ 表示打头的字符要匹配紧靠$前面的规则
+
+[ ] 中的内容是可选字符集
+
+[0-9] 表示要求字符范围在0-9之间
+
+{1,20}表示数字字符串长度合法为1到20，即为[0-9]中的字符出现次数的范围是1到20次。
+
+/^ 和 $/成对使用应该是表示要求整个字符串完全匹配定义的规则，而不是只匹配字符串中的一个子串。
+</code></pre><p>校验登录名：只能输入5-20个以字母开头、可带数字、“_”、“.”的字串</p>
+<pre><code>/^[a-zA-Z]{1}([a-zA-Z0-9]|[._]){4,19}$/
+
+^[a-zA-Z]{1} 表示第一个字符要求是字母。
+
+([a-zA-Z0-9]|[._]){4,19} 表示从第二位开始（因为它紧跟在上个表达式后面）的一个长度为4到9位的字符串，它要求是由大小写字母、数字或者特殊字符集[._]组成。
+</code></pre><p>校验用户姓名：只能输入1-30个以字母开头的字串</p>
+<pre><code>/^[a-zA-Z]{1,30}$/ 
+</code></pre><p>校验密码：只能输入6-20个字母、数字、下划线</p>
+<pre><code>/^(\w){6,20}$/
+\w：用于匹配字母，数字或下划线字符 
+</code></pre><p>校验普通电话、传真号码：可以“+”或数字开头，可含有“-” 和 “ ”</p>
+<pre><code>/^[+]{0,1}(\d){1,3}[ ]?([-]?((\d)|[ ]){1,12})+$/
+
+\d：用于匹配从0到9的数字；
+
+“?”元字符规定其前导对象必须在目标对象中连续出现零次或一次
+
+可以匹配的字符串如：+123 -999 999 ； +123-999 999 ；123 999 999 ；+123 999999等
+</code></pre><p>校验URL<br>    /^http[s]{0,1}:\/\/.+$/ 或 /^http[s]{0,1}:\/\/.{1,n}$/ (表示url串的长度为length(“https://”) + n )</p>
+<pre><code> \ / ：表示字符“/”。
+
+. 表示所有字符的集
+
++ 等同于{1,}，就是1到正无穷吧。
+</code></pre><p>校验纯中文字符</p>
+<pre><code>/^[\u4E00-\u9FA5]+$/
+
+[\u4E00-\u9FA5] ：估计是中文字符集的范围吧
+</code></pre><h3 id="3-_u6B63_u5219_u8868_u8FBE_u5F0F_u7684_u5E94_u7528"><a href="#3-_u6B63_u5219_u8868_u8FBE_u5F0F_u7684_u5E94_u7528" class="headerlink" title="3.正则表达式的应用"></a>3.正则表达式的应用</h3><p>“^\d+$”　　//非负整数（正整数 + 0） </p>
+<p>“^[0-9]<em>[1-9][0-9]</em>$”　　//正整数 </p>
+<p>“^((-\d+)|(0+))$”　　//非正整数（负整数 + 0） </p>
+<p>“^-[0-9]<em>[1-9][0-9]</em>$”　　//负整数 </p>
+<p>“^-?\d+$”　　　　//整数 </p>
+<p>“^\d+(.\d+)?$”　　//非负浮点数（正浮点数 + 0）</p>
+<p>“^(([0-9]+.[0-9]<em>[1-9][0-9]</em>)|([0-9]<em>[1-9][0-9]</em>.[0-9]+)|([0-9]<em>[1-9][0-9]</em>))$”　　//正浮点数 </p>
+<p>“^((-\d+(.\d+)?)|(0+(.0+)?))$”　　//非正浮点数（负浮点数 + 0） </p>
+<p>“^(-(([0-9]+.[0-9]<em>[1-9][0-9]</em>)|([0-9]<em>[1-9][0-9]</em>.[0-9]+)|([0-9]<em>[1-9][0-9]</em>)))$”　　//负浮点数 </p>
+<p>“^(-?\d+)(.\d+)?$”　　//浮点数 </p>
+<p>“^[A-Za-z]+$”　　//由26个英文字母组成的字符串 </p>
+<p>“^[A-Z]+$”　　//由26个英文字母的大写组成的字符串 </p>
+<p>“^[a-z]+$”　　//由26个英文字母的小写组成的字符串 </p>
+<p>“^[A-Za-z0-9]+$”　　//由数字和26个英文字母组成的字符串</p>
+<p>“^\w+$”　　//由数字、26个英文字母或者下划线组成的字符串<br>“^[\w-]+(.[\w-]+)*@[\w-]+(.[\w-]+)+$”　　　　//email地址 </p>
+<p>“^[a-zA-z]+://(\w+(-\w+)<em>)(.(\w+(-\w+)</em>))<em>(\?\S</em>)?$”　　//url</p>
+<p>/^(d{2}|d{4})-((0([1-9]{1}))|(1[1|2]))-((<a href="/[1-9]{1}">0-2</a>)|(3[0|1]))$/   //  年-月-日</p>
+<p>/^((0([1-9]{1}))|(1[1|2]))/((<a href="/[1-9]{1}">0-2</a>)|(3[0|1]))/(d{2}|d{4})$/   // 月/日/年</p>
+<p>“^([w-.]+)@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.)|(([w-]+.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(]?)$”   //Emil</p>
+<p>“(d+-)?(d{4}-?d{7}|d{3}-?d{8}|^d{7,8})(-d+)?”     //电话号码</p>
+<p>“^(d{1,2}|1dd|2[0-4]d|25[0-5]).(d{1,2}|1dd|2[0-4]d|25[0-5]).(d{1,2}|1dd|2[0-4]d|25[0-5]).(d{1,2}|1dd|2[0-4]d|25[0-5])$”   //IP地址</p>
+<p>^([0-9A-F]{2})(-[0-9A-F]{2}){5}$   //MAC地址的正则表达式</p>
+<p>^[-+]?\d+(.\d+)?$  //值类型正则表达式</p>
+
           
         
       
@@ -352,8 +463,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/03/29/pagejquery-ajax-POST-例子详解/" itemprop="url">
-                  pagejquery ajax POST 例子详解
+                <a class="post-title-link" href="/2016/08/28/JS原型与原型链/" itemprop="url">
+                  JS原型与原型链
                 </a>
               
             
@@ -366,8 +477,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-29T19:43:19+08:00" content="2016-03-29">
-              2016-03-29
+            <time itemprop="dateCreated" datetime="2016-08-28T20:20:27+08:00" content="2016-08-28">
+              2016-08-28
             </time>
           </span>
 
@@ -377,8 +488,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/29/pagejquery-ajax-POST-例子详解/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/29/pagejquery-ajax-POST-例子详解/" itemprop="commentsCount"></span>
+                <a href="/2016/08/28/JS原型与原型链/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/28/JS原型与原型链/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -403,34 +514,369 @@
       
         
           
-            <pre><code>function test(){
-$.ajax({
-        //提交数据的类型 POST GET
-        type:&quot;POST&quot;,
-        //提交的网址
-        url:&quot;testLogin.aspx&quot;,
-        //提交的数据
-        data:{Name:&quot;sanmao&quot;,Password:&quot;sanmaoword&quot;},
-        //返回数据的格式
-        datatype: &quot;html&quot;,//&quot;xml&quot;, &quot;html&quot;, &quot;script&quot;, &quot;json&quot;, &quot;jsonp&quot;, &quot;text&quot;.
-        //在请求之前调用的函数
-        beforeSend:function(){$(&quot;#msg&quot;).html(&quot;logining&quot;);},
-        //成功返回之后调用的函数             
-        success:function(data){
-       $(&quot;#msg&quot;).html(decodeURI(data));            
-        }   ,
-        //调用执行后调用的函数
-        complete: function(XMLHttpRequest, textStatus){
-           alert(XMLHttpRequest.responseText);
-           alert(textStatus);
-            //HideLoading();
-        },
-        //调用出错执行的函数
-        error: function(){
-            //请求出错处理
-        }         
-     });
+            <h3 id="u4E00-__u666E_u901A_u5BF9_u8C61_u4E0E_u51FD_u6570_u5BF9_u8C61"><a href="#u4E00-__u666E_u901A_u5BF9_u8C61_u4E0E_u51FD_u6570_u5BF9_u8C61" class="headerlink" title="一. 普通对象与函数对象"></a>一. 普通对象与函数对象</h3><p>  JavaScript 中，万物皆对象！但对象也是有区别的。分为普通对象和函数对象，Object ，Function 是JS自带的函数对象。下面举例说明</p>
+<pre><code>function f1(){};
+var f2 = function(){};
+var f3 = new Function(&apos;str&apos;,&apos;console.log(str)&apos;);
+
+var o3 = new f1();
+var o1 = {};
+var o2 =new Object();
+
+console.log(typeof Object); //function
+console.log(typeof Function); //function
+console.log(typeof o1); //object
+console.log(typeof o2); //object
+console.log(typeof o3); //object
+console.log(typeof f1); //function
+console.log(typeof f2); //function
+console.log(typeof f3); //function 
+</code></pre><p>  在上面的例子中 o1 o2 o3 为普通对象，f1 f2 f3 为函数对象。怎么区分，其实很简单，<span style="color:red">凡是通过 new Function() 创建的对象都是函数对象，其他的都是普通对象。</span>f1,f2,归根结底都是通过 new Function()的方式进行创建的。Function Object 也都是通过 New Function()创建的。</p>
+<h3 id="u4E8C-__u539F_u578B_u5BF9_u8C61"><a href="#u4E8C-__u539F_u578B_u5BF9_u8C61" class="headerlink" title="二. 原型对象"></a>二. 原型对象</h3><p>   在JavaScript 中，每当定义一个对象（函数）时候，对象中都会包含一些预定义的属性。其中函数对象的一个属性就是原型对象 prototype。注：普通对象没有prototype,但有<strong>proto</strong>属性。</p>
+<p>  原型对象其实就是普通对象（Function.prototype除外,它是函数对象，但它很特殊，他没有prototype属性（前面说道函数对象都有prototype属性））。看下面的例子：</p>
+<pre><code>function f1(){};
+console.log(f1.prototype) //f1{}
+console.log(typeof f1. prototype) //Object
+console.log(typeof Function.prototype) // Function，这个特殊
+console.log(typeof Object.prototype) // Object
+console.log(typeof Function.prototype.prototype) //undefined
+</code></pre><p> 从这句console.log(f1.prototype) //f1 {} 的输出就结果可以看出，f1.prototype就是f1的一个实例对象。就是在f1创建的时候,创建了一个它的实例对象并赋值给它的prototype，基本过程如下：</p>
+<pre><code>var temp = new f1();
+f1. prototype = temp;
+</code></pre><p>  所以，Function.prototype为什么是函数对象就迎刃而解了，上文提到凡是new Function ()产生的对象都是函数对象，所以temp1是函数对象。</p>
+<pre><code>var temp1 = new Function ();
+Function.prototype = temp1;
+</code></pre><p>那原型对象是用来做什么的呢？主要作用是用于继承。举了例子：</p>
+<pre><code>var person = function(name){
+        this.name = name
+};
+person.prototype.getName = function(){
+        return this.name; 
 }
+var zjh = new person(‘zhangjiahao’);
+zjh.getName(); //zhangjiahao
+</code></pre><p>   从这个例子可以看出，通过给person.prototype设置了一个函数对象的属性，那有person实例（例中：zjh）出来的普通对象就继承了这个属性。具体是怎么实现的继承，就要讲到下面的原型链了。</p>
+<h3 id="u4E09_uFF0E_u539F_u578B_u94FE"><a href="#u4E09_uFF0E_u539F_u578B_u94FE" class="headerlink" title="三．原型链"></a>三．原型链</h3><p>   JS在创建对象（不论是普通对象还是函数对象）的时候，都有一个叫做<strong>proto</strong>的内置属性，用于指向创建它的函数对象的原型对象prototype。以上面的例子为例：</p>
+<pre><code>console.log(zjh.__proto__ === person.prototype) //true
+</code></pre><p>同样，person.prototype对象也有<strong>proto</strong>属性，它指向创建它的函数对象（Object）的prototype</p>
+<pre><code>console.log(person.prototype.__proto__ === Object.prototype) //true
+</code></pre><p>继续，Object.prototype对象也有<strong>proto</strong>属性，但它比较特殊，为null</p>
+<pre><code>console.log(Object.prototype.__proto__) //null
+</code></pre><p>我们把这个有<strong>proto</strong>串起来的直到Object.prototype.<strong>proto</strong>为null的链叫做原型链。如下图：<br><img src="/images/原型链.jpg" alt=""></p>
+<h3 id="u56DB_uFF0E_u5185_u5B58_u7ED3_u6784_u56FE"><a href="#u56DB_uFF0E_u5185_u5B58_u7ED3_u6784_u56FE" class="headerlink" title="四．内存结构图"></a>四．内存结构图</h3><p>为了更加深入和直观的进行理解，下面我们画一下上面的内存结构图：<br><img src="/images/内存结构.jpg" alt=""></p>
+<p>画图约定：<br><img src="/images/画图约定.jpg" alt=""></p>
+<h4 id="u7591_u70B9_u89E3_u91CA_uFF1A"><a href="#u7591_u70B9_u89E3_u91CA_uFF1A" class="headerlink" title="疑点解释："></a>疑点解释：</h4><ol>
+<li><p>Object.<strong>proto</strong> === Function.prototype // true<br>Object是函数对象，是通过new Function()创建，所以Object.<strong>proto</strong>指向Function.prototype。</p>
+</li>
+<li><p>Function.<strong>proto</strong> === Function.prototype // true<br>Function 也是对象函数，也是通过new Function()创建，所以Function.<strong>proto</strong>指向Function.prototype。<br>自己是由自己创建的，好像不符合逻辑，但仔细想想，现实世界也有些类似，你是怎么来的，你妈生的，你妈怎么来的，你姥姥生的，……类人猿进化来的，那类人猿从哪来，一直追溯下去……，就是无，（NULL生万物）<br>正如《道德经》里所说“无，名天地之始”。</p>
+</li>
+<li><p>Function.prototype.<strong>proto</strong> === Object.prototype //true<br>其实这一点我也有点困惑，不过也可以试着解释一下。<br>Function.prototype是个函数对象，理论上他的<strong>proto</strong>应该指向 Function.prototype，就是他自己，自己指向自己，没有意义。<br>JS一直强调万物皆对象，函数对象也是对象，给他认个祖宗，指向Object.prototype。Object.prototype.<strong>proto</strong> === null，保证原型链能够正常结束。</p>
+</li>
+</ol>
+<h3 id="u4E94_uFF0Econstructor"><a href="#u4E94_uFF0Econstructor" class="headerlink" title="五．constructor"></a>五．constructor</h3><p>  原型对象prototype中都有个预定义的constructor属性，用来引用它的函数对象。这是一种循环引用</p>
+<pre><code>person.prototype.constructor === person //true
+Function.prototype.constructor === Function //true
+Object.prototype.constructor === Object //true
+</code></pre><p>有两点需要注意：</p>
+<p>（1）注意Object.constructor===Function；//true 本身Object就是Function函数构造出来的 </p>
+<p>（2）如何查找一个对象的constructor，就是在该对象的原型链上寻找碰到的第一个constructor属性所指向的对象</p>
+<h3 id="u516D_uFF0E_u603B_u7ED3"><a href="#u516D_uFF0E_u603B_u7ED3" class="headerlink" title="六．总结"></a>六．总结</h3><ol>
+<li>原型和原型链是JS实现继承的一种模型。</li>
+<li>原型链的形成是真正是靠<strong>proto</strong> 而非prototype</li>
+</ol>
+<p>要深入理解这句话，我们再举个例子，看看前面你真的理解了吗？</p>
+<pre><code>var animal = function(){};
+var dog = function(){};
+
+animal.price = 2000;//
+dog.prototype = animal;
+var tidy = new dog();
+
+
+console.log(dog.price) //undefined
+console.log(tidy.price) // 2000
+</code></pre><p>为什么呢？画一下内存图：<br><img src="/images/dog.jpg" alt=""></p>
+<p>这说明什么问题呢，执行dog.price的时候，发现没有price这个属性，虽然prototype指向的animal有这个属性，但它并没有去沿着这个“链”去寻找。同样，执行tidy.price的时候，也没有这个属性，但是<strong>proto</strong>指向了animal，它会沿着这个链去寻找，animal中有price属性，所以tidy.price输出2000。由此得出，原型链的真正形成是靠的<strong>proro</strong>，而不是prototype。</p>
+<p>因此，如果在这样指定dog.<strong>proto</strong> = animal。那dog.price = 2000。</p>
+<p>最后打个比喻，虽然不是很确切，但可能对原型的理解有些帮助。<br><img src="/images/son.jpg" alt=""></p>
+<p>父亲（函数对象），先生了一个大儿子（prototype），也就是你大哥，父亲给你大哥买了好多的玩具，当你出生的时候，你们之间的亲情纽带（<strong>proto</strong>）会让你自然而然的拥有了你大哥的玩具。同样，你也先生个大儿子，又给他买了好多的玩具，当你再生儿子的时候，你的小儿子会自然拥有你大儿子的所有玩具。至于他们会不会打架，这不是我们的事了。<br>所以说，你是从你大哥那继承的，印证了那句“长兄如父”啊！</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/08/28/排序/" itemprop="url">
+                  排序
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-28T15:45:16+08:00" content="2016-08-28">
+              2016-08-28
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/28/排序/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/28/排序/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li>系统方法：在forfox下系统的这个方法非常快</li>
+<li>冒泡排序：最简单，也最慢，貌似长度小于7最优</li>
+<li>快速排序：这是一个非常快的排序方式，V8的sort方法就使用快速排序和插入排序的结合</li>
+<li>插入排序： 比冒泡快，比快速排序和希尔排序慢，较小数据有优势</li>
+<li>希尔排序：在非chrome下数组长度小于1000，希尔排序比快速更快</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/08/27/css选择器/" itemprop="url">
+                  css选择器
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-27T20:53:41+08:00" content="2016-08-27">
+              2016-08-27
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/27/css选择器/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/27/css选择器/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="1-_u5143_u7D20_u9009_u62E9_u5668"><a href="#1-_u5143_u7D20_u9009_u62E9_u5668" class="headerlink" title="1.元素选择器"></a>1.元素选择器</h3><pre><code>p{
+    font-size:5px;
+}
+</code></pre><h3 id="2-_u5173_u7CFB_u9009_u62E9_u5668"><a href="#2-_u5173_u7CFB_u9009_u62E9_u5668" class="headerlink" title="2.关系选择器"></a>2.关系选择器</h3><p>E F：后代选择器，该选择器定位元素E的后代中所有元素F：</p>
+<pre><code>ul li {margin-bottom:0.5em;}
+</code></pre><p>E &gt; F：子选择器，该选择器定位元素E的直接子元素中的所有元素F，它将忽略任何进一步的嵌套：</p>
+<pre><code>ul &gt; li {list-style:none;} 
+</code></pre><p>E + F：相邻兄弟选择器，该选择器定位与元素E具有相同父元素且在标记中紧邻E的元素F：</p>
+<pre><code>li + li {border-top:1px solid #ddd;} 
+//定位具有相同父元素ul里除第一个li之外的所有li
+</code></pre><p>E ~ F：一般兄弟选择器，该选择器定位与元素E具有相同父元素且在标记中位于E之后的所有元素F：</p>
+<pre><code>h1 ~ p {color:#f00;} 
+//定位具有相同父元素的，h1标签之后的所有p标签
+</code></pre><h3 id="3-_u5C5E_u6027_u9009_u62E9_u5668"><a href="#3-_u5C5E_u6027_u9009_u62E9_u5668" class="headerlink" title="3.属性选择器"></a>3.属性选择器</h3><p>E[attr]：该选择器定位具有属性attr的任何元素E：</p>
+<pre><code>input[required] {border:1px solid #f00;} 
+//定位页面里所有具有必填属性&quot;required&quot;的input
+</code></pre><p>E[attr=val]：该选择器定位具有属性attr且属性值为val的任何元素E：</p>
+<pre><code>input[type=password] {border:1px solid #aaa;} 
+//定位页面里的密码输入框
+</code></pre><p>E[attr|=avl]：该选择器定位具有属性attr且属性值为val或以val-开始的任何元素E：</p>
+<pre><code>p[class|=a] {color:#333;} 
+//定位页面里所有的P段落里具有class属性且属性值为a或是a-开始的
+比如class=&quot;a&quot;以及class=&quot;a-b&quot;
+</code></pre><p>E[attr~=val]：该选择器定位具有属性attr且属性值为完整单词 val 的任何元素E：</p>
+<pre><code>div[title~=english] {color:#f88;} 
+//定位页面里所有具有属性title且属性值里拥有完整单词english的div容器
+比如title=&quot;english&quot;以及title=&quot;a english&quot;
+</code></pre><p>E[attr^=val]：该选择器定位具有属性attr且属性值以val开头的任何元素E：</p>
+<pre><code>div[class^=a] {color:#666;} 
+//定位页面里具有属性class且属性值以a开头的div容器
+比如class=&quot;a&quot;以及class=&quot;ab&quot;
+</code></pre><p>E[attr$=val]：该选择器与E[attr^=val]正好相反，定位具有属性attr且属性值以val结尾的任何元素E：</p>
+<pre><code>div[class$=a] {color:#f00;} 
+//定位页面里具有属性class且属性值以a结尾的div窗口
+比如class=&quot;nba&quot;以及class=&quot;cba&quot;
+</code></pre><p>E[attr*=val]：该选择器与E[attr~=val]相似，但更进一步，定位具有属性attr且属性值任意位置包含val的元素E，val可以是一个完整的单词，也可以是一个单词中的一部分：</p>
+<pre><code>a[title*=link] {text-decoration:underline;} 
+//定位所有title里具有link字符串的a链接
+</code></pre><h3 id="4-_u4F2A_u7C7B"><a href="#4-_u4F2A_u7C7B" class="headerlink" title="4.伪类"></a>4.伪类</h3><p>:link：未访问的链接；</p>
+<p>:visited：已访问的链接，不建议使用；</p>
+<p>:hover：鼠标移动到容器，不仅限于链接，可用于页面中的任何元素；</p>
+<p>:active：被激活时的状态，不仅限于链接，可用于任何具有tabindex属性的元素；</p>
+<p>:focus：获得焦点时状态，不仅限于链接，可用于任何具有tabindex属性的无线：</p>
+<p>input:focus {border:1px solid #333;} //输入框获得焦点时的样式</p>
+<p>:enabled：已启用的界面元素：</p>
+<p>input:enabled {border:1px solid #899;}</p>
+<p>:disabled：已禁用的界面元素：</p>
+<p>input:disabled {background:#eee;}</p>
+<p>:target：该选择器定位当前活动页面内定位点的目标元素：</p>
+<pre><code>#info:target {font-size:24px;} 
+//当访问的URL网址为 123.html#info 时，id=&quot;info&quot;将加载这个字体样式
+</code></pre><p>E:nth-of-type(n)：该选择器定位元素E的第n个指定类型子元素；</p>
+<p>E:nth-lash-of-type(n)：该选择器定位元素E的导数第n个指定类型子元素：</p>
+<blockquote>
+<p>.class p:nth-child(2) 与 .class p:nth-of-type(2) 的区别在于，如果.class里的第2个子元素不是P元素时，.class p:nth-child(2) 的样式将无效，而.class p:nth-of-type(2) 将定位在 .class 里的第2个p元素</p>
+<p>nth-child(n)、nth-last-child(n)、nth-of-type(n)、nth-last-of-type(n)，这其中的 n 可以使用数字静态式，比如 .nth-child(2n+1) 将匹配第1、3、5…个元素</p>
+</blockquote>
+<p><span style="color:red">建议用nth-of-type</span></p>
+<p>E:not(exception)：该选择器将选择与括号内的选择器不匹配的元素：</p>
+<pre><code>p:not(.info) {font-size:12px;} 
+//匹配所有class值不为info的p元素
+</code></pre><h3 id="5-_u4F2A_u5143_u7D20"><a href="#5-_u4F2A_u5143_u7D20" class="headerlink" title="5.伪元素"></a>5.伪元素</h3><p>伪元素可用于定位文档中包含的文本，为与伪类进行区分，伪元素使用双冒号 :: 定义，但单冒号 : 也能被识别。</p>
+<p>::first-line：匹配文本首行；</p>
+<p>::first-letter：匹配文本首字母；</p>
+<p>::before 与 ::after ：使用 contnet 属性生成额外的内容并插入在标记中：</p>
+<pre><code>a[href^=http]::after {content:&quot;link&quot;} 
+//在页面的a链接的后面插入文字link
+</code></pre><p>::selection：匹配突出显示的文本：</p>
+<pre><code>::selection {background:#444; color:#fff;} 
+//定义选中的文本颜色与背景色
 </code></pre>
           
         
@@ -480,8 +926,8 @@ $.ajax({
             
               
                 
-                <a class="post-title-link" href="/2016/03/21/JQuery-mouseover与mouseenter-mouseout与mouseleave的区别/" itemprop="url">
-                  jQuery mouseover与mouseenter,mouseout与mouseleave的区别
+                <a class="post-title-link" href="/2016/08/27/跨域/" itemprop="url">
+                  跨域
                 </a>
               
             
@@ -494,8 +940,8 @@ $.ajax({
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-21T16:06:58+08:00" content="2016-03-21">
-              2016-03-21
+            <time itemprop="dateCreated" datetime="2016-08-27T11:30:48+08:00" content="2016-08-27">
+              2016-08-27
             </time>
           </span>
 
@@ -505,8 +951,8 @@ $.ajax({
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/21/JQuery-mouseover与mouseenter-mouseout与mouseleave的区别/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/21/JQuery-mouseover与mouseenter-mouseout与mouseleave的区别/" itemprop="commentsCount"></span>
+                <a href="/2016/08/27/跨域/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/27/跨域/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -531,293 +977,70 @@ $.ajax({
       
         
           
-            <h3 id="mouseover_u4E0Emouseenter"><a href="#mouseover_u4E0Emouseenter" class="headerlink" title="mouseover与mouseenter"></a>mouseover与mouseenter</h3><p>不论鼠标指针穿过被选元素或其子元素，都会触发 mouseover 事件。</p>
-<p>只有在鼠标指针穿过被选元素时，才会触发 mouseenter 事件。</p>
-<h3 id="mouseout_u4E0Emouseleave"><a href="#mouseout_u4E0Emouseleave" class="headerlink" title="mouseout与mouseleave"></a>mouseout与mouseleave</h3><p>不论鼠标指针离开被选元素还是任何子元素，都会触发 mouseout 事件。</p>
-<p>只有在鼠标指针离开被选元素时，才会触发 mouseleave 事件。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/19/pagepageX-clientX-screenX-offsetX区别/" itemprop="url">
-                  pagepageX,clientX,screenX,offsetX区别
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-19T11:31:23+08:00" content="2016-03-19">
-              2016-03-19
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/03/19/pagepageX-clientX-screenX-offsetX区别/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/19/pagepageX-clientX-screenX-offsetX区别/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="pageX/pageY_3A"><a href="#pageX/pageY_3A" class="headerlink" title="pageX/pageY:"></a>pageX/pageY:</h3><p>鼠标相对于整个页面的X/Y坐标。<br>注意，整个页面的意思就是你整个网页的全部，比如说网页很宽很长，宽2000px，高3000px，那pageX,pageY的最大值就是它们了。</p>
-<p>特别说明：IE不支持！</p>
-<h3 id="clientX/clientY_uFF1A"><a href="#clientX/clientY_uFF1A" class="headerlink" title="clientX/clientY："></a>clientX/clientY：</h3><p>事件发生时鼠标在浏览器内容区域的X/Y坐标（不包含滚动条）。<br>浏览器内容区域即浏览器窗口中用来显示网页的可视区域，注意这个可视，也就是说需要拖动滚动条才能看到的区域不算。<br>当你将浏览器窗口缩小时，clientX/clientY的最大值也会缩小，但始终，它们的最大值不会超过你浏览器可视区域。</p>
-<p>特别说明：IE下此属性不规范，它们的最小值不是0而是2，也就是说IE下的clientX/clientY比火狐下始终大2px。</p>
-<h3 id="screenX/screenY"><a href="#screenX/screenY" class="headerlink" title="screenX/screenY"></a>screenX/screenY</h3><p>鼠标在屏幕上的坐标。screenX,screenY的最大值不会超过屏幕分辨率。</p>
-<h3 id="offsetX/offsetY_3A"><a href="#offsetX/offsetY_3A" class="headerlink" title="offsetX/offsetY:"></a>offsetX/offsetY:</h3><p>得出的结果跟pageX/pageY一样，既然如此，它有什么存在价值？因为：</p>
-<p>特别说明：只有IE支持！相当于IE下的pageX,pageY。</p>
-<p>e.clientX + document.documentElement.scrollLeft -document.documentElement.clientLeft = e.pageX<br>e.clientY + document.documentElement.scrollTop  - document.documentElement.clientTop = e.pageY</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/18/page小球弹跳之原生js/" itemprop="url">
-                  page小球弹跳之原生js
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-18T21:52:29+08:00" content="2016-03-18">
-              2016-03-18
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/03/18/page小球弹跳之原生js/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/18/page小球弹跳之原生js/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <pre><code>&lt;!DOCTYPE html&gt;
+            <h3 id="u540C_u6E90_u7B56_u7565"><a href="#u540C_u6E90_u7B56_u7565" class="headerlink" title="同源策略"></a>同源策略</h3><p><img src="/images/同源策略.png" alt=""></p>
+<h5 id="u7279_u522B_u6CE8_u610F_u4E24_u70B9_3A"><a href="#u7279_u522B_u6CE8_u610F_u4E24_u70B9_3A" class="headerlink" title="特别注意两点:"></a>特别注意两点:</h5><p>第一，如果是协议和端口造成的跨域问题“前台”是无能为力的</p>
+<p>第二：在跨域问题上，域仅仅是通过“URL的首部”来识别而不会去尝试判断相同的ip地址对应着两个域或两个域是否在同一个ip上。</p>
+<p>“URL的首部”指window.location.protocol +window.location.host，也可以理解为“Domains, protocols and ports must match”。</p>
+<h4 id="CROS_u8DE8_u57DF"><a href="#CROS_u8DE8_u57DF" class="headerlink" title="CROS跨域"></a>CROS跨域</h4><pre><code>function CreateCROSRequest (method,url) {
+    var xhr = new XMLHttpRequest();
+    if (&apos;withCredentials&apos; in xhr) {
+        xhr.open(method,url,true);
+    }//chrome
+    else if(typeof XDomainRequest!= &apos;undefined&apos;){
+    var xhr = new XDomainRequest();
+        xhr.open(method,url,true);
+    }//IE
+    else{
+        xhr = null;
+    }
+    return xhr;
+}
+var request = CreateCROSRequest(&quot;GET&quot;,&quot;http://www.baidu.com&quot;);
+if (request) {
+    request.onload = function () {
+        console.log(&apos;success&apos;)
+    }
+    request.send();
+}
+</code></pre><h4 id="JSONP_u8DE8_u57DF"><a href="#JSONP_u8DE8_u57DF" class="headerlink" title="JSONP跨域"></a>JSONP跨域</h4><pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
-&lt;meta charset=&quot;UTF-8&quot;&gt;
-&lt;title&gt;Document&lt;/title&gt;
-&lt;style&gt;
-    *{padding:0;margin:0;}
-    #ball{
-        width: 20px;
-        height: 20px;
-        border-radius:50%;
-        border: 1px solid black;
-        background: black;
-        position: absolute;
-    }
-&lt;/style&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
-    &lt;div id=&quot;ball&quot; style=&quot;top: 0px;left: 0px&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;container&quot;&gt;
+
+    &lt;/div&gt;
 &lt;/body&gt;
 &lt;script&gt;
-    var ball = document.getElementById(&apos;ball&apos;);
-    var    speedno = 0;
-    var xspeed = 0.8;
-    var yspeed = 0;
-    function animate(move) {
-        lastdown = parseFloat(ball.style.top) + move;
-        flashdown();
-    }
-    animate(320);
-
-    function flashdown(){
-        yspeed = yspeed + 0.015;
-        console.log(xspeed);
-        ball.style.top = parseFloat(ball.style.top) + yspeed + &apos;px&apos;;
-        ball.style.left = parseFloat(ball.style.left) + xspeed + &apos;px&apos;;
-        //console.log(ball.style.left)
-        if (parseFloat(ball.style.top) &lt; lastdown) {
-            setTimeout(flashdown, 1);
-        }
-        else{
-            if (yspeed == 0.015) {
-                var stop = setInterval(function(){
-                    xspeed = xspeed - 0.007;
-                    ball.style.left = parseFloat(ball.style.left) + xspeed + &apos;px&apos;;
-                    console.log(xspeed)
-                    if (xspeed &lt;=0 ) {
-                        clearInterval(stop);
-                    }
-                },1);
-
-            }
-            else{
-                speedno = -yspeed + 0.5;
-                flashup();
-            }
-
-        }    
-    }
-    function flashup(){
-        speedno = speedno + 0.015;
-        ball.style.top = parseFloat(ball.style.top) + speedno + &apos;px&apos;;
-        ball.style.left = parseFloat(ball.style.left) + xspeed + &apos;px&apos;;
-        if (speedno &lt; 0) {
-            setTimeout(flashup,1);
-        }
-        else{
-            yspeed = 0;
-            flashdown();
-        }
-    }
+//回调函数
+function handleResponse(response){
+    document.getElementById(&quot;container&quot;).innerHTML=response;
+}
+var script = document.createElement(&apos;script&apos;);
+script.src = &apos;http://www.baidu.com/json/?callback=handleResponse&apos;;
+document.body.insertBefore(script, document.body.firstChild);
 &lt;/script&gt;
 &lt;/html&gt;
-</code></pre><p><a href="/../pages/小球弹跳之原生js.html">点击查看详情</a></p>
-
+</code></pre><h4 id="HTML5_window-postMessage"><a href="#HTML5_window-postMessage" class="headerlink" title="HTML5 window.postMessage"></a>HTML5 window.postMessage</h4><pre><code>// 主页面  blog.qiutc.com
+&lt;script&gt;
+function onLoad() {
+  var iframe =document.getElementById(&apos;iframe&apos;);
+  var iframeWindow = iframe.contentWindow;
+  iframeWindow.postMessage(&quot;I&apos;m message from main page.&quot;);
+}
+&lt;/script&gt;
+&lt;iframe src=&quot;http://www.qiutc.me/b.html&quot; onload=&quot;onLoad()&quot;&lt;/iframe&gt;    
+</code></pre><p>–</p>
+<pre><code>// b 页面
+&lt;script&gt;
+window.onmessage = function(e) {
+  e = e || event;
+  console.log(e.data);
+}
+&lt;/script&gt;
+</code></pre>
           
         
       
@@ -849,7 +1072,7 @@ $.ajax({
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -890,7 +1113,7 @@ $.ajax({
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-count">15</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

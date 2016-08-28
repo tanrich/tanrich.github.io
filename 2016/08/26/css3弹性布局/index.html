@@ -1,0 +1,653 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="注意
+css 列（CSS columns）在弹性盒子中不起作用
+
+float, clear and vertical-align 在flex项目中不起作用
+
+
+display:flex
+box：将对象作为弹性伸缩盒显示。（伸缩盒最老版本）（css3）
+inline-box：将对象作为内联块级弹性伸缩盒显示。（伸缩盒最老版本）（CSS3）
+flexbox：将对象作为弹性伸缩盒显示。（伸缩盒过渡版本）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css3弹性布局">
+<meta property="og:url" content="http://yoursite.com/2016/08/26/css3弹性布局/index.html">
+<meta property="og:site_name" content="Ballon'blog">
+<meta property="og:description" content="注意
+css 列（CSS columns）在弹性盒子中不起作用
+
+float, clear and vertical-align 在flex项目中不起作用
+
+
+display:flex
+box：将对象作为弹性伸缩盒显示。（伸缩盒最老版本）（css3）
+inline-box：将对象作为内联块级弹性伸缩盒显示。（伸缩盒最老版本）（CSS3）
+flexbox：将对象作为弹性伸缩盒显示。（伸缩盒过渡版本）">
+<meta property="og:image" content="http://yoursite.com/images/justify-content.png">
+<meta property="og:image" content="http://yoursite.com/images/align-items.png">
+<meta property="og:updated_time" content="2016-08-28T16:39:32.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="css3弹性布局">
+<meta name="twitter:description" content="注意
+css 列（CSS columns）在弹性盒子中不起作用
+
+float, clear and vertical-align 在flex项目中不起作用
+
+
+display:flex
+box：将对象作为弹性伸缩盒显示。（伸缩盒最老版本）（css3）
+inline-box：将对象作为内联块级弹性伸缩盒显示。（伸缩盒最老版本）（CSS3）
+flexbox：将对象作为弹性伸缩盒显示。（伸缩盒过渡版本）">
+<meta name="twitter:image" content="http://yoursite.com/images/justify-content.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> css3弹性布局 | Ballon'blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Ballon'blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">welcome</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                css3弹性布局
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-26T00:21:12+08:00" content="2016-08-26">
+              2016-08-26
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/26/css3弹性布局/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/26/css3弹性布局/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="u6CE8_u610F"><a href="#u6CE8_u610F" class="headerlink" title="注意"></a>注意</h3><ol>
+<li><p>css 列（CSS columns）在弹性盒子中不起作用</p>
+</li>
+<li><p>float, clear and vertical-align 在flex项目中不起作用</p>
+</li>
+</ol>
+<h3 id="display_3Aflex"><a href="#display_3Aflex" class="headerlink" title="display:flex"></a>display:flex</h3><ol>
+<li>box：将对象作为弹性伸缩盒显示。（伸缩盒最老版本）（css3）</li>
+<li>inline-box：将对象作为内联块级弹性伸缩盒显示。（伸缩盒最老版本）（CSS3）</li>
+<li>flexbox：将对象作为弹性伸缩盒显示。（伸缩盒过渡版本）（CSS3）</li>
+<li>inline-flexbox：将对象作为内联块级弹性伸缩盒显示。（伸缩盒过渡版本）（CSS3）</li>
+<li>flex：将对象作为弹性伸缩盒显示。（伸缩盒最新版本）（CSS3）</li>
+<li>inline-flex：将对象作为内联块级弹性伸缩盒显示。（伸缩盒最新版本）（CSS3）</li>
+</ol>
+<h3 id="flex-direction__28_u9002_u7528_u4E8E_u7236_u7C7B_u5BB9_u5668_u7684_u5143_u7D20_u4E0A_29"><a href="#flex-direction__28_u9002_u7528_u4E8E_u7236_u7C7B_u5BB9_u5668_u7684_u5143_u7D20_u4E0A_29" class="headerlink" title="flex-direction (适用于父类容器的元素上)"></a>flex-direction (适用于父类容器的元素上)</h3><p>设置或检索伸缩盒对象的子元素在父容器中的位置。</p>
+<ol>
+<li>row：横向从左到右排列（左对齐），默认的排列方式。</li>
+<li>row-reverse：反转横向排列（右对齐，从后往前排，最后一项排在最前面。</li>
+<li>column：纵向排列。</li>
+<li><p>column-reverse：反转纵向排列，从后往前排，最后一项排在最上面。</p>
+<pre><code>.test-box-direction{
+    flex-direction: row-reverse;
+}
+</code></pre></li>
+</ol>
+<h3 id="flex-wrap__28_u9002_u7528_u4E8E_u7236_u7C7B_u5BB9_u5668_u7684_u5143_u7D20_u4E0A_29"><a href="#flex-wrap__28_u9002_u7528_u4E8E_u7236_u7C7B_u5BB9_u5668_u7684_u5143_u7D20_u4E0A_29" class="headerlink" title="flex-wrap (适用于父类容器的元素上)"></a>flex-wrap (适用于父类容器的元素上)</h3><p>设置或检索伸缩盒对象的子元素超出父容器时是否换行。</p>
+<ol>
+<li>nowrap：当子元素溢出父容器时不换行。</li>
+<li>wrap：当子元素溢出父容器时自动换行。</li>
+<li>wrap-reverse：反转 wrap 排列。</li>
+</ol>
+<h3 id="flex-flow"><a href="#flex-flow" class="headerlink" title="flex-flow"></a>flex-flow</h3><p>混合属性</p>
+<pre><code>flex-flow: &lt;‘flex-direction’&gt; || &lt;‘flex-wrap’&gt;
+</code></pre><h3 id="justify-content__28_u9002_u7528_u4E8E_u7236_u7C7B_u5BB9_u5668_u4E0A_29"><a href="#justify-content__28_u9002_u7528_u4E8E_u7236_u7C7B_u5BB9_u5668_u4E0A_29" class="headerlink" title="justify-content (适用于父类容器上)"></a>justify-content (适用于父类容器上)</h3><p>设置或检索弹性盒子元素在主轴（横轴）方向上的对齐方式。</p>
+<ol>
+<li>flex-start：弹性盒子元素将向行起始位置对齐。该行的第一个子元素的主起始位置的边界将与该行的主起始位置的边界对齐，同时所有后续的伸缩盒项目与其前一个项目对齐。</li>
+<li>flex-end：弹性盒子元素将向行结束位置对齐。该行的第一个子元素的主结束位置的边界将与该行的主结束位置的边界对齐，同时所有后续的伸缩盒项目与其前一个项目对齐。</li>
+<li>center：弹性盒子元素将向行中间位置对齐。该行的子元素将相互对齐并在行中居中对齐，同时第一个元素与行的主起始位置的边距等同与最后一个元素与行的主结束位置的边距（如果剩余空间是负数，则保持两端相等长度的溢出）。</li>
+<li>space-between：弹性盒子元素会平均地分布在行里。如果最左边的剩余空间是负数，或该行只有一个子元素，则该值等效于’flex-start’。在其它情况下，第一个元素的边界与行的主起始位置的边界对齐，同时最后一个元素的边界与行的主结束位置的边距对齐，而剩余的伸缩盒项目则平均分布，并确保两两之间的空白空间相等。</li>
+<li>space-around：弹性盒子元素会平均地分布在行里，两端保留子元素与子元素之间间距大小的一半。如果最左边的剩余空间是负数，或该行只有一个伸缩盒项目，则该值等效于’center’。在其它情况下，伸缩盒项目则平均分布，并确保两两之间的空白空间相等，同时第一个元素前的空间以及最后一个元素后的空间为其他空白空间的一半。</li>
+</ol>
+<p><img src="/images/justify-content.png" alt=""></p>
+<h3 id="align-items__28_u9002_u7528_u4E8E_u7236_u7C7B_u5BB9_u5668_u4E0A_29"><a href="#align-items__28_u9002_u7528_u4E8E_u7236_u7C7B_u5BB9_u5668_u4E0A_29" class="headerlink" title="align-items (适用于父类容器上)"></a>align-items (适用于父类容器上)</h3><ol>
+<li>flex-start：弹性盒子元素的侧轴（纵轴）起始位置的边界紧靠住该行的侧轴起始边界。</li>
+<li>flex-end：弹性盒子元素的侧轴（纵轴）起始位置的边界紧靠住该行的侧轴结束边界。</li>
+<li>center：弹性盒子元素在该行的侧轴（纵轴）上居中放置。（如果该行的尺寸小于弹性盒子元素的尺寸，则会向两个方向溢出相同的长度）。</li>
+<li>baseline：如弹性盒子元素的行内轴与侧轴为同一条，则该值与’flex-start’等效。其它情况下，该值将参与基线对齐。</li>
+<li>stretch：如果指定侧轴大小的属性值为’auto’，则其值会使项目的边距盒的尺寸尽可能接近所在行的尺寸，但同时会遵照’min/max-width/height’属性的限制。</li>
+</ol>
+<p><img src="/images/align-items.png" alt=""></p>
+<h3 id="order"><a href="#order" class="headerlink" title="order"></a>order</h3><p>用整数值来定义排列顺序，数值小的排在前面。可以为负值。</p>
+<h3 id="flex-grow__28_u9002_u7528_u4E8E_u5F39_u6027_u76D2_u6A21_u578B_u5BB9_u5668_u5B50_u5143_u7D20_29"><a href="#flex-grow__28_u9002_u7528_u4E8E_u5F39_u6027_u76D2_u6A21_u578B_u5BB9_u5668_u5B50_u5143_u7D20_29" class="headerlink" title="flex-grow (适用于弹性盒模型容器子元素)"></a>flex-grow (适用于弹性盒模型容器子元素)</h3><p>根据弹性盒子元素所设置的扩展因子作为比率来分配剩余空间。</p>
+<p><a href="http://caibaojian.com/demo/flexbox/flex-grow.html" target="_blank" rel="external">详情</a></p>
+<h3 id="flex-shrink__28_u9002_u7528_u4E8E_u5F39_u6027_u76D2_u6A21_u578B_u5BB9_u5668_u5B50_u5143_u7D20_29"><a href="#flex-shrink__28_u9002_u7528_u4E8E_u5F39_u6027_u76D2_u6A21_u578B_u5BB9_u5668_u5B50_u5143_u7D20_29" class="headerlink" title="flex-shrink (适用于弹性盒模型容器子元素)"></a>flex-shrink (适用于弹性盒模型容器子元素)</h3><p>设置或检索弹性盒的收缩比率（根据弹性盒子元素所设置的收缩因子作为比率来收缩空间。）</p>
+<p><a href="http://caibaojian.com/demo/flexbox/flex-shrink.html" target="_blank" rel="external">详情</a></p>
+<h3 id="u91CD_u70B9"><a href="#u91CD_u70B9" class="headerlink" title="重点"></a>重点</h3><p><a href="http://caibaojian.com/demo/flexbox/flex.html" target="_blank" rel="external">收缩长度与width、flex-shrink值的关系</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/15/请求方式/" rel="next" title="请求方式">
+                <i class="fa fa-chevron-left"></i> 请求方式
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/08/27/ES6/" rel="prev" title="ES6">
+                ES6 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/08/26/css3弹性布局/"
+           data-title="css3弹性布局" data-url="http://yoursite.com/2016/08/26/css3弹性布局/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Ricky" />
+          <p class="site-author-name" itemprop="name">Ricky</p>
+          <p class="site-description motion-element" itemprop="description">blog</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#u6CE8_u610F"><span class="nav-number">1.</span> <span class="nav-text">注意</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#display_3Aflex"><span class="nav-number">2.</span> <span class="nav-text">display:flex</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flex-direction__28_u9002_u7528_u4E8E_u7236_u7C7B_u5BB9_u5668_u7684_u5143_u7D20_u4E0A_29"><span class="nav-number">3.</span> <span class="nav-text">flex-direction (适用于父类容器的元素上)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flex-wrap__28_u9002_u7528_u4E8E_u7236_u7C7B_u5BB9_u5668_u7684_u5143_u7D20_u4E0A_29"><span class="nav-number">4.</span> <span class="nav-text">flex-wrap (适用于父类容器的元素上)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flex-flow"><span class="nav-number">5.</span> <span class="nav-text">flex-flow</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#justify-content__28_u9002_u7528_u4E8E_u7236_u7C7B_u5BB9_u5668_u4E0A_29"><span class="nav-number">6.</span> <span class="nav-text">justify-content (适用于父类容器上)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#align-items__28_u9002_u7528_u4E8E_u7236_u7C7B_u5BB9_u5668_u4E0A_29"><span class="nav-number">7.</span> <span class="nav-text">align-items (适用于父类容器上)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#order"><span class="nav-number">8.</span> <span class="nav-text">order</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flex-grow__28_u9002_u7528_u4E8E_u5F39_u6027_u76D2_u6A21_u578B_u5BB9_u5668_u5B50_u5143_u7D20_29"><span class="nav-number">9.</span> <span class="nav-text">flex-grow (适用于弹性盒模型容器子元素)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flex-shrink__28_u9002_u7528_u4E8E_u5F39_u6027_u76D2_u6A21_u578B_u5BB9_u5668_u5B50_u5143_u7D20_29"><span class="nav-number">10.</span> <span class="nav-text">flex-shrink (适用于弹性盒模型容器子元素)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u91CD_u70B9"><span class="nav-number">11.</span> <span class="nav-text">重点</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ricky</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://github.com/">Github</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"babypig"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

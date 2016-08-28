@@ -1,0 +1,668 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="一. 普通对象与函数对象  JavaScript 中，万物皆对象！但对象也是有区别的。分为普通对象和函数对象，Object ，Function 是JS自带的函数对象。下面举例说明
+function f1(){};
+var f2 = function(){};
+var f3 = new Function(&amp;apos;str&amp;apos;,&amp;apos;console.log(str)&amp;apos;);">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS原型与原型链">
+<meta property="og:url" content="http://yoursite.com/2016/08/28/JS原型与原型链/index.html">
+<meta property="og:site_name" content="Ballon'blog">
+<meta property="og:description" content="一. 普通对象与函数对象  JavaScript 中，万物皆对象！但对象也是有区别的。分为普通对象和函数对象，Object ，Function 是JS自带的函数对象。下面举例说明
+function f1(){};
+var f2 = function(){};
+var f3 = new Function(&amp;apos;str&amp;apos;,&amp;apos;console.log(str)&amp;apos;);">
+<meta property="og:image" content="http://yoursite.com/images/原型链.jpg">
+<meta property="og:image" content="http://yoursite.com/images/内存结构.jpg">
+<meta property="og:image" content="http://yoursite.com/images/画图约定.jpg">
+<meta property="og:image" content="http://yoursite.com/images/dog.jpg">
+<meta property="og:image" content="http://yoursite.com/images/son.jpg">
+<meta property="og:updated_time" content="2016-08-28T16:40:55.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS原型与原型链">
+<meta name="twitter:description" content="一. 普通对象与函数对象  JavaScript 中，万物皆对象！但对象也是有区别的。分为普通对象和函数对象，Object ，Function 是JS自带的函数对象。下面举例说明
+function f1(){};
+var f2 = function(){};
+var f3 = new Function(&amp;apos;str&amp;apos;,&amp;apos;console.log(str)&amp;apos;);">
+<meta name="twitter:image" content="http://yoursite.com/images/原型链.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> JS原型与原型链 | Ballon'blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Ballon'blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">welcome</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                JS原型与原型链
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-28T20:20:27+08:00" content="2016-08-28">
+              2016-08-28
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/28/JS原型与原型链/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/28/JS原型与原型链/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="u4E00-__u666E_u901A_u5BF9_u8C61_u4E0E_u51FD_u6570_u5BF9_u8C61"><a href="#u4E00-__u666E_u901A_u5BF9_u8C61_u4E0E_u51FD_u6570_u5BF9_u8C61" class="headerlink" title="一. 普通对象与函数对象"></a>一. 普通对象与函数对象</h3><p>  JavaScript 中，万物皆对象！但对象也是有区别的。分为普通对象和函数对象，Object ，Function 是JS自带的函数对象。下面举例说明</p>
+<pre><code>function f1(){};
+var f2 = function(){};
+var f3 = new Function(&apos;str&apos;,&apos;console.log(str)&apos;);
+
+var o3 = new f1();
+var o1 = {};
+var o2 =new Object();
+
+console.log(typeof Object); //function
+console.log(typeof Function); //function
+console.log(typeof o1); //object
+console.log(typeof o2); //object
+console.log(typeof o3); //object
+console.log(typeof f1); //function
+console.log(typeof f2); //function
+console.log(typeof f3); //function 
+</code></pre><p>  在上面的例子中 o1 o2 o3 为普通对象，f1 f2 f3 为函数对象。怎么区分，其实很简单，<span style="color:red">凡是通过 new Function() 创建的对象都是函数对象，其他的都是普通对象。</span>f1,f2,归根结底都是通过 new Function()的方式进行创建的。Function Object 也都是通过 New Function()创建的。</p>
+<h3 id="u4E8C-__u539F_u578B_u5BF9_u8C61"><a href="#u4E8C-__u539F_u578B_u5BF9_u8C61" class="headerlink" title="二. 原型对象"></a>二. 原型对象</h3><p>   在JavaScript 中，每当定义一个对象（函数）时候，对象中都会包含一些预定义的属性。其中函数对象的一个属性就是原型对象 prototype。注：普通对象没有prototype,但有<strong>proto</strong>属性。</p>
+<p>  原型对象其实就是普通对象（Function.prototype除外,它是函数对象，但它很特殊，他没有prototype属性（前面说道函数对象都有prototype属性））。看下面的例子：</p>
+<pre><code>function f1(){};
+console.log(f1.prototype) //f1{}
+console.log(typeof f1. prototype) //Object
+console.log(typeof Function.prototype) // Function，这个特殊
+console.log(typeof Object.prototype) // Object
+console.log(typeof Function.prototype.prototype) //undefined
+</code></pre><p> 从这句console.log(f1.prototype) //f1 {} 的输出就结果可以看出，f1.prototype就是f1的一个实例对象。就是在f1创建的时候,创建了一个它的实例对象并赋值给它的prototype，基本过程如下：</p>
+<pre><code>var temp = new f1();
+f1. prototype = temp;
+</code></pre><p>  所以，Function.prototype为什么是函数对象就迎刃而解了，上文提到凡是new Function ()产生的对象都是函数对象，所以temp1是函数对象。</p>
+<pre><code>var temp1 = new Function ();
+Function.prototype = temp1;
+</code></pre><p>那原型对象是用来做什么的呢？主要作用是用于继承。举了例子：</p>
+<pre><code>var person = function(name){
+        this.name = name
+};
+person.prototype.getName = function(){
+        return this.name; 
+}
+var zjh = new person(‘zhangjiahao’);
+zjh.getName(); //zhangjiahao
+</code></pre><p>   从这个例子可以看出，通过给person.prototype设置了一个函数对象的属性，那有person实例（例中：zjh）出来的普通对象就继承了这个属性。具体是怎么实现的继承，就要讲到下面的原型链了。</p>
+<h3 id="u4E09_uFF0E_u539F_u578B_u94FE"><a href="#u4E09_uFF0E_u539F_u578B_u94FE" class="headerlink" title="三．原型链"></a>三．原型链</h3><p>   JS在创建对象（不论是普通对象还是函数对象）的时候，都有一个叫做<strong>proto</strong>的内置属性，用于指向创建它的函数对象的原型对象prototype。以上面的例子为例：</p>
+<pre><code>console.log(zjh.__proto__ === person.prototype) //true
+</code></pre><p>同样，person.prototype对象也有<strong>proto</strong>属性，它指向创建它的函数对象（Object）的prototype</p>
+<pre><code>console.log(person.prototype.__proto__ === Object.prototype) //true
+</code></pre><p>继续，Object.prototype对象也有<strong>proto</strong>属性，但它比较特殊，为null</p>
+<pre><code>console.log(Object.prototype.__proto__) //null
+</code></pre><p>我们把这个有<strong>proto</strong>串起来的直到Object.prototype.<strong>proto</strong>为null的链叫做原型链。如下图：<br><img src="/images/原型链.jpg" alt=""></p>
+<h3 id="u56DB_uFF0E_u5185_u5B58_u7ED3_u6784_u56FE"><a href="#u56DB_uFF0E_u5185_u5B58_u7ED3_u6784_u56FE" class="headerlink" title="四．内存结构图"></a>四．内存结构图</h3><p>为了更加深入和直观的进行理解，下面我们画一下上面的内存结构图：<br><img src="/images/内存结构.jpg" alt=""></p>
+<p>画图约定：<br><img src="/images/画图约定.jpg" alt=""></p>
+<h4 id="u7591_u70B9_u89E3_u91CA_uFF1A"><a href="#u7591_u70B9_u89E3_u91CA_uFF1A" class="headerlink" title="疑点解释："></a>疑点解释：</h4><ol>
+<li><p>Object.<strong>proto</strong> === Function.prototype // true<br>Object是函数对象，是通过new Function()创建，所以Object.<strong>proto</strong>指向Function.prototype。</p>
+</li>
+<li><p>Function.<strong>proto</strong> === Function.prototype // true<br>Function 也是对象函数，也是通过new Function()创建，所以Function.<strong>proto</strong>指向Function.prototype。<br>自己是由自己创建的，好像不符合逻辑，但仔细想想，现实世界也有些类似，你是怎么来的，你妈生的，你妈怎么来的，你姥姥生的，……类人猿进化来的，那类人猿从哪来，一直追溯下去……，就是无，（NULL生万物）<br>正如《道德经》里所说“无，名天地之始”。</p>
+</li>
+<li><p>Function.prototype.<strong>proto</strong> === Object.prototype //true<br>其实这一点我也有点困惑，不过也可以试着解释一下。<br>Function.prototype是个函数对象，理论上他的<strong>proto</strong>应该指向 Function.prototype，就是他自己，自己指向自己，没有意义。<br>JS一直强调万物皆对象，函数对象也是对象，给他认个祖宗，指向Object.prototype。Object.prototype.<strong>proto</strong> === null，保证原型链能够正常结束。</p>
+</li>
+</ol>
+<h3 id="u4E94_uFF0Econstructor"><a href="#u4E94_uFF0Econstructor" class="headerlink" title="五．constructor"></a>五．constructor</h3><p>  原型对象prototype中都有个预定义的constructor属性，用来引用它的函数对象。这是一种循环引用</p>
+<pre><code>person.prototype.constructor === person //true
+Function.prototype.constructor === Function //true
+Object.prototype.constructor === Object //true
+</code></pre><p>有两点需要注意：</p>
+<p>（1）注意Object.constructor===Function；//true 本身Object就是Function函数构造出来的 </p>
+<p>（2）如何查找一个对象的constructor，就是在该对象的原型链上寻找碰到的第一个constructor属性所指向的对象</p>
+<h3 id="u516D_uFF0E_u603B_u7ED3"><a href="#u516D_uFF0E_u603B_u7ED3" class="headerlink" title="六．总结"></a>六．总结</h3><ol>
+<li>原型和原型链是JS实现继承的一种模型。</li>
+<li>原型链的形成是真正是靠<strong>proto</strong> 而非prototype</li>
+</ol>
+<p>要深入理解这句话，我们再举个例子，看看前面你真的理解了吗？</p>
+<pre><code>var animal = function(){};
+var dog = function(){};
+
+animal.price = 2000;//
+dog.prototype = animal;
+var tidy = new dog();
+
+
+console.log(dog.price) //undefined
+console.log(tidy.price) // 2000
+</code></pre><p>为什么呢？画一下内存图：<br><img src="/images/dog.jpg" alt=""></p>
+<p>这说明什么问题呢，执行dog.price的时候，发现没有price这个属性，虽然prototype指向的animal有这个属性，但它并没有去沿着这个“链”去寻找。同样，执行tidy.price的时候，也没有这个属性，但是<strong>proto</strong>指向了animal，它会沿着这个链去寻找，animal中有price属性，所以tidy.price输出2000。由此得出，原型链的真正形成是靠的<strong>proro</strong>，而不是prototype。</p>
+<p>因此，如果在这样指定dog.<strong>proto</strong> = animal。那dog.price = 2000。</p>
+<p>最后打个比喻，虽然不是很确切，但可能对原型的理解有些帮助。<br><img src="/images/son.jpg" alt=""></p>
+<p>父亲（函数对象），先生了一个大儿子（prototype），也就是你大哥，父亲给你大哥买了好多的玩具，当你出生的时候，你们之间的亲情纽带（<strong>proto</strong>）会让你自然而然的拥有了你大哥的玩具。同样，你也先生个大儿子，又给他买了好多的玩具，当你再生儿子的时候，你的小儿子会自然拥有你大儿子的所有玩具。至于他们会不会打架，这不是我们的事了。<br>所以说，你是从你大哥那继承的，印证了那句“长兄如父”啊！</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/08/28/排序/" rel="next" title="排序">
+                <i class="fa fa-chevron-left"></i> 排序
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/08/28/正则表达式/" rel="prev" title="正则表达式">
+                正则表达式 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/08/28/JS原型与原型链/"
+           data-title="JS原型与原型链" data-url="http://yoursite.com/2016/08/28/JS原型与原型链/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Ricky" />
+          <p class="site-author-name" itemprop="name">Ricky</p>
+          <p class="site-description motion-element" itemprop="description">blog</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#u4E00-__u666E_u901A_u5BF9_u8C61_u4E0E_u51FD_u6570_u5BF9_u8C61"><span class="nav-number">1.</span> <span class="nav-text">一. 普通对象与函数对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u4E8C-__u539F_u578B_u5BF9_u8C61"><span class="nav-number">2.</span> <span class="nav-text">二. 原型对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u4E09_uFF0E_u539F_u578B_u94FE"><span class="nav-number">3.</span> <span class="nav-text">三．原型链</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u56DB_uFF0E_u5185_u5B58_u7ED3_u6784_u56FE"><span class="nav-number">4.</span> <span class="nav-text">四．内存结构图</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u7591_u70B9_u89E3_u91CA_uFF1A"><span class="nav-number">4.1.</span> <span class="nav-text">疑点解释：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u4E94_uFF0Econstructor"><span class="nav-number">5.</span> <span class="nav-text">五．constructor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u516D_uFF0E_u603B_u7ED3"><span class="nav-number">6.</span> <span class="nav-text">六．总结</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ricky</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://github.com/">Github</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"babypig"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
