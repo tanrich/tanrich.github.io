@@ -86,35 +86,29 @@
 
 <meta name="description" content="function test(){
 $.ajax({
-        //提交数据的类型 POST GET
+        //&amp;#x63D0;&amp;#x4EA4;&amp;#x6570;&amp;#x636E;&amp;#x7684;&amp;#x7C7B;&amp;#x578B; POST GET
         type:&amp;quot;POST&amp;quot;,
-        //提交的网址
-        url:&amp;quot;testLogin.aspx&amp;quot;,
-        //提交的数据
-        data:{Name:&amp;quot;sanmao&amp;quot;,Passwo">
+        //&amp;#x63D0;&amp;#x4EA4;&amp;#x7684;&amp;#x7F51;&amp;#x5740;
+        url:&amp;quo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="pagejquery ajax POST 例子详解">
 <meta property="og:url" content="http://yoursite.com/2016/03/29/pagejquery-ajax-POST-例子详解/index.html">
 <meta property="og:site_name" content="Ballon'blog">
 <meta property="og:description" content="function test(){
 $.ajax({
-        //提交数据的类型 POST GET
+        //&amp;#x63D0;&amp;#x4EA4;&amp;#x6570;&amp;#x636E;&amp;#x7684;&amp;#x7C7B;&amp;#x578B; POST GET
         type:&amp;quot;POST&amp;quot;,
-        //提交的网址
-        url:&amp;quot;testLogin.aspx&amp;quot;,
-        //提交的数据
-        data:{Name:&amp;quot;sanmao&amp;quot;,Passwo">
+        //&amp;#x63D0;&amp;#x4EA4;&amp;#x7684;&amp;#x7F51;&amp;#x5740;
+        url:&amp;quo">
 <meta property="og:updated_time" content="2016-07-27T11:25:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="pagejquery ajax POST 例子详解">
 <meta name="twitter:description" content="function test(){
 $.ajax({
-        //提交数据的类型 POST GET
+        //&amp;#x63D0;&amp;#x4EA4;&amp;#x6570;&amp;#x636E;&amp;#x7684;&amp;#x7C7B;&amp;#x578B; POST GET
         type:&amp;quot;POST&amp;quot;,
-        //提交的网址
-        url:&amp;quot;testLogin.aspx&amp;quot;,
-        //提交的数据
-        data:{Name:&amp;quot;sanmao&amp;quot;,Passwo">
+        //&amp;#x63D0;&amp;#x4EA4;&amp;#x7684;&amp;#x7F51;&amp;#x5740;
+        url:&amp;quo">
 
 
 
@@ -301,29 +295,29 @@ $.ajax({
       
         <pre><code>function test(){
 $.ajax({
-        //提交数据的类型 POST GET
+        //&#x63D0;&#x4EA4;&#x6570;&#x636E;&#x7684;&#x7C7B;&#x578B; POST GET
         type:&quot;POST&quot;,
-        //提交的网址
+        //&#x63D0;&#x4EA4;&#x7684;&#x7F51;&#x5740;
         url:&quot;testLogin.aspx&quot;,
-        //提交的数据
+        //&#x63D0;&#x4EA4;&#x7684;&#x6570;&#x636E;
         data:{Name:&quot;sanmao&quot;,Password:&quot;sanmaoword&quot;},
-        //返回数据的格式
+        //&#x8FD4;&#x56DE;&#x6570;&#x636E;&#x7684;&#x683C;&#x5F0F;
         datatype: &quot;html&quot;,//&quot;xml&quot;, &quot;html&quot;, &quot;script&quot;, &quot;json&quot;, &quot;jsonp&quot;, &quot;text&quot;.
-        //在请求之前调用的函数
+        //&#x5728;&#x8BF7;&#x6C42;&#x4E4B;&#x524D;&#x8C03;&#x7528;&#x7684;&#x51FD;&#x6570;
         beforeSend:function(){$(&quot;#msg&quot;).html(&quot;logining&quot;);},
-        //成功返回之后调用的函数             
+        //&#x6210;&#x529F;&#x8FD4;&#x56DE;&#x4E4B;&#x540E;&#x8C03;&#x7528;&#x7684;&#x51FD;&#x6570;             
         success:function(data){
        $(&quot;#msg&quot;).html(decodeURI(data));            
         }   ,
-        //调用执行后调用的函数
+        //&#x8C03;&#x7528;&#x6267;&#x884C;&#x540E;&#x8C03;&#x7528;&#x7684;&#x51FD;&#x6570;
         complete: function(XMLHttpRequest, textStatus){
            alert(XMLHttpRequest.responseText);
            alert(textStatus);
             //HideLoading();
         },
-        //调用出错执行的函数
+        //&#x8C03;&#x7528;&#x51FA;&#x9519;&#x6267;&#x884C;&#x7684;&#x51FD;&#x6570;
         error: function(){
-            //请求出错处理
+            //&#x8BF7;&#x6C42;&#x51FA;&#x9519;&#x5904;&#x7406;
         }         
      });
 }

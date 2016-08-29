@@ -284,136 +284,136 @@
       
         
           
-            <h3 id="1-_u6B63_u5219_u8868_u8FBE_u5F0F_u57FA_u672C_u8BED_u6CD5"><a href="#1-_u6B63_u5219_u8868_u8FBE_u5F0F_u57FA_u672C_u8BED_u6CD5" class="headerlink" title="1.正则表达式基本语法"></a>1.正则表达式基本语法</h3><blockquote>
-<p>两个特殊的符号’^’和’$’。他们的作用是分别指出一个字符串的开始和结束。</p>
+            <h3 id="1-_u6B63_u5219_u8868_u8FBE_u5F0F_u57FA_u672C_u8BED_u6CD5"><a href="#1-_u6B63_u5219_u8868_u8FBE_u5F0F_u57FA_u672C_u8BED_u6CD5" class="headerlink" title="1.&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x57FA;&#x672C;&#x8BED;&#x6CD5;"></a>1.&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x57FA;&#x672C;&#x8BED;&#x6CD5;</h3><blockquote>
+<p>&#x4E24;&#x4E2A;&#x7279;&#x6B8A;&#x7684;&#x7B26;&#x53F7;&#x2019;^&#x2019;&#x548C;&#x2019;$&#x2019;&#x3002;&#x4ED6;&#x4EEC;&#x7684;&#x4F5C;&#x7528;&#x662F;&#x5206;&#x522B;&#x6307;&#x51FA;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x5F00;&#x59CB;&#x548C;&#x7ED3;&#x675F;&#x3002;</p>
 </blockquote>
-<pre><code>&quot;^The&quot;：表示所有以&quot;The&quot;开始的字符串（&quot;There&quot;，&quot;The cat&quot;等）；
+<pre><code>&quot;^The&quot;&#xFF1A;&#x8868;&#x793A;&#x6240;&#x6709;&#x4EE5;&quot;The&quot;&#x5F00;&#x59CB;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#xFF08;&quot;There&quot;&#xFF0C;&quot;The cat&quot;&#x7B49;&#xFF09;&#xFF1B;
 
-&quot;of despair$&quot;：表示所以以&quot;of despair&quot;结尾的字符串；
+&quot;of despair$&quot;&#xFF1A;&#x8868;&#x793A;&#x6240;&#x4EE5;&#x4EE5;&quot;of despair&quot;&#x7ED3;&#x5C3E;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#xFF1B;
 
-&quot;^abc$&quot;：表示开始和结尾都是&quot;abc&quot;的字符串——呵呵，只有&quot;abc&quot;自己了；
+&quot;^abc$&quot;&#xFF1A;&#x8868;&#x793A;&#x5F00;&#x59CB;&#x548C;&#x7ED3;&#x5C3E;&#x90FD;&#x662F;&quot;abc&quot;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x2014;&#x2014;&#x5475;&#x5475;&#xFF0C;&#x53EA;&#x6709;&quot;abc&quot;&#x81EA;&#x5DF1;&#x4E86;&#xFF1B;
 
-&quot;notice&quot;：表示任何包含&quot;notice&quot;的字符串。
+&quot;notice&quot;&#xFF1A;&#x8868;&#x793A;&#x4EFB;&#x4F55;&#x5305;&#x542B;&quot;notice&quot;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x3002;
 </code></pre><blockquote>
-<p>‘*’，’+’，’?’</p>
-<p>分别表示“没有或更多”，“一次或更多”还有“没有或一次”。</p>
-<p>相当于”{0,}”，”{1,}”和”{0,1}”</p>
+<p>&#x2018;*&#x2019;&#xFF0C;&#x2019;+&#x2019;&#xFF0C;&#x2019;?&#x2019;</p>
+<p>&#x5206;&#x522B;&#x8868;&#x793A;&#x201C;&#x6CA1;&#x6709;&#x6216;&#x66F4;&#x591A;&#x201D;&#xFF0C;&#x201C;&#x4E00;&#x6B21;&#x6216;&#x66F4;&#x591A;&#x201D;&#x8FD8;&#x6709;&#x201C;&#x6CA1;&#x6709;&#x6216;&#x4E00;&#x6B21;&#x201D;&#x3002;</p>
+<p>&#x76F8;&#x5F53;&#x4E8E;&#x201D;{0,}&#x201D;&#xFF0C;&#x201D;{1,}&#x201D;&#x548C;&#x201D;{0,1}&#x201D;</p>
 </blockquote>
-<pre><code>&quot;ab*&quot;：表示一个字符串有一个a后面跟着零个或若干个b。（&quot;a&quot;, &quot;ab&quot;, &quot;abbb&quot;,……）；
+<pre><code>&quot;ab*&quot;&#xFF1A;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x6709;&#x4E00;&#x4E2A;a&#x540E;&#x9762;&#x8DDF;&#x7740;&#x96F6;&#x4E2A;&#x6216;&#x82E5;&#x5E72;&#x4E2A;b&#x3002;&#xFF08;&quot;a&quot;, &quot;ab&quot;, &quot;abbb&quot;,&#x2026;&#x2026;&#xFF09;&#xFF1B;
 
-&quot;ab+&quot;：表示一个字符串有一个a后面跟着至少一个b或者更多；
+&quot;ab+&quot;&#xFF1A;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x6709;&#x4E00;&#x4E2A;a&#x540E;&#x9762;&#x8DDF;&#x7740;&#x81F3;&#x5C11;&#x4E00;&#x4E2A;b&#x6216;&#x8005;&#x66F4;&#x591A;&#xFF1B;
 
-&quot;ab?&quot;：表示一个字符串有一个a后面跟着零个或者一个b；
+&quot;ab?&quot;&#xFF1A;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x6709;&#x4E00;&#x4E2A;a&#x540E;&#x9762;&#x8DDF;&#x7740;&#x96F6;&#x4E2A;&#x6216;&#x8005;&#x4E00;&#x4E2A;b&#xFF1B;
 
-&quot;a?b+$&quot;：表示在字符串的末尾有零个或一个a跟着一个或几个b。
+&quot;a?b+$&quot;&#xFF1A;&#x8868;&#x793A;&#x5728;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x672B;&#x5C3E;&#x6709;&#x96F6;&#x4E2A;&#x6216;&#x4E00;&#x4E2A;a&#x8DDF;&#x7740;&#x4E00;&#x4E2A;&#x6216;&#x51E0;&#x4E2A;b&#x3002;
 </code></pre><blockquote>
-<p>你也可以使用范围，用大括号括起，用以表示重复次数的范围。</p>
-<p>请注意，你必须指定范围的下限（如：”{0,2}”而不是”{,2}”）。</p>
+<p>&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x8303;&#x56F4;&#xFF0C;&#x7528;&#x5927;&#x62EC;&#x53F7;&#x62EC;&#x8D77;&#xFF0C;&#x7528;&#x4EE5;&#x8868;&#x793A;&#x91CD;&#x590D;&#x6B21;&#x6570;&#x7684;&#x8303;&#x56F4;&#x3002;</p>
+<p>&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x4F60;&#x5FC5;&#x987B;&#x6307;&#x5B9A;&#x8303;&#x56F4;&#x7684;&#x4E0B;&#x9650;&#xFF08;&#x5982;&#xFF1A;&#x201D;{0,2}&#x201D;&#x800C;&#x4E0D;&#x662F;&#x201D;{,2}&#x201D;&#xFF09;&#x3002;</p>
 </blockquote>
-<pre><code>&quot;ab{2}&quot;：表示一个字符串有一个a跟着2个b（&quot;abb&quot;）；
+<pre><code>&quot;ab{2}&quot;&#xFF1A;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x6709;&#x4E00;&#x4E2A;a&#x8DDF;&#x7740;2&#x4E2A;b&#xFF08;&quot;abb&quot;&#xFF09;&#xFF1B;
 
-&quot;ab{2,}&quot;：表示一个字符串有一个a跟着至少2个b；
+&quot;ab{2,}&quot;&#xFF1A;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x6709;&#x4E00;&#x4E2A;a&#x8DDF;&#x7740;&#x81F3;&#x5C11;2&#x4E2A;b&#xFF1B;
 
-&quot;ab{3,5}&quot;：表示一个字符串有一个a跟着3到5个b。
+&quot;ab{3,5}&quot;&#xFF1A;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x6709;&#x4E00;&#x4E2A;a&#x8DDF;&#x7740;3&#x5230;5&#x4E2A;b&#x3002;
 </code></pre><blockquote>
-<p>还有一个’¦’，表示“或”操作：</p>
+<p>&#x8FD8;&#x6709;&#x4E00;&#x4E2A;&#x2019;&#xA6;&#x2019;&#xFF0C;&#x8868;&#x793A;&#x201C;&#x6216;&#x201D;&#x64CD;&#x4F5C;&#xFF1A;</p>
 </blockquote>
-<pre><code>&quot;hi¦hello&quot;：表示一个字符串里有&quot;hi&quot;或者&quot;hello&quot;；
+<pre><code>&quot;hi&#xA6;hello&quot;&#xFF1A;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x91CC;&#x6709;&quot;hi&quot;&#x6216;&#x8005;&quot;hello&quot;&#xFF1B;
 
-&quot;(b¦cd)ef&quot;：表示&quot;bef&quot;或&quot;cdef&quot;；
+&quot;(b&#xA6;cd)ef&quot;&#xFF1A;&#x8868;&#x793A;&quot;bef&quot;&#x6216;&quot;cdef&quot;&#xFF1B;
 
-&quot;(a¦b)*c&quot;：表示一串&quot;a&quot;&quot;b&quot;混合的字符串后面跟一个&quot;c&quot;；
+&quot;(a&#xA6;b)*c&quot;&#xFF1A;&#x8868;&#x793A;&#x4E00;&#x4E32;&quot;a&quot;&quot;b&quot;&#x6DF7;&#x5408;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x540E;&#x9762;&#x8DDF;&#x4E00;&#x4E2A;&quot;c&quot;&#xFF1B;
 </code></pre><blockquote>
-<p>‘.’可以替代任何字符：</p>
+<p>&#x2018;.&#x2019;&#x53EF;&#x4EE5;&#x66FF;&#x4EE3;&#x4EFB;&#x4F55;&#x5B57;&#x7B26;&#xFF1A;</p>
 </blockquote>
-<pre><code>&quot;a.[0-9]&quot;：表示一个字符串有一个&quot;a&quot;后面跟着一个任意字符和一个数字；
+<pre><code>&quot;a.[0-9]&quot;&#xFF1A;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x6709;&#x4E00;&#x4E2A;&quot;a&quot;&#x540E;&#x9762;&#x8DDF;&#x7740;&#x4E00;&#x4E2A;&#x4EFB;&#x610F;&#x5B57;&#x7B26;&#x548C;&#x4E00;&#x4E2A;&#x6570;&#x5B57;&#xFF1B;
 
-&quot;^.{3}$&quot;：表示有任意三个字符的字符串（长度为3个字符）；
+&quot;^.{3}$&quot;&#xFF1A;&#x8868;&#x793A;&#x6709;&#x4EFB;&#x610F;&#x4E09;&#x4E2A;&#x5B57;&#x7B26;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#xFF08;&#x957F;&#x5EA6;&#x4E3A;3&#x4E2A;&#x5B57;&#x7B26;&#xFF09;&#xFF1B;
 </code></pre><blockquote>
-<p>方括号表示某些字符允许在一个字符串中的某一特定位置出现：</p>
+<p>&#x65B9;&#x62EC;&#x53F7;&#x8868;&#x793A;&#x67D0;&#x4E9B;&#x5B57;&#x7B26;&#x5141;&#x8BB8;&#x5728;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x7684;&#x67D0;&#x4E00;&#x7279;&#x5B9A;&#x4F4D;&#x7F6E;&#x51FA;&#x73B0;&#xFF1A;</p>
 </blockquote>
-<pre><code>&quot;[ab]&quot;：表示一个字符串有一个&quot;a&quot;或&quot;b&quot;（相当于&quot;a¦b&quot;）；
+<pre><code>&quot;[ab]&quot;&#xFF1A;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x6709;&#x4E00;&#x4E2A;&quot;a&quot;&#x6216;&quot;b&quot;&#xFF08;&#x76F8;&#x5F53;&#x4E8E;&quot;a&#xA6;b&quot;&#xFF09;&#xFF1B;
 
-&quot;[a-d]&quot;：表示一个字符串包含小写的&apos;a&apos;到&apos;d&apos;中的一个（相当于&quot;a¦b¦c¦d&quot;或者&quot;[abcd]&quot;）；
+&quot;[a-d]&quot;&#xFF1A;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x5305;&#x542B;&#x5C0F;&#x5199;&#x7684;&apos;a&apos;&#x5230;&apos;d&apos;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#xFF08;&#x76F8;&#x5F53;&#x4E8E;&quot;a&#xA6;b&#xA6;c&#xA6;d&quot;&#x6216;&#x8005;&quot;[abcd]&quot;&#xFF09;&#xFF1B;
 
-&quot;^[a-zA-Z]&quot;：表示一个以字母开头的字符串；
+&quot;^[a-zA-Z]&quot;&#xFF1A;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x4EE5;&#x5B57;&#x6BCD;&#x5F00;&#x5934;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#xFF1B;
 
-&quot;[0-9]%&quot;：表示一个百分号前有一位的数字；
+&quot;[0-9]%&quot;&#xFF1A;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x767E;&#x5206;&#x53F7;&#x524D;&#x6709;&#x4E00;&#x4F4D;&#x7684;&#x6570;&#x5B57;&#xFF1B;
 
-&quot;,[a-zA-Z0-9]$&quot;：表示一个字符串以一个逗号后面跟着一个字母或数字结束。
+&quot;,[a-zA-Z0-9]$&quot;&#xFF1A;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x4EE5;&#x4E00;&#x4E2A;&#x9017;&#x53F7;&#x540E;&#x9762;&#x8DDF;&#x7740;&#x4E00;&#x4E2A;&#x5B57;&#x6BCD;&#x6216;&#x6570;&#x5B57;&#x7ED3;&#x675F;&#x3002;
 
-你也可以在方括号里用&apos;^&apos;表示不希望出现的字符，&apos;^&apos;应在方括号里的第一位。
-（如：&quot;%[^a-zA-Z]%&quot;表示两个百分号中不应该出现字母）。
+&#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x65B9;&#x62EC;&#x53F7;&#x91CC;&#x7528;&apos;^&apos;&#x8868;&#x793A;&#x4E0D;&#x5E0C;&#x671B;&#x51FA;&#x73B0;&#x7684;&#x5B57;&#x7B26;&#xFF0C;&apos;^&apos;&#x5E94;&#x5728;&#x65B9;&#x62EC;&#x53F7;&#x91CC;&#x7684;&#x7B2C;&#x4E00;&#x4F4D;&#x3002;
+&#xFF08;&#x5982;&#xFF1A;&quot;%[^a-zA-Z]%&quot;&#x8868;&#x793A;&#x4E24;&#x4E2A;&#x767E;&#x5206;&#x53F7;&#x4E2D;&#x4E0D;&#x5E94;&#x8BE5;&#x51FA;&#x73B0;&#x5B57;&#x6BCD;&#xFF09;&#x3002;
 </code></pre><blockquote>
-<p>预定义类</p>
+<p>&#x9884;&#x5B9A;&#x4E49;&#x7C7B;</p>
 </blockquote>
-<p><img src="/images/预定义类.png" alt=""></p>
-<h3 id="2-_u6B63_u5219_u8868_u8FBE_u5F0F_u7684_u5E94_u7528_u5B9E_u4F8B_u901A_u4FD7_u8BF4_u660E"><a href="#2-_u6B63_u5219_u8868_u8FBE_u5F0F_u7684_u5E94_u7528_u5B9E_u4F8B_u901A_u4FD7_u8BF4_u660E" class="headerlink" title="2.正则表达式的应用实例通俗说明"></a>2.正则表达式的应用实例通俗说明</h3><p>校验是否全由数字组成</p>
+<p><img src="/2016/08/28/&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;/images/&#x9884;&#x5B9A;&#x4E49;&#x7C7B;.png" alt=""></p>
+<h3 id="2-_u6B63_u5219_u8868_u8FBE_u5F0F_u7684_u5E94_u7528_u5B9E_u4F8B_u901A_u4FD7_u8BF4_u660E"><a href="#2-_u6B63_u5219_u8868_u8FBE_u5F0F_u7684_u5E94_u7528_u5B9E_u4F8B_u901A_u4FD7_u8BF4_u660E" class="headerlink" title="2.&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x5E94;&#x7528;&#x5B9E;&#x4F8B;&#x901A;&#x4FD7;&#x8BF4;&#x660E;"></a>2.&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x5E94;&#x7528;&#x5B9E;&#x4F8B;&#x901A;&#x4FD7;&#x8BF4;&#x660E;</h3><p>&#x6821;&#x9A8C;&#x662F;&#x5426;&#x5168;&#x7531;&#x6570;&#x5B57;&#x7EC4;&#x6210;</p>
 <pre><code>/^[0-9]{1,20}$/
 
-^ 表示打头的字符要匹配紧跟^后面的规则
+^ &#x8868;&#x793A;&#x6253;&#x5934;&#x7684;&#x5B57;&#x7B26;&#x8981;&#x5339;&#x914D;&#x7D27;&#x8DDF;^&#x540E;&#x9762;&#x7684;&#x89C4;&#x5219;
 
-$ 表示打头的字符要匹配紧靠$前面的规则
+$ &#x8868;&#x793A;&#x6253;&#x5934;&#x7684;&#x5B57;&#x7B26;&#x8981;&#x5339;&#x914D;&#x7D27;&#x9760;$&#x524D;&#x9762;&#x7684;&#x89C4;&#x5219;
 
-[ ] 中的内容是可选字符集
+[ ] &#x4E2D;&#x7684;&#x5185;&#x5BB9;&#x662F;&#x53EF;&#x9009;&#x5B57;&#x7B26;&#x96C6;
 
-[0-9] 表示要求字符范围在0-9之间
+[0-9] &#x8868;&#x793A;&#x8981;&#x6C42;&#x5B57;&#x7B26;&#x8303;&#x56F4;&#x5728;0-9&#x4E4B;&#x95F4;
 
-{1,20}表示数字字符串长度合法为1到20，即为[0-9]中的字符出现次数的范围是1到20次。
+{1,20}&#x8868;&#x793A;&#x6570;&#x5B57;&#x5B57;&#x7B26;&#x4E32;&#x957F;&#x5EA6;&#x5408;&#x6CD5;&#x4E3A;1&#x5230;20&#xFF0C;&#x5373;&#x4E3A;[0-9]&#x4E2D;&#x7684;&#x5B57;&#x7B26;&#x51FA;&#x73B0;&#x6B21;&#x6570;&#x7684;&#x8303;&#x56F4;&#x662F;1&#x5230;20&#x6B21;&#x3002;
 
-/^ 和 $/成对使用应该是表示要求整个字符串完全匹配定义的规则，而不是只匹配字符串中的一个子串。
-</code></pre><p>校验登录名：只能输入5-20个以字母开头、可带数字、“_”、“.”的字串</p>
+/^ &#x548C; $/&#x6210;&#x5BF9;&#x4F7F;&#x7528;&#x5E94;&#x8BE5;&#x662F;&#x8868;&#x793A;&#x8981;&#x6C42;&#x6574;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x5B8C;&#x5168;&#x5339;&#x914D;&#x5B9A;&#x4E49;&#x7684;&#x89C4;&#x5219;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x53EA;&#x5339;&#x914D;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x5B50;&#x4E32;&#x3002;
+</code></pre><p>&#x6821;&#x9A8C;&#x767B;&#x5F55;&#x540D;&#xFF1A;&#x53EA;&#x80FD;&#x8F93;&#x5165;5-20&#x4E2A;&#x4EE5;&#x5B57;&#x6BCD;&#x5F00;&#x5934;&#x3001;&#x53EF;&#x5E26;&#x6570;&#x5B57;&#x3001;&#x201C;_&#x201D;&#x3001;&#x201C;.&#x201D;&#x7684;&#x5B57;&#x4E32;</p>
 <pre><code>/^[a-zA-Z]{1}([a-zA-Z0-9]|[._]){4,19}$/
 
-^[a-zA-Z]{1} 表示第一个字符要求是字母。
+^[a-zA-Z]{1} &#x8868;&#x793A;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x8981;&#x6C42;&#x662F;&#x5B57;&#x6BCD;&#x3002;
 
-([a-zA-Z0-9]|[._]){4,19} 表示从第二位开始（因为它紧跟在上个表达式后面）的一个长度为4到9位的字符串，它要求是由大小写字母、数字或者特殊字符集[._]组成。
-</code></pre><p>校验用户姓名：只能输入1-30个以字母开头的字串</p>
+([a-zA-Z0-9]|[._]){4,19} &#x8868;&#x793A;&#x4ECE;&#x7B2C;&#x4E8C;&#x4F4D;&#x5F00;&#x59CB;&#xFF08;&#x56E0;&#x4E3A;&#x5B83;&#x7D27;&#x8DDF;&#x5728;&#x4E0A;&#x4E2A;&#x8868;&#x8FBE;&#x5F0F;&#x540E;&#x9762;&#xFF09;&#x7684;&#x4E00;&#x4E2A;&#x957F;&#x5EA6;&#x4E3A;4&#x5230;9&#x4F4D;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x5B83;&#x8981;&#x6C42;&#x662F;&#x7531;&#x5927;&#x5C0F;&#x5199;&#x5B57;&#x6BCD;&#x3001;&#x6570;&#x5B57;&#x6216;&#x8005;&#x7279;&#x6B8A;&#x5B57;&#x7B26;&#x96C6;[._]&#x7EC4;&#x6210;&#x3002;
+</code></pre><p>&#x6821;&#x9A8C;&#x7528;&#x6237;&#x59D3;&#x540D;&#xFF1A;&#x53EA;&#x80FD;&#x8F93;&#x5165;1-30&#x4E2A;&#x4EE5;&#x5B57;&#x6BCD;&#x5F00;&#x5934;&#x7684;&#x5B57;&#x4E32;</p>
 <pre><code>/^[a-zA-Z]{1,30}$/ 
-</code></pre><p>校验密码：只能输入6-20个字母、数字、下划线</p>
+</code></pre><p>&#x6821;&#x9A8C;&#x5BC6;&#x7801;&#xFF1A;&#x53EA;&#x80FD;&#x8F93;&#x5165;6-20&#x4E2A;&#x5B57;&#x6BCD;&#x3001;&#x6570;&#x5B57;&#x3001;&#x4E0B;&#x5212;&#x7EBF;</p>
 <pre><code>/^(\w){6,20}$/
-\w：用于匹配字母，数字或下划线字符 
-</code></pre><p>校验普通电话、传真号码：可以“+”或数字开头，可含有“-” 和 “ ”</p>
+\w&#xFF1A;&#x7528;&#x4E8E;&#x5339;&#x914D;&#x5B57;&#x6BCD;&#xFF0C;&#x6570;&#x5B57;&#x6216;&#x4E0B;&#x5212;&#x7EBF;&#x5B57;&#x7B26; 
+</code></pre><p>&#x6821;&#x9A8C;&#x666E;&#x901A;&#x7535;&#x8BDD;&#x3001;&#x4F20;&#x771F;&#x53F7;&#x7801;&#xFF1A;&#x53EF;&#x4EE5;&#x201C;+&#x201D;&#x6216;&#x6570;&#x5B57;&#x5F00;&#x5934;&#xFF0C;&#x53EF;&#x542B;&#x6709;&#x201C;-&#x201D; &#x548C; &#x201C; &#x201D;</p>
 <pre><code>/^[+]{0,1}(\d){1,3}[ ]?([-]?((\d)|[ ]){1,12})+$/
 
-\d：用于匹配从0到9的数字；
+\d&#xFF1A;&#x7528;&#x4E8E;&#x5339;&#x914D;&#x4ECE;0&#x5230;9&#x7684;&#x6570;&#x5B57;&#xFF1B;
 
-“?”元字符规定其前导对象必须在目标对象中连续出现零次或一次
+&#x201C;?&#x201D;&#x5143;&#x5B57;&#x7B26;&#x89C4;&#x5B9A;&#x5176;&#x524D;&#x5BFC;&#x5BF9;&#x8C61;&#x5FC5;&#x987B;&#x5728;&#x76EE;&#x6807;&#x5BF9;&#x8C61;&#x4E2D;&#x8FDE;&#x7EED;&#x51FA;&#x73B0;&#x96F6;&#x6B21;&#x6216;&#x4E00;&#x6B21;
 
-可以匹配的字符串如：+123 -999 999 ； +123-999 999 ；123 999 999 ；+123 999999等
-</code></pre><p>校验URL<br>    /^http[s]{0,1}:\/\/.+$/ 或 /^http[s]{0,1}:\/\/.{1,n}$/ (表示url串的长度为length(“https://”) + n )</p>
-<pre><code> \ / ：表示字符“/”。
+&#x53EF;&#x4EE5;&#x5339;&#x914D;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x5982;&#xFF1A;+123 -999 999 &#xFF1B; +123-999 999 &#xFF1B;123 999 999 &#xFF1B;+123 999999&#x7B49;
+</code></pre><p>&#x6821;&#x9A8C;URL<br>    /^http[s]{0,1}:\/\/.+$/ &#x6216; /^http[s]{0,1}:\/\/.{1,n}$/ (&#x8868;&#x793A;url&#x4E32;&#x7684;&#x957F;&#x5EA6;&#x4E3A;length(&#x201C;https://&#x201D;) + n )</p>
+<pre><code> \ / &#xFF1A;&#x8868;&#x793A;&#x5B57;&#x7B26;&#x201C;/&#x201D;&#x3002;
 
-. 表示所有字符的集
+. &#x8868;&#x793A;&#x6240;&#x6709;&#x5B57;&#x7B26;&#x7684;&#x96C6;
 
-+ 等同于{1,}，就是1到正无穷吧。
-</code></pre><p>校验纯中文字符</p>
++ &#x7B49;&#x540C;&#x4E8E;{1,}&#xFF0C;&#x5C31;&#x662F;1&#x5230;&#x6B63;&#x65E0;&#x7A77;&#x5427;&#x3002;
+</code></pre><p>&#x6821;&#x9A8C;&#x7EAF;&#x4E2D;&#x6587;&#x5B57;&#x7B26;</p>
 <pre><code>/^[\u4E00-\u9FA5]+$/
 
-[\u4E00-\u9FA5] ：估计是中文字符集的范围吧
-</code></pre><h3 id="3-_u6B63_u5219_u8868_u8FBE_u5F0F_u7684_u5E94_u7528"><a href="#3-_u6B63_u5219_u8868_u8FBE_u5F0F_u7684_u5E94_u7528" class="headerlink" title="3.正则表达式的应用"></a>3.正则表达式的应用</h3><p>“^\d+$”　　//非负整数（正整数 + 0） </p>
-<p>“^[0-9]<em>[1-9][0-9]</em>$”　　//正整数 </p>
-<p>“^((-\d+)|(0+))$”　　//非正整数（负整数 + 0） </p>
-<p>“^-[0-9]<em>[1-9][0-9]</em>$”　　//负整数 </p>
-<p>“^-?\d+$”　　　　//整数 </p>
-<p>“^\d+(.\d+)?$”　　//非负浮点数（正浮点数 + 0）</p>
-<p>“^(([0-9]+.[0-9]<em>[1-9][0-9]</em>)|([0-9]<em>[1-9][0-9]</em>.[0-9]+)|([0-9]<em>[1-9][0-9]</em>))$”　　//正浮点数 </p>
-<p>“^((-\d+(.\d+)?)|(0+(.0+)?))$”　　//非正浮点数（负浮点数 + 0） </p>
-<p>“^(-(([0-9]+.[0-9]<em>[1-9][0-9]</em>)|([0-9]<em>[1-9][0-9]</em>.[0-9]+)|([0-9]<em>[1-9][0-9]</em>)))$”　　//负浮点数 </p>
-<p>“^(-?\d+)(.\d+)?$”　　//浮点数 </p>
-<p>“^[A-Za-z]+$”　　//由26个英文字母组成的字符串 </p>
-<p>“^[A-Z]+$”　　//由26个英文字母的大写组成的字符串 </p>
-<p>“^[a-z]+$”　　//由26个英文字母的小写组成的字符串 </p>
-<p>“^[A-Za-z0-9]+$”　　//由数字和26个英文字母组成的字符串</p>
-<p>“^\w+$”　　//由数字、26个英文字母或者下划线组成的字符串<br>“^[\w-]+(.[\w-]+)*@[\w-]+(.[\w-]+)+$”　　　　//email地址 </p>
-<p>“^[a-zA-z]+://(\w+(-\w+)<em>)(.(\w+(-\w+)</em>))<em>(\?\S</em>)?$”　　//url</p>
-<p>/^(d{2}|d{4})-((0([1-9]{1}))|(1[1|2]))-((<a href="/[1-9]{1}">0-2</a>)|(3[0|1]))$/   //  年-月-日</p>
-<p>/^((0([1-9]{1}))|(1[1|2]))/((<a href="/[1-9]{1}">0-2</a>)|(3[0|1]))/(d{2}|d{4})$/   // 月/日/年</p>
-<p>“^([w-.]+)@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.)|(([w-]+.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(]?)$”   //Emil</p>
-<p>“(d+-)?(d{4}-?d{7}|d{3}-?d{8}|^d{7,8})(-d+)?”     //电话号码</p>
-<p>“^(d{1,2}|1dd|2[0-4]d|25[0-5]).(d{1,2}|1dd|2[0-4]d|25[0-5]).(d{1,2}|1dd|2[0-4]d|25[0-5]).(d{1,2}|1dd|2[0-4]d|25[0-5])$”   //IP地址</p>
-<p>^([0-9A-F]{2})(-[0-9A-F]{2}){5}$   //MAC地址的正则表达式</p>
-<p>^[-+]?\d+(.\d+)?$  //值类型正则表达式</p>
+[\u4E00-\u9FA5] &#xFF1A;&#x4F30;&#x8BA1;&#x662F;&#x4E2D;&#x6587;&#x5B57;&#x7B26;&#x96C6;&#x7684;&#x8303;&#x56F4;&#x5427;
+</code></pre><h3 id="3-_u6B63_u5219_u8868_u8FBE_u5F0F_u7684_u5E94_u7528"><a href="#3-_u6B63_u5219_u8868_u8FBE_u5F0F_u7684_u5E94_u7528" class="headerlink" title="3.&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x5E94;&#x7528;"></a>3.&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x5E94;&#x7528;</h3><p>&#x201C;^\d+$&#x201D;&#x3000;&#x3000;//&#x975E;&#x8D1F;&#x6574;&#x6570;&#xFF08;&#x6B63;&#x6574;&#x6570; + 0&#xFF09; </p>
+<p>&#x201C;^[0-9]<em>[1-9][0-9]</em>$&#x201D;&#x3000;&#x3000;//&#x6B63;&#x6574;&#x6570; </p>
+<p>&#x201C;^((-\d+)|(0+))$&#x201D;&#x3000;&#x3000;//&#x975E;&#x6B63;&#x6574;&#x6570;&#xFF08;&#x8D1F;&#x6574;&#x6570; + 0&#xFF09; </p>
+<p>&#x201C;^-[0-9]<em>[1-9][0-9]</em>$&#x201D;&#x3000;&#x3000;//&#x8D1F;&#x6574;&#x6570; </p>
+<p>&#x201C;^-?\d+$&#x201D;&#x3000;&#x3000;&#x3000;&#x3000;//&#x6574;&#x6570; </p>
+<p>&#x201C;^\d+(.\d+)?$&#x201D;&#x3000;&#x3000;//&#x975E;&#x8D1F;&#x6D6E;&#x70B9;&#x6570;&#xFF08;&#x6B63;&#x6D6E;&#x70B9;&#x6570; + 0&#xFF09;</p>
+<p>&#x201C;^(([0-9]+.[0-9]<em>[1-9][0-9]</em>)|([0-9]<em>[1-9][0-9]</em>.[0-9]+)|([0-9]<em>[1-9][0-9]</em>))$&#x201D;&#x3000;&#x3000;//&#x6B63;&#x6D6E;&#x70B9;&#x6570; </p>
+<p>&#x201C;^((-\d+(.\d+)?)|(0+(.0+)?))$&#x201D;&#x3000;&#x3000;//&#x975E;&#x6B63;&#x6D6E;&#x70B9;&#x6570;&#xFF08;&#x8D1F;&#x6D6E;&#x70B9;&#x6570; + 0&#xFF09; </p>
+<p>&#x201C;^(-(([0-9]+.[0-9]<em>[1-9][0-9]</em>)|([0-9]<em>[1-9][0-9]</em>.[0-9]+)|([0-9]<em>[1-9][0-9]</em>)))$&#x201D;&#x3000;&#x3000;//&#x8D1F;&#x6D6E;&#x70B9;&#x6570; </p>
+<p>&#x201C;^(-?\d+)(.\d+)?$&#x201D;&#x3000;&#x3000;//&#x6D6E;&#x70B9;&#x6570; </p>
+<p>&#x201C;^[A-Za-z]+$&#x201D;&#x3000;&#x3000;//&#x7531;26&#x4E2A;&#x82F1;&#x6587;&#x5B57;&#x6BCD;&#x7EC4;&#x6210;&#x7684;&#x5B57;&#x7B26;&#x4E32; </p>
+<p>&#x201C;^[A-Z]+$&#x201D;&#x3000;&#x3000;//&#x7531;26&#x4E2A;&#x82F1;&#x6587;&#x5B57;&#x6BCD;&#x7684;&#x5927;&#x5199;&#x7EC4;&#x6210;&#x7684;&#x5B57;&#x7B26;&#x4E32; </p>
+<p>&#x201C;^[a-z]+$&#x201D;&#x3000;&#x3000;//&#x7531;26&#x4E2A;&#x82F1;&#x6587;&#x5B57;&#x6BCD;&#x7684;&#x5C0F;&#x5199;&#x7EC4;&#x6210;&#x7684;&#x5B57;&#x7B26;&#x4E32; </p>
+<p>&#x201C;^[A-Za-z0-9]+$&#x201D;&#x3000;&#x3000;//&#x7531;&#x6570;&#x5B57;&#x548C;26&#x4E2A;&#x82F1;&#x6587;&#x5B57;&#x6BCD;&#x7EC4;&#x6210;&#x7684;&#x5B57;&#x7B26;&#x4E32;</p>
+<p>&#x201C;^\w+$&#x201D;&#x3000;&#x3000;//&#x7531;&#x6570;&#x5B57;&#x3001;26&#x4E2A;&#x82F1;&#x6587;&#x5B57;&#x6BCD;&#x6216;&#x8005;&#x4E0B;&#x5212;&#x7EBF;&#x7EC4;&#x6210;&#x7684;&#x5B57;&#x7B26;&#x4E32;<br>&#x201C;^[\w-]+(.[\w-]+)*@[\w-]+(.[\w-]+)+$&#x201D;&#x3000;&#x3000;&#x3000;&#x3000;//email&#x5730;&#x5740; </p>
+<p>&#x201C;^[a-zA-z]+://(\w+(-\w+)<em>)(.(\w+(-\w+)</em>))<em>(\?\S</em>)?$&#x201D;&#x3000;&#x3000;//url</p>
+<p>/^(d{2}|d{4})-((0([1-9]{1}))|(1[1|2]))-((<a href="/[1-9]{1}">0-2</a>)|(3[0|1]))$/   //  &#x5E74;-&#x6708;-&#x65E5;</p>
+<p>/^((0([1-9]{1}))|(1[1|2]))/((<a href="/[1-9]{1}">0-2</a>)|(3[0|1]))/(d{2}|d{4})$/   // &#x6708;/&#x65E5;/&#x5E74;</p>
+<p>&#x201C;^([w-.]+)@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.)|(([w-]+.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(]?)$&#x201D;   //Emil</p>
+<p>&#x201C;(d+-)?(d{4}-?d{7}|d{3}-?d{8}|^d{7,8})(-d+)?&#x201D;     //&#x7535;&#x8BDD;&#x53F7;&#x7801;</p>
+<p>&#x201C;^(d{1,2}|1dd|2[0-4]d|25[0-5]).(d{1,2}|1dd|2[0-4]d|25[0-5]).(d{1,2}|1dd|2[0-4]d|25[0-5]).(d{1,2}|1dd|2[0-4]d|25[0-5])$&#x201D;   //IP&#x5730;&#x5740;</p>
+<p>^([0-9A-F]{2})(-[0-9A-F]{2}){5}$   //MAC&#x5730;&#x5740;&#x7684;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;</p>
+<p>^[-+]?\d+(.\d+)?$  //&#x503C;&#x7C7B;&#x578B;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;</p>
 
           
         
@@ -514,7 +514,7 @@ $ 表示打头的字符要匹配紧靠$前面的规则
       
         
           
-            <h3 id="u4E00-__u666E_u901A_u5BF9_u8C61_u4E0E_u51FD_u6570_u5BF9_u8C61"><a href="#u4E00-__u666E_u901A_u5BF9_u8C61_u4E0E_u51FD_u6570_u5BF9_u8C61" class="headerlink" title="一. 普通对象与函数对象"></a>一. 普通对象与函数对象</h3><p>  JavaScript 中，万物皆对象！但对象也是有区别的。分为普通对象和函数对象，Object ，Function 是JS自带的函数对象。下面举例说明</p>
+            <h3 id="u4E00-__u666E_u901A_u5BF9_u8C61_u4E0E_u51FD_u6570_u5BF9_u8C61"><a href="#u4E00-__u666E_u901A_u5BF9_u8C61_u4E0E_u51FD_u6570_u5BF9_u8C61" class="headerlink" title="&#x4E00;. &#x666E;&#x901A;&#x5BF9;&#x8C61;&#x4E0E;&#x51FD;&#x6570;&#x5BF9;&#x8C61;"></a>&#x4E00;. &#x666E;&#x901A;&#x5BF9;&#x8C61;&#x4E0E;&#x51FD;&#x6570;&#x5BF9;&#x8C61;</h3><p>  JavaScript &#x4E2D;&#xFF0C;&#x4E07;&#x7269;&#x7686;&#x5BF9;&#x8C61;&#xFF01;&#x4F46;&#x5BF9;&#x8C61;&#x4E5F;&#x662F;&#x6709;&#x533A;&#x522B;&#x7684;&#x3002;&#x5206;&#x4E3A;&#x666E;&#x901A;&#x5BF9;&#x8C61;&#x548C;&#x51FD;&#x6570;&#x5BF9;&#x8C61;&#xFF0C;Object &#xFF0C;Function &#x662F;JS&#x81EA;&#x5E26;&#x7684;&#x51FD;&#x6570;&#x5BF9;&#x8C61;&#x3002;&#x4E0B;&#x9762;&#x4E3E;&#x4F8B;&#x8BF4;&#x660E;</p>
 <pre><code>function f1(){};
 var f2 = function(){};
 var f3 = new Function(&apos;str&apos;,&apos;console.log(str)&apos;);
@@ -531,60 +531,60 @@ console.log(typeof o3); //object
 console.log(typeof f1); //function
 console.log(typeof f2); //function
 console.log(typeof f3); //function 
-</code></pre><p>  在上面的例子中 o1 o2 o3 为普通对象，f1 f2 f3 为函数对象。怎么区分，其实很简单，<span style="color:red">凡是通过 new Function() 创建的对象都是函数对象，其他的都是普通对象。</span>f1,f2,归根结底都是通过 new Function()的方式进行创建的。Function Object 也都是通过 New Function()创建的。</p>
-<h3 id="u4E8C-__u539F_u578B_u5BF9_u8C61"><a href="#u4E8C-__u539F_u578B_u5BF9_u8C61" class="headerlink" title="二. 原型对象"></a>二. 原型对象</h3><p>   在JavaScript 中，每当定义一个对象（函数）时候，对象中都会包含一些预定义的属性。其中函数对象的一个属性就是原型对象 prototype。注：普通对象没有prototype,但有<strong>proto</strong>属性。</p>
-<p>  原型对象其实就是普通对象（Function.prototype除外,它是函数对象，但它很特殊，他没有prototype属性（前面说道函数对象都有prototype属性））。看下面的例子：</p>
+</code></pre><p>  &#x5728;&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4E2D; o1 o2 o3 &#x4E3A;&#x666E;&#x901A;&#x5BF9;&#x8C61;&#xFF0C;f1 f2 f3 &#x4E3A;&#x51FD;&#x6570;&#x5BF9;&#x8C61;&#x3002;&#x600E;&#x4E48;&#x533A;&#x5206;&#xFF0C;&#x5176;&#x5B9E;&#x5F88;&#x7B80;&#x5355;&#xFF0C;<span style="color:red">&#x51E1;&#x662F;&#x901A;&#x8FC7; new Function() &#x521B;&#x5EFA;&#x7684;&#x5BF9;&#x8C61;&#x90FD;&#x662F;&#x51FD;&#x6570;&#x5BF9;&#x8C61;&#xFF0C;&#x5176;&#x4ED6;&#x7684;&#x90FD;&#x662F;&#x666E;&#x901A;&#x5BF9;&#x8C61;&#x3002;</span>f1,f2,&#x5F52;&#x6839;&#x7ED3;&#x5E95;&#x90FD;&#x662F;&#x901A;&#x8FC7; new Function()&#x7684;&#x65B9;&#x5F0F;&#x8FDB;&#x884C;&#x521B;&#x5EFA;&#x7684;&#x3002;Function Object &#x4E5F;&#x90FD;&#x662F;&#x901A;&#x8FC7; New Function()&#x521B;&#x5EFA;&#x7684;&#x3002;</p>
+<h3 id="u4E8C-__u539F_u578B_u5BF9_u8C61"><a href="#u4E8C-__u539F_u578B_u5BF9_u8C61" class="headerlink" title="&#x4E8C;. &#x539F;&#x578B;&#x5BF9;&#x8C61;"></a>&#x4E8C;. &#x539F;&#x578B;&#x5BF9;&#x8C61;</h3><p>   &#x5728;JavaScript &#x4E2D;&#xFF0C;&#x6BCF;&#x5F53;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF08;&#x51FD;&#x6570;&#xFF09;&#x65F6;&#x5019;&#xFF0C;&#x5BF9;&#x8C61;&#x4E2D;&#x90FD;&#x4F1A;&#x5305;&#x542B;&#x4E00;&#x4E9B;&#x9884;&#x5B9A;&#x4E49;&#x7684;&#x5C5E;&#x6027;&#x3002;&#x5176;&#x4E2D;&#x51FD;&#x6570;&#x5BF9;&#x8C61;&#x7684;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#x5C31;&#x662F;&#x539F;&#x578B;&#x5BF9;&#x8C61; prototype&#x3002;&#x6CE8;&#xFF1A;&#x666E;&#x901A;&#x5BF9;&#x8C61;&#x6CA1;&#x6709;prototype,&#x4F46;&#x6709;<strong>proto</strong>&#x5C5E;&#x6027;&#x3002;</p>
+<p>  &#x539F;&#x578B;&#x5BF9;&#x8C61;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x666E;&#x901A;&#x5BF9;&#x8C61;&#xFF08;Function.prototype&#x9664;&#x5916;,&#x5B83;&#x662F;&#x51FD;&#x6570;&#x5BF9;&#x8C61;&#xFF0C;&#x4F46;&#x5B83;&#x5F88;&#x7279;&#x6B8A;&#xFF0C;&#x4ED6;&#x6CA1;&#x6709;prototype&#x5C5E;&#x6027;&#xFF08;&#x524D;&#x9762;&#x8BF4;&#x9053;&#x51FD;&#x6570;&#x5BF9;&#x8C61;&#x90FD;&#x6709;prototype&#x5C5E;&#x6027;&#xFF09;&#xFF09;&#x3002;&#x770B;&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#xFF1A;</p>
 <pre><code>function f1(){};
 console.log(f1.prototype) //f1{}
 console.log(typeof f1. prototype) //Object
-console.log(typeof Function.prototype) // Function，这个特殊
+console.log(typeof Function.prototype) // Function&#xFF0C;&#x8FD9;&#x4E2A;&#x7279;&#x6B8A;
 console.log(typeof Object.prototype) // Object
 console.log(typeof Function.prototype.prototype) //undefined
-</code></pre><p> 从这句console.log(f1.prototype) //f1 {} 的输出就结果可以看出，f1.prototype就是f1的一个实例对象。就是在f1创建的时候,创建了一个它的实例对象并赋值给它的prototype，基本过程如下：</p>
+</code></pre><p> &#x4ECE;&#x8FD9;&#x53E5;console.log(f1.prototype) //f1 {} &#x7684;&#x8F93;&#x51FA;&#x5C31;&#x7ED3;&#x679C;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;f1.prototype&#x5C31;&#x662F;f1&#x7684;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;&#x5BF9;&#x8C61;&#x3002;&#x5C31;&#x662F;&#x5728;f1&#x521B;&#x5EFA;&#x7684;&#x65F6;&#x5019;,&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;&#x5B83;&#x7684;&#x5B9E;&#x4F8B;&#x5BF9;&#x8C61;&#x5E76;&#x8D4B;&#x503C;&#x7ED9;&#x5B83;&#x7684;prototype&#xFF0C;&#x57FA;&#x672C;&#x8FC7;&#x7A0B;&#x5982;&#x4E0B;&#xFF1A;</p>
 <pre><code>var temp = new f1();
 f1. prototype = temp;
-</code></pre><p>  所以，Function.prototype为什么是函数对象就迎刃而解了，上文提到凡是new Function ()产生的对象都是函数对象，所以temp1是函数对象。</p>
+</code></pre><p>  &#x6240;&#x4EE5;&#xFF0C;Function.prototype&#x4E3A;&#x4EC0;&#x4E48;&#x662F;&#x51FD;&#x6570;&#x5BF9;&#x8C61;&#x5C31;&#x8FCE;&#x5203;&#x800C;&#x89E3;&#x4E86;&#xFF0C;&#x4E0A;&#x6587;&#x63D0;&#x5230;&#x51E1;&#x662F;new Function ()&#x4EA7;&#x751F;&#x7684;&#x5BF9;&#x8C61;&#x90FD;&#x662F;&#x51FD;&#x6570;&#x5BF9;&#x8C61;&#xFF0C;&#x6240;&#x4EE5;temp1&#x662F;&#x51FD;&#x6570;&#x5BF9;&#x8C61;&#x3002;</p>
 <pre><code>var temp1 = new Function ();
 Function.prototype = temp1;
-</code></pre><p>那原型对象是用来做什么的呢？主要作用是用于继承。举了例子：</p>
+</code></pre><p>&#x90A3;&#x539F;&#x578B;&#x5BF9;&#x8C61;&#x662F;&#x7528;&#x6765;&#x505A;&#x4EC0;&#x4E48;&#x7684;&#x5462;&#xFF1F;&#x4E3B;&#x8981;&#x4F5C;&#x7528;&#x662F;&#x7528;&#x4E8E;&#x7EE7;&#x627F;&#x3002;&#x4E3E;&#x4E86;&#x4F8B;&#x5B50;&#xFF1A;</p>
 <pre><code>var person = function(name){
         this.name = name
 };
 person.prototype.getName = function(){
         return this.name; 
 }
-var zjh = new person(‘zhangjiahao’);
+var zjh = new person(&#x2018;zhangjiahao&#x2019;);
 zjh.getName(); //zhangjiahao
-</code></pre><p>   从这个例子可以看出，通过给person.prototype设置了一个函数对象的属性，那有person实例（例中：zjh）出来的普通对象就继承了这个属性。具体是怎么实现的继承，就要讲到下面的原型链了。</p>
-<h3 id="u4E09_uFF0E_u539F_u578B_u94FE"><a href="#u4E09_uFF0E_u539F_u578B_u94FE" class="headerlink" title="三．原型链"></a>三．原型链</h3><p>   JS在创建对象（不论是普通对象还是函数对象）的时候，都有一个叫做<strong>proto</strong>的内置属性，用于指向创建它的函数对象的原型对象prototype。以上面的例子为例：</p>
+</code></pre><p>   &#x4ECE;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;&#x901A;&#x8FC7;&#x7ED9;person.prototype&#x8BBE;&#x7F6E;&#x4E86;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x90A3;&#x6709;person&#x5B9E;&#x4F8B;&#xFF08;&#x4F8B;&#x4E2D;&#xFF1A;zjh&#xFF09;&#x51FA;&#x6765;&#x7684;&#x666E;&#x901A;&#x5BF9;&#x8C61;&#x5C31;&#x7EE7;&#x627F;&#x4E86;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x3002;&#x5177;&#x4F53;&#x662F;&#x600E;&#x4E48;&#x5B9E;&#x73B0;&#x7684;&#x7EE7;&#x627F;&#xFF0C;&#x5C31;&#x8981;&#x8BB2;&#x5230;&#x4E0B;&#x9762;&#x7684;&#x539F;&#x578B;&#x94FE;&#x4E86;&#x3002;</p>
+<h3 id="u4E09_uFF0E_u539F_u578B_u94FE"><a href="#u4E09_uFF0E_u539F_u578B_u94FE" class="headerlink" title="&#x4E09;&#xFF0E;&#x539F;&#x578B;&#x94FE;"></a>&#x4E09;&#xFF0E;&#x539F;&#x578B;&#x94FE;</h3><p>   JS&#x5728;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#xFF08;&#x4E0D;&#x8BBA;&#x662F;&#x666E;&#x901A;&#x5BF9;&#x8C61;&#x8FD8;&#x662F;&#x51FD;&#x6570;&#x5BF9;&#x8C61;&#xFF09;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x53EB;&#x505A;<strong>proto</strong>&#x7684;&#x5185;&#x7F6E;&#x5C5E;&#x6027;&#xFF0C;&#x7528;&#x4E8E;&#x6307;&#x5411;&#x521B;&#x5EFA;&#x5B83;&#x7684;&#x51FD;&#x6570;&#x5BF9;&#x8C61;&#x7684;&#x539F;&#x578B;&#x5BF9;&#x8C61;prototype&#x3002;&#x4EE5;&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4E3A;&#x4F8B;&#xFF1A;</p>
 <pre><code>console.log(zjh.__proto__ === person.prototype) //true
-</code></pre><p>同样，person.prototype对象也有<strong>proto</strong>属性，它指向创建它的函数对象（Object）的prototype</p>
+</code></pre><p>&#x540C;&#x6837;&#xFF0C;person.prototype&#x5BF9;&#x8C61;&#x4E5F;&#x6709;<strong>proto</strong>&#x5C5E;&#x6027;&#xFF0C;&#x5B83;&#x6307;&#x5411;&#x521B;&#x5EFA;&#x5B83;&#x7684;&#x51FD;&#x6570;&#x5BF9;&#x8C61;&#xFF08;Object&#xFF09;&#x7684;prototype</p>
 <pre><code>console.log(person.prototype.__proto__ === Object.prototype) //true
-</code></pre><p>继续，Object.prototype对象也有<strong>proto</strong>属性，但它比较特殊，为null</p>
+</code></pre><p>&#x7EE7;&#x7EED;&#xFF0C;Object.prototype&#x5BF9;&#x8C61;&#x4E5F;&#x6709;<strong>proto</strong>&#x5C5E;&#x6027;&#xFF0C;&#x4F46;&#x5B83;&#x6BD4;&#x8F83;&#x7279;&#x6B8A;&#xFF0C;&#x4E3A;null</p>
 <pre><code>console.log(Object.prototype.__proto__) //null
-</code></pre><p>我们把这个有<strong>proto</strong>串起来的直到Object.prototype.<strong>proto</strong>为null的链叫做原型链。如下图：<br><img src="/images/原型链.jpg" alt=""></p>
-<h3 id="u56DB_uFF0E_u5185_u5B58_u7ED3_u6784_u56FE"><a href="#u56DB_uFF0E_u5185_u5B58_u7ED3_u6784_u56FE" class="headerlink" title="四．内存结构图"></a>四．内存结构图</h3><p>为了更加深入和直观的进行理解，下面我们画一下上面的内存结构图：<br><img src="/images/内存结构.jpg" alt=""></p>
-<p>画图约定：<br><img src="/images/画图约定.jpg" alt=""></p>
-<h4 id="u7591_u70B9_u89E3_u91CA_uFF1A"><a href="#u7591_u70B9_u89E3_u91CA_uFF1A" class="headerlink" title="疑点解释："></a>疑点解释：</h4><ol>
-<li><p>Object.<strong>proto</strong> === Function.prototype // true<br>Object是函数对象，是通过new Function()创建，所以Object.<strong>proto</strong>指向Function.prototype。</p>
+</code></pre><p>&#x6211;&#x4EEC;&#x628A;&#x8FD9;&#x4E2A;&#x6709;<strong>proto</strong>&#x4E32;&#x8D77;&#x6765;&#x7684;&#x76F4;&#x5230;Object.prototype.<strong>proto</strong>&#x4E3A;null&#x7684;&#x94FE;&#x53EB;&#x505A;&#x539F;&#x578B;&#x94FE;&#x3002;&#x5982;&#x4E0B;&#x56FE;&#xFF1A;<br><img src="/2016/08/28/JS&#x539F;&#x578B;&#x4E0E;&#x539F;&#x578B;&#x94FE;/images/&#x539F;&#x578B;&#x94FE;.jpg" alt=""></p>
+<h3 id="u56DB_uFF0E_u5185_u5B58_u7ED3_u6784_u56FE"><a href="#u56DB_uFF0E_u5185_u5B58_u7ED3_u6784_u56FE" class="headerlink" title="&#x56DB;&#xFF0E;&#x5185;&#x5B58;&#x7ED3;&#x6784;&#x56FE;"></a>&#x56DB;&#xFF0E;&#x5185;&#x5B58;&#x7ED3;&#x6784;&#x56FE;</h3><p>&#x4E3A;&#x4E86;&#x66F4;&#x52A0;&#x6DF1;&#x5165;&#x548C;&#x76F4;&#x89C2;&#x7684;&#x8FDB;&#x884C;&#x7406;&#x89E3;&#xFF0C;&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x753B;&#x4E00;&#x4E0B;&#x4E0A;&#x9762;&#x7684;&#x5185;&#x5B58;&#x7ED3;&#x6784;&#x56FE;&#xFF1A;<br><img src="/2016/08/28/JS&#x539F;&#x578B;&#x4E0E;&#x539F;&#x578B;&#x94FE;/images/&#x5185;&#x5B58;&#x7ED3;&#x6784;.jpg" alt=""></p>
+<p>&#x753B;&#x56FE;&#x7EA6;&#x5B9A;&#xFF1A;<br><img src="/2016/08/28/JS&#x539F;&#x578B;&#x4E0E;&#x539F;&#x578B;&#x94FE;/images/&#x753B;&#x56FE;&#x7EA6;&#x5B9A;.jpg" alt=""></p>
+<h4 id="u7591_u70B9_u89E3_u91CA_uFF1A"><a href="#u7591_u70B9_u89E3_u91CA_uFF1A" class="headerlink" title="&#x7591;&#x70B9;&#x89E3;&#x91CA;&#xFF1A;"></a>&#x7591;&#x70B9;&#x89E3;&#x91CA;&#xFF1A;</h4><ol>
+<li><p>Object.<strong>proto</strong> === Function.prototype // true<br>Object&#x662F;&#x51FD;&#x6570;&#x5BF9;&#x8C61;&#xFF0C;&#x662F;&#x901A;&#x8FC7;new Function()&#x521B;&#x5EFA;&#xFF0C;&#x6240;&#x4EE5;Object.<strong>proto</strong>&#x6307;&#x5411;Function.prototype&#x3002;</p>
 </li>
-<li><p>Function.<strong>proto</strong> === Function.prototype // true<br>Function 也是对象函数，也是通过new Function()创建，所以Function.<strong>proto</strong>指向Function.prototype。<br>自己是由自己创建的，好像不符合逻辑，但仔细想想，现实世界也有些类似，你是怎么来的，你妈生的，你妈怎么来的，你姥姥生的，……类人猿进化来的，那类人猿从哪来，一直追溯下去……，就是无，（NULL生万物）<br>正如《道德经》里所说“无，名天地之始”。</p>
+<li><p>Function.<strong>proto</strong> === Function.prototype // true<br>Function &#x4E5F;&#x662F;&#x5BF9;&#x8C61;&#x51FD;&#x6570;&#xFF0C;&#x4E5F;&#x662F;&#x901A;&#x8FC7;new Function()&#x521B;&#x5EFA;&#xFF0C;&#x6240;&#x4EE5;Function.<strong>proto</strong>&#x6307;&#x5411;Function.prototype&#x3002;<br>&#x81EA;&#x5DF1;&#x662F;&#x7531;&#x81EA;&#x5DF1;&#x521B;&#x5EFA;&#x7684;&#xFF0C;&#x597D;&#x50CF;&#x4E0D;&#x7B26;&#x5408;&#x903B;&#x8F91;&#xFF0C;&#x4F46;&#x4ED4;&#x7EC6;&#x60F3;&#x60F3;&#xFF0C;&#x73B0;&#x5B9E;&#x4E16;&#x754C;&#x4E5F;&#x6709;&#x4E9B;&#x7C7B;&#x4F3C;&#xFF0C;&#x4F60;&#x662F;&#x600E;&#x4E48;&#x6765;&#x7684;&#xFF0C;&#x4F60;&#x5988;&#x751F;&#x7684;&#xFF0C;&#x4F60;&#x5988;&#x600E;&#x4E48;&#x6765;&#x7684;&#xFF0C;&#x4F60;&#x59E5;&#x59E5;&#x751F;&#x7684;&#xFF0C;&#x2026;&#x2026;&#x7C7B;&#x4EBA;&#x733F;&#x8FDB;&#x5316;&#x6765;&#x7684;&#xFF0C;&#x90A3;&#x7C7B;&#x4EBA;&#x733F;&#x4ECE;&#x54EA;&#x6765;&#xFF0C;&#x4E00;&#x76F4;&#x8FFD;&#x6EAF;&#x4E0B;&#x53BB;&#x2026;&#x2026;&#xFF0C;&#x5C31;&#x662F;&#x65E0;&#xFF0C;&#xFF08;NULL&#x751F;&#x4E07;&#x7269;&#xFF09;<br>&#x6B63;&#x5982;&#x300A;&#x9053;&#x5FB7;&#x7ECF;&#x300B;&#x91CC;&#x6240;&#x8BF4;&#x201C;&#x65E0;&#xFF0C;&#x540D;&#x5929;&#x5730;&#x4E4B;&#x59CB;&#x201D;&#x3002;</p>
 </li>
-<li><p>Function.prototype.<strong>proto</strong> === Object.prototype //true<br>其实这一点我也有点困惑，不过也可以试着解释一下。<br>Function.prototype是个函数对象，理论上他的<strong>proto</strong>应该指向 Function.prototype，就是他自己，自己指向自己，没有意义。<br>JS一直强调万物皆对象，函数对象也是对象，给他认个祖宗，指向Object.prototype。Object.prototype.<strong>proto</strong> === null，保证原型链能够正常结束。</p>
+<li><p>Function.prototype.<strong>proto</strong> === Object.prototype //true<br>&#x5176;&#x5B9E;&#x8FD9;&#x4E00;&#x70B9;&#x6211;&#x4E5F;&#x6709;&#x70B9;&#x56F0;&#x60D1;&#xFF0C;&#x4E0D;&#x8FC7;&#x4E5F;&#x53EF;&#x4EE5;&#x8BD5;&#x7740;&#x89E3;&#x91CA;&#x4E00;&#x4E0B;&#x3002;<br>Function.prototype&#x662F;&#x4E2A;&#x51FD;&#x6570;&#x5BF9;&#x8C61;&#xFF0C;&#x7406;&#x8BBA;&#x4E0A;&#x4ED6;&#x7684;<strong>proto</strong>&#x5E94;&#x8BE5;&#x6307;&#x5411; Function.prototype&#xFF0C;&#x5C31;&#x662F;&#x4ED6;&#x81EA;&#x5DF1;&#xFF0C;&#x81EA;&#x5DF1;&#x6307;&#x5411;&#x81EA;&#x5DF1;&#xFF0C;&#x6CA1;&#x6709;&#x610F;&#x4E49;&#x3002;<br>JS&#x4E00;&#x76F4;&#x5F3A;&#x8C03;&#x4E07;&#x7269;&#x7686;&#x5BF9;&#x8C61;&#xFF0C;&#x51FD;&#x6570;&#x5BF9;&#x8C61;&#x4E5F;&#x662F;&#x5BF9;&#x8C61;&#xFF0C;&#x7ED9;&#x4ED6;&#x8BA4;&#x4E2A;&#x7956;&#x5B97;&#xFF0C;&#x6307;&#x5411;Object.prototype&#x3002;Object.prototype.<strong>proto</strong> === null&#xFF0C;&#x4FDD;&#x8BC1;&#x539F;&#x578B;&#x94FE;&#x80FD;&#x591F;&#x6B63;&#x5E38;&#x7ED3;&#x675F;&#x3002;</p>
 </li>
 </ol>
-<h3 id="u4E94_uFF0Econstructor"><a href="#u4E94_uFF0Econstructor" class="headerlink" title="五．constructor"></a>五．constructor</h3><p>  原型对象prototype中都有个预定义的constructor属性，用来引用它的函数对象。这是一种循环引用</p>
+<h3 id="u4E94_uFF0Econstructor"><a href="#u4E94_uFF0Econstructor" class="headerlink" title="&#x4E94;&#xFF0E;constructor"></a>&#x4E94;&#xFF0E;constructor</h3><p>  &#x539F;&#x578B;&#x5BF9;&#x8C61;prototype&#x4E2D;&#x90FD;&#x6709;&#x4E2A;&#x9884;&#x5B9A;&#x4E49;&#x7684;constructor&#x5C5E;&#x6027;&#xFF0C;&#x7528;&#x6765;&#x5F15;&#x7528;&#x5B83;&#x7684;&#x51FD;&#x6570;&#x5BF9;&#x8C61;&#x3002;&#x8FD9;&#x662F;&#x4E00;&#x79CD;&#x5FAA;&#x73AF;&#x5F15;&#x7528;</p>
 <pre><code>person.prototype.constructor === person //true
 Function.prototype.constructor === Function //true
 Object.prototype.constructor === Object //true
-</code></pre><p>有两点需要注意：</p>
-<p>（1）注意Object.constructor===Function；//true 本身Object就是Function函数构造出来的 </p>
-<p>（2）如何查找一个对象的constructor，就是在该对象的原型链上寻找碰到的第一个constructor属性所指向的对象</p>
-<h3 id="u516D_uFF0E_u603B_u7ED3"><a href="#u516D_uFF0E_u603B_u7ED3" class="headerlink" title="六．总结"></a>六．总结</h3><ol>
-<li>原型和原型链是JS实现继承的一种模型。</li>
-<li>原型链的形成是真正是靠<strong>proto</strong> 而非prototype</li>
+</code></pre><p>&#x6709;&#x4E24;&#x70B9;&#x9700;&#x8981;&#x6CE8;&#x610F;&#xFF1A;</p>
+<p>&#xFF08;1&#xFF09;&#x6CE8;&#x610F;Object.constructor===Function&#xFF1B;//true &#x672C;&#x8EAB;Object&#x5C31;&#x662F;Function&#x51FD;&#x6570;&#x6784;&#x9020;&#x51FA;&#x6765;&#x7684; </p>
+<p>&#xFF08;2&#xFF09;&#x5982;&#x4F55;&#x67E5;&#x627E;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;constructor&#xFF0C;&#x5C31;&#x662F;&#x5728;&#x8BE5;&#x5BF9;&#x8C61;&#x7684;&#x539F;&#x578B;&#x94FE;&#x4E0A;&#x5BFB;&#x627E;&#x78B0;&#x5230;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;constructor&#x5C5E;&#x6027;&#x6240;&#x6307;&#x5411;&#x7684;&#x5BF9;&#x8C61;</p>
+<h3 id="u516D_uFF0E_u603B_u7ED3"><a href="#u516D_uFF0E_u603B_u7ED3" class="headerlink" title="&#x516D;&#xFF0E;&#x603B;&#x7ED3;"></a>&#x516D;&#xFF0E;&#x603B;&#x7ED3;</h3><ol>
+<li>&#x539F;&#x578B;&#x548C;&#x539F;&#x578B;&#x94FE;&#x662F;JS&#x5B9E;&#x73B0;&#x7EE7;&#x627F;&#x7684;&#x4E00;&#x79CD;&#x6A21;&#x578B;&#x3002;</li>
+<li>&#x539F;&#x578B;&#x94FE;&#x7684;&#x5F62;&#x6210;&#x662F;&#x771F;&#x6B63;&#x662F;&#x9760;<strong>proto</strong> &#x800C;&#x975E;prototype</li>
 </ol>
-<p>要深入理解这句话，我们再举个例子，看看前面你真的理解了吗？</p>
+<p>&#x8981;&#x6DF1;&#x5165;&#x7406;&#x89E3;&#x8FD9;&#x53E5;&#x8BDD;&#xFF0C;&#x6211;&#x4EEC;&#x518D;&#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;&#x770B;&#x770B;&#x524D;&#x9762;&#x4F60;&#x771F;&#x7684;&#x7406;&#x89E3;&#x4E86;&#x5417;&#xFF1F;</p>
 <pre><code>var animal = function(){};
 var dog = function(){};
 
@@ -595,11 +595,11 @@ var tidy = new dog();
 
 console.log(dog.price) //undefined
 console.log(tidy.price) // 2000
-</code></pre><p>为什么呢？画一下内存图：<br><img src="/images/dog.jpg" alt=""></p>
-<p>这说明什么问题呢，执行dog.price的时候，发现没有price这个属性，虽然prototype指向的animal有这个属性，但它并没有去沿着这个“链”去寻找。同样，执行tidy.price的时候，也没有这个属性，但是<strong>proto</strong>指向了animal，它会沿着这个链去寻找，animal中有price属性，所以tidy.price输出2000。由此得出，原型链的真正形成是靠的<strong>proro</strong>，而不是prototype。</p>
-<p>因此，如果在这样指定dog.<strong>proto</strong> = animal。那dog.price = 2000。</p>
-<p>最后打个比喻，虽然不是很确切，但可能对原型的理解有些帮助。<br><img src="/images/son.jpg" alt=""></p>
-<p>父亲（函数对象），先生了一个大儿子（prototype），也就是你大哥，父亲给你大哥买了好多的玩具，当你出生的时候，你们之间的亲情纽带（<strong>proto</strong>）会让你自然而然的拥有了你大哥的玩具。同样，你也先生个大儿子，又给他买了好多的玩具，当你再生儿子的时候，你的小儿子会自然拥有你大儿子的所有玩具。至于他们会不会打架，这不是我们的事了。<br>所以说，你是从你大哥那继承的，印证了那句“长兄如父”啊！</p>
+</code></pre><p>&#x4E3A;&#x4EC0;&#x4E48;&#x5462;&#xFF1F;&#x753B;&#x4E00;&#x4E0B;&#x5185;&#x5B58;&#x56FE;&#xFF1A;<br><img src="/2016/08/28/JS&#x539F;&#x578B;&#x4E0E;&#x539F;&#x578B;&#x94FE;/images/dog.jpg" alt=""></p>
+<p>&#x8FD9;&#x8BF4;&#x660E;&#x4EC0;&#x4E48;&#x95EE;&#x9898;&#x5462;&#xFF0C;&#x6267;&#x884C;dog.price&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x53D1;&#x73B0;&#x6CA1;&#x6709;price&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x867D;&#x7136;prototype&#x6307;&#x5411;&#x7684;animal&#x6709;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x4F46;&#x5B83;&#x5E76;&#x6CA1;&#x6709;&#x53BB;&#x6CBF;&#x7740;&#x8FD9;&#x4E2A;&#x201C;&#x94FE;&#x201D;&#x53BB;&#x5BFB;&#x627E;&#x3002;&#x540C;&#x6837;&#xFF0C;&#x6267;&#x884C;tidy.price&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4E5F;&#x6CA1;&#x6709;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x4F46;&#x662F;<strong>proto</strong>&#x6307;&#x5411;&#x4E86;animal&#xFF0C;&#x5B83;&#x4F1A;&#x6CBF;&#x7740;&#x8FD9;&#x4E2A;&#x94FE;&#x53BB;&#x5BFB;&#x627E;&#xFF0C;animal&#x4E2D;&#x6709;price&#x5C5E;&#x6027;&#xFF0C;&#x6240;&#x4EE5;tidy.price&#x8F93;&#x51FA;2000&#x3002;&#x7531;&#x6B64;&#x5F97;&#x51FA;&#xFF0C;&#x539F;&#x578B;&#x94FE;&#x7684;&#x771F;&#x6B63;&#x5F62;&#x6210;&#x662F;&#x9760;&#x7684;<strong>proro</strong>&#xFF0C;&#x800C;&#x4E0D;&#x662F;prototype&#x3002;</p>
+<p>&#x56E0;&#x6B64;&#xFF0C;&#x5982;&#x679C;&#x5728;&#x8FD9;&#x6837;&#x6307;&#x5B9A;dog.<strong>proto</strong> = animal&#x3002;&#x90A3;dog.price = 2000&#x3002;</p>
+<p>&#x6700;&#x540E;&#x6253;&#x4E2A;&#x6BD4;&#x55BB;&#xFF0C;&#x867D;&#x7136;&#x4E0D;&#x662F;&#x5F88;&#x786E;&#x5207;&#xFF0C;&#x4F46;&#x53EF;&#x80FD;&#x5BF9;&#x539F;&#x578B;&#x7684;&#x7406;&#x89E3;&#x6709;&#x4E9B;&#x5E2E;&#x52A9;&#x3002;<br><img src="/2016/08/28/JS&#x539F;&#x578B;&#x4E0E;&#x539F;&#x578B;&#x94FE;/images/son.jpg" alt=""></p>
+<p>&#x7236;&#x4EB2;&#xFF08;&#x51FD;&#x6570;&#x5BF9;&#x8C61;&#xFF09;&#xFF0C;&#x5148;&#x751F;&#x4E86;&#x4E00;&#x4E2A;&#x5927;&#x513F;&#x5B50;&#xFF08;prototype&#xFF09;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x4F60;&#x5927;&#x54E5;&#xFF0C;&#x7236;&#x4EB2;&#x7ED9;&#x4F60;&#x5927;&#x54E5;&#x4E70;&#x4E86;&#x597D;&#x591A;&#x7684;&#x73A9;&#x5177;&#xFF0C;&#x5F53;&#x4F60;&#x51FA;&#x751F;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F60;&#x4EEC;&#x4E4B;&#x95F4;&#x7684;&#x4EB2;&#x60C5;&#x7EBD;&#x5E26;&#xFF08;<strong>proto</strong>&#xFF09;&#x4F1A;&#x8BA9;&#x4F60;&#x81EA;&#x7136;&#x800C;&#x7136;&#x7684;&#x62E5;&#x6709;&#x4E86;&#x4F60;&#x5927;&#x54E5;&#x7684;&#x73A9;&#x5177;&#x3002;&#x540C;&#x6837;&#xFF0C;&#x4F60;&#x4E5F;&#x5148;&#x751F;&#x4E2A;&#x5927;&#x513F;&#x5B50;&#xFF0C;&#x53C8;&#x7ED9;&#x4ED6;&#x4E70;&#x4E86;&#x597D;&#x591A;&#x7684;&#x73A9;&#x5177;&#xFF0C;&#x5F53;&#x4F60;&#x518D;&#x751F;&#x513F;&#x5B50;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F60;&#x7684;&#x5C0F;&#x513F;&#x5B50;&#x4F1A;&#x81EA;&#x7136;&#x62E5;&#x6709;&#x4F60;&#x5927;&#x513F;&#x5B50;&#x7684;&#x6240;&#x6709;&#x73A9;&#x5177;&#x3002;&#x81F3;&#x4E8E;&#x4ED6;&#x4EEC;&#x4F1A;&#x4E0D;&#x4F1A;&#x6253;&#x67B6;&#xFF0C;&#x8FD9;&#x4E0D;&#x662F;&#x6211;&#x4EEC;&#x7684;&#x4E8B;&#x4E86;&#x3002;<br>&#x6240;&#x4EE5;&#x8BF4;&#xFF0C;&#x4F60;&#x662F;&#x4ECE;&#x4F60;&#x5927;&#x54E5;&#x90A3;&#x7EE7;&#x627F;&#x7684;&#xFF0C;&#x5370;&#x8BC1;&#x4E86;&#x90A3;&#x53E5;&#x201C;&#x957F;&#x5144;&#x5982;&#x7236;&#x201D;&#x554A;&#xFF01;</p>
 
           
         
@@ -701,11 +701,11 @@ console.log(tidy.price) // 2000
         
           
             <ul>
-<li>系统方法：在forfox下系统的这个方法非常快</li>
-<li>冒泡排序：最简单，也最慢，貌似长度小于7最优</li>
-<li>快速排序：这是一个非常快的排序方式，V8的sort方法就使用快速排序和插入排序的结合</li>
-<li>插入排序： 比冒泡快，比快速排序和希尔排序慢，较小数据有优势</li>
-<li>希尔排序：在非chrome下数组长度小于1000，希尔排序比快速更快</li>
+<li>&#x7CFB;&#x7EDF;&#x65B9;&#x6CD5;&#xFF1A;&#x5728;forfox&#x4E0B;&#x7CFB;&#x7EDF;&#x7684;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x975E;&#x5E38;&#x5FEB;</li>
+<li>&#x5192;&#x6CE1;&#x6392;&#x5E8F;&#xFF1A;&#x6700;&#x7B80;&#x5355;&#xFF0C;&#x4E5F;&#x6700;&#x6162;&#xFF0C;&#x8C8C;&#x4F3C;&#x957F;&#x5EA6;&#x5C0F;&#x4E8E;7&#x6700;&#x4F18;</li>
+<li>&#x5FEB;&#x901F;&#x6392;&#x5E8F;&#xFF1A;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x5FEB;&#x7684;&#x6392;&#x5E8F;&#x65B9;&#x5F0F;&#xFF0C;V8&#x7684;sort&#x65B9;&#x6CD5;&#x5C31;&#x4F7F;&#x7528;&#x5FEB;&#x901F;&#x6392;&#x5E8F;&#x548C;&#x63D2;&#x5165;&#x6392;&#x5E8F;&#x7684;&#x7ED3;&#x5408;</li>
+<li>&#x63D2;&#x5165;&#x6392;&#x5E8F;&#xFF1A; &#x6BD4;&#x5192;&#x6CE1;&#x5FEB;&#xFF0C;&#x6BD4;&#x5FEB;&#x901F;&#x6392;&#x5E8F;&#x548C;&#x5E0C;&#x5C14;&#x6392;&#x5E8F;&#x6162;&#xFF0C;&#x8F83;&#x5C0F;&#x6570;&#x636E;&#x6709;&#x4F18;&#x52BF;</li>
+<li>&#x5E0C;&#x5C14;&#x6392;&#x5E8F;&#xFF1A;&#x5728;&#x975E;chrome&#x4E0B;&#x6570;&#x7EC4;&#x957F;&#x5EA6;&#x5C0F;&#x4E8E;1000&#xFF0C;&#x5E0C;&#x5C14;&#x6392;&#x5E8F;&#x6BD4;&#x5FEB;&#x901F;&#x66F4;&#x5FEB;</li>
 </ul>
 
           
@@ -807,76 +807,76 @@ console.log(tidy.price) // 2000
       
         
           
-            <h3 id="1-_u5143_u7D20_u9009_u62E9_u5668"><a href="#1-_u5143_u7D20_u9009_u62E9_u5668" class="headerlink" title="1.元素选择器"></a>1.元素选择器</h3><pre><code>p{
+            <h3 id="1-_u5143_u7D20_u9009_u62E9_u5668"><a href="#1-_u5143_u7D20_u9009_u62E9_u5668" class="headerlink" title="1.&#x5143;&#x7D20;&#x9009;&#x62E9;&#x5668;"></a>1.&#x5143;&#x7D20;&#x9009;&#x62E9;&#x5668;</h3><pre><code>p{
     font-size:5px;
 }
-</code></pre><h3 id="2-_u5173_u7CFB_u9009_u62E9_u5668"><a href="#2-_u5173_u7CFB_u9009_u62E9_u5668" class="headerlink" title="2.关系选择器"></a>2.关系选择器</h3><p>E F：后代选择器，该选择器定位元素E的后代中所有元素F：</p>
+</code></pre><h3 id="2-_u5173_u7CFB_u9009_u62E9_u5668"><a href="#2-_u5173_u7CFB_u9009_u62E9_u5668" class="headerlink" title="2.&#x5173;&#x7CFB;&#x9009;&#x62E9;&#x5668;"></a>2.&#x5173;&#x7CFB;&#x9009;&#x62E9;&#x5668;</h3><p>E F&#xFF1A;&#x540E;&#x4EE3;&#x9009;&#x62E9;&#x5668;&#xFF0C;&#x8BE5;&#x9009;&#x62E9;&#x5668;&#x5B9A;&#x4F4D;&#x5143;&#x7D20;E&#x7684;&#x540E;&#x4EE3;&#x4E2D;&#x6240;&#x6709;&#x5143;&#x7D20;F&#xFF1A;</p>
 <pre><code>ul li {margin-bottom:0.5em;}
-</code></pre><p>E &gt; F：子选择器，该选择器定位元素E的直接子元素中的所有元素F，它将忽略任何进一步的嵌套：</p>
+</code></pre><p>E &gt; F&#xFF1A;&#x5B50;&#x9009;&#x62E9;&#x5668;&#xFF0C;&#x8BE5;&#x9009;&#x62E9;&#x5668;&#x5B9A;&#x4F4D;&#x5143;&#x7D20;E&#x7684;&#x76F4;&#x63A5;&#x5B50;&#x5143;&#x7D20;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x5143;&#x7D20;F&#xFF0C;&#x5B83;&#x5C06;&#x5FFD;&#x7565;&#x4EFB;&#x4F55;&#x8FDB;&#x4E00;&#x6B65;&#x7684;&#x5D4C;&#x5957;&#xFF1A;</p>
 <pre><code>ul &gt; li {list-style:none;} 
-</code></pre><p>E + F：相邻兄弟选择器，该选择器定位与元素E具有相同父元素且在标记中紧邻E的元素F：</p>
+</code></pre><p>E + F&#xFF1A;&#x76F8;&#x90BB;&#x5144;&#x5F1F;&#x9009;&#x62E9;&#x5668;&#xFF0C;&#x8BE5;&#x9009;&#x62E9;&#x5668;&#x5B9A;&#x4F4D;&#x4E0E;&#x5143;&#x7D20;E&#x5177;&#x6709;&#x76F8;&#x540C;&#x7236;&#x5143;&#x7D20;&#x4E14;&#x5728;&#x6807;&#x8BB0;&#x4E2D;&#x7D27;&#x90BB;E&#x7684;&#x5143;&#x7D20;F&#xFF1A;</p>
 <pre><code>li + li {border-top:1px solid #ddd;} 
-//定位具有相同父元素ul里除第一个li之外的所有li
-</code></pre><p>E ~ F：一般兄弟选择器，该选择器定位与元素E具有相同父元素且在标记中位于E之后的所有元素F：</p>
+//&#x5B9A;&#x4F4D;&#x5177;&#x6709;&#x76F8;&#x540C;&#x7236;&#x5143;&#x7D20;ul&#x91CC;&#x9664;&#x7B2C;&#x4E00;&#x4E2A;li&#x4E4B;&#x5916;&#x7684;&#x6240;&#x6709;li
+</code></pre><p>E ~ F&#xFF1A;&#x4E00;&#x822C;&#x5144;&#x5F1F;&#x9009;&#x62E9;&#x5668;&#xFF0C;&#x8BE5;&#x9009;&#x62E9;&#x5668;&#x5B9A;&#x4F4D;&#x4E0E;&#x5143;&#x7D20;E&#x5177;&#x6709;&#x76F8;&#x540C;&#x7236;&#x5143;&#x7D20;&#x4E14;&#x5728;&#x6807;&#x8BB0;&#x4E2D;&#x4F4D;&#x4E8E;E&#x4E4B;&#x540E;&#x7684;&#x6240;&#x6709;&#x5143;&#x7D20;F&#xFF1A;</p>
 <pre><code>h1 ~ p {color:#f00;} 
-//定位具有相同父元素的，h1标签之后的所有p标签
-</code></pre><h3 id="3-_u5C5E_u6027_u9009_u62E9_u5668"><a href="#3-_u5C5E_u6027_u9009_u62E9_u5668" class="headerlink" title="3.属性选择器"></a>3.属性选择器</h3><p>E[attr]：该选择器定位具有属性attr的任何元素E：</p>
+//&#x5B9A;&#x4F4D;&#x5177;&#x6709;&#x76F8;&#x540C;&#x7236;&#x5143;&#x7D20;&#x7684;&#xFF0C;h1&#x6807;&#x7B7E;&#x4E4B;&#x540E;&#x7684;&#x6240;&#x6709;p&#x6807;&#x7B7E;
+</code></pre><h3 id="3-_u5C5E_u6027_u9009_u62E9_u5668"><a href="#3-_u5C5E_u6027_u9009_u62E9_u5668" class="headerlink" title="3.&#x5C5E;&#x6027;&#x9009;&#x62E9;&#x5668;"></a>3.&#x5C5E;&#x6027;&#x9009;&#x62E9;&#x5668;</h3><p>E[attr]&#xFF1A;&#x8BE5;&#x9009;&#x62E9;&#x5668;&#x5B9A;&#x4F4D;&#x5177;&#x6709;&#x5C5E;&#x6027;attr&#x7684;&#x4EFB;&#x4F55;&#x5143;&#x7D20;E&#xFF1A;</p>
 <pre><code>input[required] {border:1px solid #f00;} 
-//定位页面里所有具有必填属性&quot;required&quot;的input
-</code></pre><p>E[attr=val]：该选择器定位具有属性attr且属性值为val的任何元素E：</p>
+//&#x5B9A;&#x4F4D;&#x9875;&#x9762;&#x91CC;&#x6240;&#x6709;&#x5177;&#x6709;&#x5FC5;&#x586B;&#x5C5E;&#x6027;&quot;required&quot;&#x7684;input
+</code></pre><p>E[attr=val]&#xFF1A;&#x8BE5;&#x9009;&#x62E9;&#x5668;&#x5B9A;&#x4F4D;&#x5177;&#x6709;&#x5C5E;&#x6027;attr&#x4E14;&#x5C5E;&#x6027;&#x503C;&#x4E3A;val&#x7684;&#x4EFB;&#x4F55;&#x5143;&#x7D20;E&#xFF1A;</p>
 <pre><code>input[type=password] {border:1px solid #aaa;} 
-//定位页面里的密码输入框
-</code></pre><p>E[attr|=avl]：该选择器定位具有属性attr且属性值为val或以val-开始的任何元素E：</p>
+//&#x5B9A;&#x4F4D;&#x9875;&#x9762;&#x91CC;&#x7684;&#x5BC6;&#x7801;&#x8F93;&#x5165;&#x6846;
+</code></pre><p>E[attr|=avl]&#xFF1A;&#x8BE5;&#x9009;&#x62E9;&#x5668;&#x5B9A;&#x4F4D;&#x5177;&#x6709;&#x5C5E;&#x6027;attr&#x4E14;&#x5C5E;&#x6027;&#x503C;&#x4E3A;val&#x6216;&#x4EE5;val-&#x5F00;&#x59CB;&#x7684;&#x4EFB;&#x4F55;&#x5143;&#x7D20;E&#xFF1A;</p>
 <pre><code>p[class|=a] {color:#333;} 
-//定位页面里所有的P段落里具有class属性且属性值为a或是a-开始的
-比如class=&quot;a&quot;以及class=&quot;a-b&quot;
-</code></pre><p>E[attr~=val]：该选择器定位具有属性attr且属性值为完整单词 val 的任何元素E：</p>
+//&#x5B9A;&#x4F4D;&#x9875;&#x9762;&#x91CC;&#x6240;&#x6709;&#x7684;P&#x6BB5;&#x843D;&#x91CC;&#x5177;&#x6709;class&#x5C5E;&#x6027;&#x4E14;&#x5C5E;&#x6027;&#x503C;&#x4E3A;a&#x6216;&#x662F;a-&#x5F00;&#x59CB;&#x7684;
+&#x6BD4;&#x5982;class=&quot;a&quot;&#x4EE5;&#x53CA;class=&quot;a-b&quot;
+</code></pre><p>E[attr~=val]&#xFF1A;&#x8BE5;&#x9009;&#x62E9;&#x5668;&#x5B9A;&#x4F4D;&#x5177;&#x6709;&#x5C5E;&#x6027;attr&#x4E14;&#x5C5E;&#x6027;&#x503C;&#x4E3A;&#x5B8C;&#x6574;&#x5355;&#x8BCD; val &#x7684;&#x4EFB;&#x4F55;&#x5143;&#x7D20;E&#xFF1A;</p>
 <pre><code>div[title~=english] {color:#f88;} 
-//定位页面里所有具有属性title且属性值里拥有完整单词english的div容器
-比如title=&quot;english&quot;以及title=&quot;a english&quot;
-</code></pre><p>E[attr^=val]：该选择器定位具有属性attr且属性值以val开头的任何元素E：</p>
+//&#x5B9A;&#x4F4D;&#x9875;&#x9762;&#x91CC;&#x6240;&#x6709;&#x5177;&#x6709;&#x5C5E;&#x6027;title&#x4E14;&#x5C5E;&#x6027;&#x503C;&#x91CC;&#x62E5;&#x6709;&#x5B8C;&#x6574;&#x5355;&#x8BCD;english&#x7684;div&#x5BB9;&#x5668;
+&#x6BD4;&#x5982;title=&quot;english&quot;&#x4EE5;&#x53CA;title=&quot;a english&quot;
+</code></pre><p>E[attr^=val]&#xFF1A;&#x8BE5;&#x9009;&#x62E9;&#x5668;&#x5B9A;&#x4F4D;&#x5177;&#x6709;&#x5C5E;&#x6027;attr&#x4E14;&#x5C5E;&#x6027;&#x503C;&#x4EE5;val&#x5F00;&#x5934;&#x7684;&#x4EFB;&#x4F55;&#x5143;&#x7D20;E&#xFF1A;</p>
 <pre><code>div[class^=a] {color:#666;} 
-//定位页面里具有属性class且属性值以a开头的div容器
-比如class=&quot;a&quot;以及class=&quot;ab&quot;
-</code></pre><p>E[attr$=val]：该选择器与E[attr^=val]正好相反，定位具有属性attr且属性值以val结尾的任何元素E：</p>
+//&#x5B9A;&#x4F4D;&#x9875;&#x9762;&#x91CC;&#x5177;&#x6709;&#x5C5E;&#x6027;class&#x4E14;&#x5C5E;&#x6027;&#x503C;&#x4EE5;a&#x5F00;&#x5934;&#x7684;div&#x5BB9;&#x5668;
+&#x6BD4;&#x5982;class=&quot;a&quot;&#x4EE5;&#x53CA;class=&quot;ab&quot;
+</code></pre><p>E[attr$=val]&#xFF1A;&#x8BE5;&#x9009;&#x62E9;&#x5668;&#x4E0E;E[attr^=val]&#x6B63;&#x597D;&#x76F8;&#x53CD;&#xFF0C;&#x5B9A;&#x4F4D;&#x5177;&#x6709;&#x5C5E;&#x6027;attr&#x4E14;&#x5C5E;&#x6027;&#x503C;&#x4EE5;val&#x7ED3;&#x5C3E;&#x7684;&#x4EFB;&#x4F55;&#x5143;&#x7D20;E&#xFF1A;</p>
 <pre><code>div[class$=a] {color:#f00;} 
-//定位页面里具有属性class且属性值以a结尾的div窗口
-比如class=&quot;nba&quot;以及class=&quot;cba&quot;
-</code></pre><p>E[attr*=val]：该选择器与E[attr~=val]相似，但更进一步，定位具有属性attr且属性值任意位置包含val的元素E，val可以是一个完整的单词，也可以是一个单词中的一部分：</p>
+//&#x5B9A;&#x4F4D;&#x9875;&#x9762;&#x91CC;&#x5177;&#x6709;&#x5C5E;&#x6027;class&#x4E14;&#x5C5E;&#x6027;&#x503C;&#x4EE5;a&#x7ED3;&#x5C3E;&#x7684;div&#x7A97;&#x53E3;
+&#x6BD4;&#x5982;class=&quot;nba&quot;&#x4EE5;&#x53CA;class=&quot;cba&quot;
+</code></pre><p>E[attr*=val]&#xFF1A;&#x8BE5;&#x9009;&#x62E9;&#x5668;&#x4E0E;E[attr~=val]&#x76F8;&#x4F3C;&#xFF0C;&#x4F46;&#x66F4;&#x8FDB;&#x4E00;&#x6B65;&#xFF0C;&#x5B9A;&#x4F4D;&#x5177;&#x6709;&#x5C5E;&#x6027;attr&#x4E14;&#x5C5E;&#x6027;&#x503C;&#x4EFB;&#x610F;&#x4F4D;&#x7F6E;&#x5305;&#x542B;val&#x7684;&#x5143;&#x7D20;E&#xFF0C;val&#x53EF;&#x4EE5;&#x662F;&#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x7684;&#x5355;&#x8BCD;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x4E00;&#x4E2A;&#x5355;&#x8BCD;&#x4E2D;&#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF1A;</p>
 <pre><code>a[title*=link] {text-decoration:underline;} 
-//定位所有title里具有link字符串的a链接
-</code></pre><h3 id="4-_u4F2A_u7C7B"><a href="#4-_u4F2A_u7C7B" class="headerlink" title="4.伪类"></a>4.伪类</h3><p>:link：未访问的链接；</p>
-<p>:visited：已访问的链接，不建议使用；</p>
-<p>:hover：鼠标移动到容器，不仅限于链接，可用于页面中的任何元素；</p>
-<p>:active：被激活时的状态，不仅限于链接，可用于任何具有tabindex属性的元素；</p>
-<p>:focus：获得焦点时状态，不仅限于链接，可用于任何具有tabindex属性的无线：</p>
-<p>input:focus {border:1px solid #333;} //输入框获得焦点时的样式</p>
-<p>:enabled：已启用的界面元素：</p>
+//&#x5B9A;&#x4F4D;&#x6240;&#x6709;title&#x91CC;&#x5177;&#x6709;link&#x5B57;&#x7B26;&#x4E32;&#x7684;a&#x94FE;&#x63A5;
+</code></pre><h3 id="4-_u4F2A_u7C7B"><a href="#4-_u4F2A_u7C7B" class="headerlink" title="4.&#x4F2A;&#x7C7B;"></a>4.&#x4F2A;&#x7C7B;</h3><p>:link&#xFF1A;&#x672A;&#x8BBF;&#x95EE;&#x7684;&#x94FE;&#x63A5;&#xFF1B;</p>
+<p>:visited&#xFF1A;&#x5DF2;&#x8BBF;&#x95EE;&#x7684;&#x94FE;&#x63A5;&#xFF0C;&#x4E0D;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#xFF1B;</p>
+<p>:hover&#xFF1A;&#x9F20;&#x6807;&#x79FB;&#x52A8;&#x5230;&#x5BB9;&#x5668;&#xFF0C;&#x4E0D;&#x4EC5;&#x9650;&#x4E8E;&#x94FE;&#x63A5;&#xFF0C;&#x53EF;&#x7528;&#x4E8E;&#x9875;&#x9762;&#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x5143;&#x7D20;&#xFF1B;</p>
+<p>:active&#xFF1A;&#x88AB;&#x6FC0;&#x6D3B;&#x65F6;&#x7684;&#x72B6;&#x6001;&#xFF0C;&#x4E0D;&#x4EC5;&#x9650;&#x4E8E;&#x94FE;&#x63A5;&#xFF0C;&#x53EF;&#x7528;&#x4E8E;&#x4EFB;&#x4F55;&#x5177;&#x6709;tabindex&#x5C5E;&#x6027;&#x7684;&#x5143;&#x7D20;&#xFF1B;</p>
+<p>:focus&#xFF1A;&#x83B7;&#x5F97;&#x7126;&#x70B9;&#x65F6;&#x72B6;&#x6001;&#xFF0C;&#x4E0D;&#x4EC5;&#x9650;&#x4E8E;&#x94FE;&#x63A5;&#xFF0C;&#x53EF;&#x7528;&#x4E8E;&#x4EFB;&#x4F55;&#x5177;&#x6709;tabindex&#x5C5E;&#x6027;&#x7684;&#x65E0;&#x7EBF;&#xFF1A;</p>
+<p>input:focus {border:1px solid #333;} //&#x8F93;&#x5165;&#x6846;&#x83B7;&#x5F97;&#x7126;&#x70B9;&#x65F6;&#x7684;&#x6837;&#x5F0F;</p>
+<p>:enabled&#xFF1A;&#x5DF2;&#x542F;&#x7528;&#x7684;&#x754C;&#x9762;&#x5143;&#x7D20;&#xFF1A;</p>
 <p>input:enabled {border:1px solid #899;}</p>
-<p>:disabled：已禁用的界面元素：</p>
+<p>:disabled&#xFF1A;&#x5DF2;&#x7981;&#x7528;&#x7684;&#x754C;&#x9762;&#x5143;&#x7D20;&#xFF1A;</p>
 <p>input:disabled {background:#eee;}</p>
-<p>:target：该选择器定位当前活动页面内定位点的目标元素：</p>
+<p>:target&#xFF1A;&#x8BE5;&#x9009;&#x62E9;&#x5668;&#x5B9A;&#x4F4D;&#x5F53;&#x524D;&#x6D3B;&#x52A8;&#x9875;&#x9762;&#x5185;&#x5B9A;&#x4F4D;&#x70B9;&#x7684;&#x76EE;&#x6807;&#x5143;&#x7D20;&#xFF1A;</p>
 <pre><code>#info:target {font-size:24px;} 
-//当访问的URL网址为 123.html#info 时，id=&quot;info&quot;将加载这个字体样式
-</code></pre><p>E:nth-of-type(n)：该选择器定位元素E的第n个指定类型子元素；</p>
-<p>E:nth-lash-of-type(n)：该选择器定位元素E的导数第n个指定类型子元素：</p>
+//&#x5F53;&#x8BBF;&#x95EE;&#x7684;URL&#x7F51;&#x5740;&#x4E3A; 123.html#info &#x65F6;&#xFF0C;id=&quot;info&quot;&#x5C06;&#x52A0;&#x8F7D;&#x8FD9;&#x4E2A;&#x5B57;&#x4F53;&#x6837;&#x5F0F;
+</code></pre><p>E:nth-of-type(n)&#xFF1A;&#x8BE5;&#x9009;&#x62E9;&#x5668;&#x5B9A;&#x4F4D;&#x5143;&#x7D20;E&#x7684;&#x7B2C;n&#x4E2A;&#x6307;&#x5B9A;&#x7C7B;&#x578B;&#x5B50;&#x5143;&#x7D20;&#xFF1B;</p>
+<p>E:nth-lash-of-type(n)&#xFF1A;&#x8BE5;&#x9009;&#x62E9;&#x5668;&#x5B9A;&#x4F4D;&#x5143;&#x7D20;E&#x7684;&#x5BFC;&#x6570;&#x7B2C;n&#x4E2A;&#x6307;&#x5B9A;&#x7C7B;&#x578B;&#x5B50;&#x5143;&#x7D20;&#xFF1A;</p>
 <blockquote>
-<p>.class p:nth-child(2) 与 .class p:nth-of-type(2) 的区别在于，如果.class里的第2个子元素不是P元素时，.class p:nth-child(2) 的样式将无效，而.class p:nth-of-type(2) 将定位在 .class 里的第2个p元素</p>
-<p>nth-child(n)、nth-last-child(n)、nth-of-type(n)、nth-last-of-type(n)，这其中的 n 可以使用数字静态式，比如 .nth-child(2n+1) 将匹配第1、3、5…个元素</p>
+<p>.class p:nth-child(2) &#x4E0E; .class p:nth-of-type(2) &#x7684;&#x533A;&#x522B;&#x5728;&#x4E8E;&#xFF0C;&#x5982;&#x679C;.class&#x91CC;&#x7684;&#x7B2C;2&#x4E2A;&#x5B50;&#x5143;&#x7D20;&#x4E0D;&#x662F;P&#x5143;&#x7D20;&#x65F6;&#xFF0C;.class p:nth-child(2) &#x7684;&#x6837;&#x5F0F;&#x5C06;&#x65E0;&#x6548;&#xFF0C;&#x800C;.class p:nth-of-type(2) &#x5C06;&#x5B9A;&#x4F4D;&#x5728; .class &#x91CC;&#x7684;&#x7B2C;2&#x4E2A;p&#x5143;&#x7D20;</p>
+<p>nth-child(n)&#x3001;nth-last-child(n)&#x3001;nth-of-type(n)&#x3001;nth-last-of-type(n)&#xFF0C;&#x8FD9;&#x5176;&#x4E2D;&#x7684; n &#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6570;&#x5B57;&#x9759;&#x6001;&#x5F0F;&#xFF0C;&#x6BD4;&#x5982; .nth-child(2n+1) &#x5C06;&#x5339;&#x914D;&#x7B2C;1&#x3001;3&#x3001;5&#x2026;&#x4E2A;&#x5143;&#x7D20;</p>
 </blockquote>
-<p><span style="color:red">建议用nth-of-type</span></p>
-<p>E:not(exception)：该选择器将选择与括号内的选择器不匹配的元素：</p>
+<p><span style="color:red">&#x5EFA;&#x8BAE;&#x7528;nth-of-type</span></p>
+<p>E:not(exception)&#xFF1A;&#x8BE5;&#x9009;&#x62E9;&#x5668;&#x5C06;&#x9009;&#x62E9;&#x4E0E;&#x62EC;&#x53F7;&#x5185;&#x7684;&#x9009;&#x62E9;&#x5668;&#x4E0D;&#x5339;&#x914D;&#x7684;&#x5143;&#x7D20;&#xFF1A;</p>
 <pre><code>p:not(.info) {font-size:12px;} 
-//匹配所有class值不为info的p元素
-</code></pre><h3 id="5-_u4F2A_u5143_u7D20"><a href="#5-_u4F2A_u5143_u7D20" class="headerlink" title="5.伪元素"></a>5.伪元素</h3><p>伪元素可用于定位文档中包含的文本，为与伪类进行区分，伪元素使用双冒号 :: 定义，但单冒号 : 也能被识别。</p>
-<p>::first-line：匹配文本首行；</p>
-<p>::first-letter：匹配文本首字母；</p>
-<p>::before 与 ::after ：使用 contnet 属性生成额外的内容并插入在标记中：</p>
+//&#x5339;&#x914D;&#x6240;&#x6709;class&#x503C;&#x4E0D;&#x4E3A;info&#x7684;p&#x5143;&#x7D20;
+</code></pre><h3 id="5-_u4F2A_u5143_u7D20"><a href="#5-_u4F2A_u5143_u7D20" class="headerlink" title="5.&#x4F2A;&#x5143;&#x7D20;"></a>5.&#x4F2A;&#x5143;&#x7D20;</h3><p>&#x4F2A;&#x5143;&#x7D20;&#x53EF;&#x7528;&#x4E8E;&#x5B9A;&#x4F4D;&#x6587;&#x6863;&#x4E2D;&#x5305;&#x542B;&#x7684;&#x6587;&#x672C;&#xFF0C;&#x4E3A;&#x4E0E;&#x4F2A;&#x7C7B;&#x8FDB;&#x884C;&#x533A;&#x5206;&#xFF0C;&#x4F2A;&#x5143;&#x7D20;&#x4F7F;&#x7528;&#x53CC;&#x5192;&#x53F7; :: &#x5B9A;&#x4E49;&#xFF0C;&#x4F46;&#x5355;&#x5192;&#x53F7; : &#x4E5F;&#x80FD;&#x88AB;&#x8BC6;&#x522B;&#x3002;</p>
+<p>::first-line&#xFF1A;&#x5339;&#x914D;&#x6587;&#x672C;&#x9996;&#x884C;&#xFF1B;</p>
+<p>::first-letter&#xFF1A;&#x5339;&#x914D;&#x6587;&#x672C;&#x9996;&#x5B57;&#x6BCD;&#xFF1B;</p>
+<p>::before &#x4E0E; ::after &#xFF1A;&#x4F7F;&#x7528; contnet &#x5C5E;&#x6027;&#x751F;&#x6210;&#x989D;&#x5916;&#x7684;&#x5185;&#x5BB9;&#x5E76;&#x63D2;&#x5165;&#x5728;&#x6807;&#x8BB0;&#x4E2D;&#xFF1A;</p>
 <pre><code>a[href^=http]::after {content:&quot;link&quot;} 
-//在页面的a链接的后面插入文字link
-</code></pre><p>::selection：匹配突出显示的文本：</p>
+//&#x5728;&#x9875;&#x9762;&#x7684;a&#x94FE;&#x63A5;&#x7684;&#x540E;&#x9762;&#x63D2;&#x5165;&#x6587;&#x5B57;link
+</code></pre><p>::selection&#xFF1A;&#x5339;&#x914D;&#x7A81;&#x51FA;&#x663E;&#x793A;&#x7684;&#x6587;&#x672C;&#xFF1A;</p>
 <pre><code>::selection {background:#444; color:#fff;} 
-//定义选中的文本颜色与背景色
+//&#x5B9A;&#x4E49;&#x9009;&#x4E2D;&#x7684;&#x6587;&#x672C;&#x989C;&#x8272;&#x4E0E;&#x80CC;&#x666F;&#x8272;
 </code></pre>
           
         
@@ -977,11 +977,11 @@ console.log(tidy.price) // 2000
       
         
           
-            <h3 id="u540C_u6E90_u7B56_u7565"><a href="#u540C_u6E90_u7B56_u7565" class="headerlink" title="同源策略"></a>同源策略</h3><p><img src="/images/同源策略.png" alt=""></p>
-<h5 id="u7279_u522B_u6CE8_u610F_u4E24_u70B9_3A"><a href="#u7279_u522B_u6CE8_u610F_u4E24_u70B9_3A" class="headerlink" title="特别注意两点:"></a>特别注意两点:</h5><p>第一，如果是协议和端口造成的跨域问题“前台”是无能为力的</p>
-<p>第二：在跨域问题上，域仅仅是通过“URL的首部”来识别而不会去尝试判断相同的ip地址对应着两个域或两个域是否在同一个ip上。</p>
-<p>“URL的首部”指window.location.protocol +window.location.host，也可以理解为“Domains, protocols and ports must match”。</p>
-<h4 id="CROS_u8DE8_u57DF"><a href="#CROS_u8DE8_u57DF" class="headerlink" title="CROS跨域"></a>CROS跨域</h4><pre><code>function CreateCROSRequest (method,url) {
+            <h3 id="u540C_u6E90_u7B56_u7565"><a href="#u540C_u6E90_u7B56_u7565" class="headerlink" title="&#x540C;&#x6E90;&#x7B56;&#x7565;"></a>&#x540C;&#x6E90;&#x7B56;&#x7565;</h3><p><img src="/2016/08/27/&#x8DE8;&#x57DF;/images/&#x540C;&#x6E90;&#x7B56;&#x7565;.png" alt=""></p>
+<h5 id="u7279_u522B_u6CE8_u610F_u4E24_u70B9_3A"><a href="#u7279_u522B_u6CE8_u610F_u4E24_u70B9_3A" class="headerlink" title="&#x7279;&#x522B;&#x6CE8;&#x610F;&#x4E24;&#x70B9;:"></a>&#x7279;&#x522B;&#x6CE8;&#x610F;&#x4E24;&#x70B9;:</h5><p>&#x7B2C;&#x4E00;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x534F;&#x8BAE;&#x548C;&#x7AEF;&#x53E3;&#x9020;&#x6210;&#x7684;&#x8DE8;&#x57DF;&#x95EE;&#x9898;&#x201C;&#x524D;&#x53F0;&#x201D;&#x662F;&#x65E0;&#x80FD;&#x4E3A;&#x529B;&#x7684;</p>
+<p>&#x7B2C;&#x4E8C;&#xFF1A;&#x5728;&#x8DE8;&#x57DF;&#x95EE;&#x9898;&#x4E0A;&#xFF0C;&#x57DF;&#x4EC5;&#x4EC5;&#x662F;&#x901A;&#x8FC7;&#x201C;URL&#x7684;&#x9996;&#x90E8;&#x201D;&#x6765;&#x8BC6;&#x522B;&#x800C;&#x4E0D;&#x4F1A;&#x53BB;&#x5C1D;&#x8BD5;&#x5224;&#x65AD;&#x76F8;&#x540C;&#x7684;ip&#x5730;&#x5740;&#x5BF9;&#x5E94;&#x7740;&#x4E24;&#x4E2A;&#x57DF;&#x6216;&#x4E24;&#x4E2A;&#x57DF;&#x662F;&#x5426;&#x5728;&#x540C;&#x4E00;&#x4E2A;ip&#x4E0A;&#x3002;</p>
+<p>&#x201C;URL&#x7684;&#x9996;&#x90E8;&#x201D;&#x6307;window.location.protocol +window.location.host&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;&#x201C;Domains, protocols and ports must match&#x201D;&#x3002;</p>
+<h4 id="CROS_u8DE8_u57DF"><a href="#CROS_u8DE8_u57DF" class="headerlink" title="CROS&#x8DE8;&#x57DF;"></a>CROS&#x8DE8;&#x57DF;</h4><pre><code>function CreateCROSRequest (method,url) {
     var xhr = new XMLHttpRequest();
     if (&apos;withCredentials&apos; in xhr) {
         xhr.open(method,url,true);
@@ -1002,7 +1002,7 @@ if (request) {
     }
     request.send();
 }
-</code></pre><h4 id="JSONP_u8DE8_u57DF"><a href="#JSONP_u8DE8_u57DF" class="headerlink" title="JSONP跨域"></a>JSONP跨域</h4><pre><code>&lt;!DOCTYPE html&gt;
+</code></pre><h4 id="JSONP_u8DE8_u57DF"><a href="#JSONP_u8DE8_u57DF" class="headerlink" title="JSONP&#x8DE8;&#x57DF;"></a>JSONP&#x8DE8;&#x57DF;</h4><pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
     &lt;meta charset=&quot;UTF-8&quot;&gt;
@@ -1014,7 +1014,7 @@ if (request) {
     &lt;/div&gt;
 &lt;/body&gt;
 &lt;script&gt;
-//回调函数
+//&#x56DE;&#x8C03;&#x51FD;&#x6570;
 function handleResponse(response){
     document.getElementById(&quot;container&quot;).innerHTML=response;
 }
@@ -1023,7 +1023,7 @@ script.src = &apos;http://www.baidu.com/json/?callback=handleResponse&apos;;
 document.body.insertBefore(script, document.body.firstChild);
 &lt;/script&gt;
 &lt;/html&gt;
-</code></pre><h4 id="HTML5_window-postMessage"><a href="#HTML5_window-postMessage" class="headerlink" title="HTML5 window.postMessage"></a>HTML5 window.postMessage</h4><pre><code>// 主页面  blog.qiutc.com
+</code></pre><h4 id="HTML5_window-postMessage"><a href="#HTML5_window-postMessage" class="headerlink" title="HTML5 window.postMessage"></a>HTML5 window.postMessage</h4><pre><code>// &#x4E3B;&#x9875;&#x9762;  blog.qiutc.com
 &lt;script&gt;
 function onLoad() {
   var iframe =document.getElementById(&apos;iframe&apos;);
@@ -1032,8 +1032,8 @@ function onLoad() {
 }
 &lt;/script&gt;
 &lt;iframe src=&quot;http://www.qiutc.me/b.html&quot; onload=&quot;onLoad()&quot;&lt;/iframe&gt;    
-</code></pre><p>–</p>
-<pre><code>// b 页面
+</code></pre><p>&#x2013;</p>
+<pre><code>// b &#x9875;&#x9762;
 &lt;script&gt;
 window.onmessage = function(e) {
   e = e || event;

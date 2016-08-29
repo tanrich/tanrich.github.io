@@ -284,13 +284,13 @@
       
         
           
-            <h3 id="pageX/pageY_3A"><a href="#pageX/pageY_3A" class="headerlink" title="pageX/pageY:"></a>pageX/pageY:</h3><p>鼠标相对于整个页面的X/Y坐标。<br>注意，整个页面的意思就是你整个网页的全部，比如说网页很宽很长，宽2000px，高3000px，那pageX,pageY的最大值就是它们了。</p>
-<p>特别说明：IE不支持！</p>
-<h3 id="clientX/clientY_uFF1A"><a href="#clientX/clientY_uFF1A" class="headerlink" title="clientX/clientY："></a>clientX/clientY：</h3><p>事件发生时鼠标在浏览器内容区域的X/Y坐标（不包含滚动条）。<br>浏览器内容区域即浏览器窗口中用来显示网页的可视区域，注意这个可视，也就是说需要拖动滚动条才能看到的区域不算。<br>当你将浏览器窗口缩小时，clientX/clientY的最大值也会缩小，但始终，它们的最大值不会超过你浏览器可视区域。</p>
-<p>特别说明：IE下此属性不规范，它们的最小值不是0而是2，也就是说IE下的clientX/clientY比火狐下始终大2px。</p>
-<h3 id="screenX/screenY"><a href="#screenX/screenY" class="headerlink" title="screenX/screenY"></a>screenX/screenY</h3><p>鼠标在屏幕上的坐标。screenX,screenY的最大值不会超过屏幕分辨率。</p>
-<h3 id="offsetX/offsetY_3A"><a href="#offsetX/offsetY_3A" class="headerlink" title="offsetX/offsetY:"></a>offsetX/offsetY:</h3><p>得出的结果跟pageX/pageY一样，既然如此，它有什么存在价值？因为：</p>
-<p>特别说明：只有IE支持！相当于IE下的pageX,pageY。</p>
+            <h3 id="pageX/pageY_3A"><a href="#pageX/pageY_3A" class="headerlink" title="pageX/pageY:"></a>pageX/pageY:</h3><p>&#x9F20;&#x6807;&#x76F8;&#x5BF9;&#x4E8E;&#x6574;&#x4E2A;&#x9875;&#x9762;&#x7684;X/Y&#x5750;&#x6807;&#x3002;<br>&#x6CE8;&#x610F;&#xFF0C;&#x6574;&#x4E2A;&#x9875;&#x9762;&#x7684;&#x610F;&#x601D;&#x5C31;&#x662F;&#x4F60;&#x6574;&#x4E2A;&#x7F51;&#x9875;&#x7684;&#x5168;&#x90E8;&#xFF0C;&#x6BD4;&#x5982;&#x8BF4;&#x7F51;&#x9875;&#x5F88;&#x5BBD;&#x5F88;&#x957F;&#xFF0C;&#x5BBD;2000px&#xFF0C;&#x9AD8;3000px&#xFF0C;&#x90A3;pageX,pageY&#x7684;&#x6700;&#x5927;&#x503C;&#x5C31;&#x662F;&#x5B83;&#x4EEC;&#x4E86;&#x3002;</p>
+<p>&#x7279;&#x522B;&#x8BF4;&#x660E;&#xFF1A;IE&#x4E0D;&#x652F;&#x6301;&#xFF01;</p>
+<h3 id="clientX/clientY_uFF1A"><a href="#clientX/clientY_uFF1A" class="headerlink" title="clientX/clientY&#xFF1A;"></a>clientX/clientY&#xFF1A;</h3><p>&#x4E8B;&#x4EF6;&#x53D1;&#x751F;&#x65F6;&#x9F20;&#x6807;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x5185;&#x5BB9;&#x533A;&#x57DF;&#x7684;X/Y&#x5750;&#x6807;&#xFF08;&#x4E0D;&#x5305;&#x542B;&#x6EDA;&#x52A8;&#x6761;&#xFF09;&#x3002;<br>&#x6D4F;&#x89C8;&#x5668;&#x5185;&#x5BB9;&#x533A;&#x57DF;&#x5373;&#x6D4F;&#x89C8;&#x5668;&#x7A97;&#x53E3;&#x4E2D;&#x7528;&#x6765;&#x663E;&#x793A;&#x7F51;&#x9875;&#x7684;&#x53EF;&#x89C6;&#x533A;&#x57DF;&#xFF0C;&#x6CE8;&#x610F;&#x8FD9;&#x4E2A;&#x53EF;&#x89C6;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x9700;&#x8981;&#x62D6;&#x52A8;&#x6EDA;&#x52A8;&#x6761;&#x624D;&#x80FD;&#x770B;&#x5230;&#x7684;&#x533A;&#x57DF;&#x4E0D;&#x7B97;&#x3002;<br>&#x5F53;&#x4F60;&#x5C06;&#x6D4F;&#x89C8;&#x5668;&#x7A97;&#x53E3;&#x7F29;&#x5C0F;&#x65F6;&#xFF0C;clientX/clientY&#x7684;&#x6700;&#x5927;&#x503C;&#x4E5F;&#x4F1A;&#x7F29;&#x5C0F;&#xFF0C;&#x4F46;&#x59CB;&#x7EC8;&#xFF0C;&#x5B83;&#x4EEC;&#x7684;&#x6700;&#x5927;&#x503C;&#x4E0D;&#x4F1A;&#x8D85;&#x8FC7;&#x4F60;&#x6D4F;&#x89C8;&#x5668;&#x53EF;&#x89C6;&#x533A;&#x57DF;&#x3002;</p>
+<p>&#x7279;&#x522B;&#x8BF4;&#x660E;&#xFF1A;IE&#x4E0B;&#x6B64;&#x5C5E;&#x6027;&#x4E0D;&#x89C4;&#x8303;&#xFF0C;&#x5B83;&#x4EEC;&#x7684;&#x6700;&#x5C0F;&#x503C;&#x4E0D;&#x662F;0&#x800C;&#x662F;2&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;IE&#x4E0B;&#x7684;clientX/clientY&#x6BD4;&#x706B;&#x72D0;&#x4E0B;&#x59CB;&#x7EC8;&#x5927;2px&#x3002;</p>
+<h3 id="screenX/screenY"><a href="#screenX/screenY" class="headerlink" title="screenX/screenY"></a>screenX/screenY</h3><p>&#x9F20;&#x6807;&#x5728;&#x5C4F;&#x5E55;&#x4E0A;&#x7684;&#x5750;&#x6807;&#x3002;screenX,screenY&#x7684;&#x6700;&#x5927;&#x503C;&#x4E0D;&#x4F1A;&#x8D85;&#x8FC7;&#x5C4F;&#x5E55;&#x5206;&#x8FA8;&#x7387;&#x3002;</p>
+<h3 id="offsetX/offsetY_3A"><a href="#offsetX/offsetY_3A" class="headerlink" title="offsetX/offsetY:"></a>offsetX/offsetY:</h3><p>&#x5F97;&#x51FA;&#x7684;&#x7ED3;&#x679C;&#x8DDF;pageX/pageY&#x4E00;&#x6837;&#xFF0C;&#x65E2;&#x7136;&#x5982;&#x6B64;&#xFF0C;&#x5B83;&#x6709;&#x4EC0;&#x4E48;&#x5B58;&#x5728;&#x4EF7;&#x503C;&#xFF1F;&#x56E0;&#x4E3A;&#xFF1A;</p>
+<p>&#x7279;&#x522B;&#x8BF4;&#x660E;&#xFF1A;&#x53EA;&#x6709;IE&#x652F;&#x6301;&#xFF01;&#x76F8;&#x5F53;&#x4E8E;IE&#x4E0B;&#x7684;pageX,pageY&#x3002;</p>
 <p>e.clientX + document.documentElement.scrollLeft -document.documentElement.clientLeft = e.pageX<br>e.clientY + document.documentElement.scrollTop  - document.documentElement.clientTop = e.pageY</p>
 
           
@@ -465,7 +465,7 @@
     }
 &lt;/script&gt;
 &lt;/html&gt;
-</code></pre><p><a href="/../pages/小球弹跳之原生js.html">点击查看详情</a></p>
+</code></pre><p><a href="/../pages/&#x5C0F;&#x7403;&#x5F39;&#x8DF3;&#x4E4B;&#x539F;&#x751F;js.html">&#x70B9;&#x51FB;&#x67E5;&#x770B;&#x8BE6;&#x60C5;</a></p>
 
           
         
@@ -566,16 +566,16 @@
       
         
           
-            <p>offset:获取元素相对于文档（document）的当前坐标  </p>
-<h4 id="u6CE8_u610F_3A"><a href="#u6CE8_u610F_3A" class="headerlink" title="注意:"></a><font color="red">注意:</font></h4><p>使用offset()方法不管该元素如何定位，也不管其父元素如何定位，都是获取的该元素相对于当前视口的偏移。  </p>
-<p> position : 获取元素相对父元素的偏移</p>
-<h4 id="u6CE8_u610F_3A-1"><a href="#u6CE8_u610F_3A-1" class="headerlink" title="注意:"></a><font color="red">注意:</font></h4><p>1，使用position()方法时事实上是把该元素当绝对定位来处理，获取的是该元素相当于最近的一个拥有绝对或者相对定位的父元素的偏移位置。<br>2，使用position()方法时如果其所有的父元素都为默认定位（static）方式，则其处理方式和offset()一样，是当前窗口的相对偏移。  </p>
-<h4 id="u7528_u6CD5_3A"><a href="#u7528_u6CD5_3A" class="headerlink" title="用法:"></a><font color="red">用法:</font></h4><p>如  </p>
-<pre><code>var position=$(this).position()//定义当前元素,而且当前元素
+            <p>offset:&#x83B7;&#x53D6;&#x5143;&#x7D20;&#x76F8;&#x5BF9;&#x4E8E;&#x6587;&#x6863;&#xFF08;document&#xFF09;&#x7684;&#x5F53;&#x524D;&#x5750;&#x6807;  </p>
+<h4 id="u6CE8_u610F_3A"><a href="#u6CE8_u610F_3A" class="headerlink" title="&#x6CE8;&#x610F;:"></a><font color="red">&#x6CE8;&#x610F;:</font></h4><p>&#x4F7F;&#x7528;offset()&#x65B9;&#x6CD5;&#x4E0D;&#x7BA1;&#x8BE5;&#x5143;&#x7D20;&#x5982;&#x4F55;&#x5B9A;&#x4F4D;&#xFF0C;&#x4E5F;&#x4E0D;&#x7BA1;&#x5176;&#x7236;&#x5143;&#x7D20;&#x5982;&#x4F55;&#x5B9A;&#x4F4D;&#xFF0C;&#x90FD;&#x662F;&#x83B7;&#x53D6;&#x7684;&#x8BE5;&#x5143;&#x7D20;&#x76F8;&#x5BF9;&#x4E8E;&#x5F53;&#x524D;&#x89C6;&#x53E3;&#x7684;&#x504F;&#x79FB;&#x3002;  </p>
+<p> position : &#x83B7;&#x53D6;&#x5143;&#x7D20;&#x76F8;&#x5BF9;&#x7236;&#x5143;&#x7D20;&#x7684;&#x504F;&#x79FB;</p>
+<h4 id="u6CE8_u610F_3A-1"><a href="#u6CE8_u610F_3A-1" class="headerlink" title="&#x6CE8;&#x610F;:"></a><font color="red">&#x6CE8;&#x610F;:</font></h4><p>1&#xFF0C;&#x4F7F;&#x7528;position()&#x65B9;&#x6CD5;&#x65F6;&#x4E8B;&#x5B9E;&#x4E0A;&#x662F;&#x628A;&#x8BE5;&#x5143;&#x7D20;&#x5F53;&#x7EDD;&#x5BF9;&#x5B9A;&#x4F4D;&#x6765;&#x5904;&#x7406;&#xFF0C;&#x83B7;&#x53D6;&#x7684;&#x662F;&#x8BE5;&#x5143;&#x7D20;&#x76F8;&#x5F53;&#x4E8E;&#x6700;&#x8FD1;&#x7684;&#x4E00;&#x4E2A;&#x62E5;&#x6709;&#x7EDD;&#x5BF9;&#x6216;&#x8005;&#x76F8;&#x5BF9;&#x5B9A;&#x4F4D;&#x7684;&#x7236;&#x5143;&#x7D20;&#x7684;&#x504F;&#x79FB;&#x4F4D;&#x7F6E;&#x3002;<br>2&#xFF0C;&#x4F7F;&#x7528;position()&#x65B9;&#x6CD5;&#x65F6;&#x5982;&#x679C;&#x5176;&#x6240;&#x6709;&#x7684;&#x7236;&#x5143;&#x7D20;&#x90FD;&#x4E3A;&#x9ED8;&#x8BA4;&#x5B9A;&#x4F4D;&#xFF08;static&#xFF09;&#x65B9;&#x5F0F;&#xFF0C;&#x5219;&#x5176;&#x5904;&#x7406;&#x65B9;&#x5F0F;&#x548C;offset()&#x4E00;&#x6837;&#xFF0C;&#x662F;&#x5F53;&#x524D;&#x7A97;&#x53E3;&#x7684;&#x76F8;&#x5BF9;&#x504F;&#x79FB;&#x3002;  </p>
+<h4 id="u7528_u6CD5_3A"><a href="#u7528_u6CD5_3A" class="headerlink" title="&#x7528;&#x6CD5;:"></a><font color="red">&#x7528;&#x6CD5;:</font></h4><p>&#x5982;  </p>
+<pre><code>var position=$(this).position()//&#x5B9A;&#x4E49;&#x5F53;&#x524D;&#x5143;&#x7D20;,&#x800C;&#x4E14;&#x5F53;&#x524D;&#x5143;&#x7D20;
 position:absolute;
 alert(position.top);
 alert(position.left);
-</code></pre><p>输出当前元素距离最近的父元素的垂直距离值和水平距离值.<br>注意,当前元素的父亲元素的CSS最好为 position:relative  </p>
+</code></pre><p>&#x8F93;&#x51FA;&#x5F53;&#x524D;&#x5143;&#x7D20;&#x8DDD;&#x79BB;&#x6700;&#x8FD1;&#x7684;&#x7236;&#x5143;&#x7D20;&#x7684;&#x5782;&#x76F4;&#x8DDD;&#x79BB;&#x503C;&#x548C;&#x6C34;&#x5E73;&#x8DDD;&#x79BB;&#x503C;.<br>&#x6CE8;&#x610F;,&#x5F53;&#x524D;&#x5143;&#x7D20;&#x7684;&#x7236;&#x4EB2;&#x5143;&#x7D20;&#x7684;CSS&#x6700;&#x597D;&#x4E3A; position:relative  </p>
 
           
         
@@ -680,11 +680,11 @@ alert(position.left);
 &lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
     &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;七巧板&lt;/title&gt;
+    &lt;title&gt;&#x4E03;&#x5DE7;&#x677F;&lt;/title&gt;
 
 &lt;/head&gt;
 &lt;body&gt;
-    &lt;canvas id=&quot;canvas&quot; width=&quot;800&quot; height=&quot;800&quot; style=&quot;border: 1px solid black;display: block;margin: 0 auto;&quot;&gt;不支持canvas&lt;/canvas&gt;
+    &lt;canvas id=&quot;canvas&quot; width=&quot;800&quot; height=&quot;800&quot; style=&quot;border: 1px solid black;display: block;margin: 0 auto;&quot;&gt;&#x4E0D;&#x652F;&#x6301;canvas&lt;/canvas&gt;
 &lt;/body&gt;
 &lt;script&gt;
     var tangram = [
@@ -714,7 +714,7 @@ alert(position.left);
 }
 &lt;/script&gt;
 &lt;/html&gt;    
-</code></pre><p><a href="/../pages/tangram.html">点击查看详情</a></p>
+</code></pre><p><a href="/../pages/tangram.html">&#x70B9;&#x51FB;&#x67E5;&#x770B;&#x8BE6;&#x60C5;</a></p>
 
           
         
@@ -815,7 +815,7 @@ alert(position.left);
       
         
           
-            <p>这是我的第一个个人博客。我也正式跨入了拥有自己个人博客的队伍。fighting！</p>
+            <p>&#x8FD9;&#x662F;&#x6211;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x4E2A;&#x4EBA;&#x535A;&#x5BA2;&#x3002;&#x6211;&#x4E5F;&#x6B63;&#x5F0F;&#x8DE8;&#x5165;&#x4E86;&#x62E5;&#x6709;&#x81EA;&#x5DF1;&#x4E2A;&#x4EBA;&#x535A;&#x5BA2;&#x7684;&#x961F;&#x4F0D;&#x3002;fighting&#xFF01;</p>
 
           
         

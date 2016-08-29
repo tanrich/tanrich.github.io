@@ -84,49 +84,31 @@
 
 
 
-<meta name="description" content="let、constlet不存在变量提升
+<meta name="description" content="let&amp;#x3001;constlet&amp;#x4E0D;&amp;#x5B58;&amp;#x5728;&amp;#x53D8;&amp;#x91CF;&amp;#x63D0;&amp;#x5347;
 console.log(a);//undefined
-console.log(b);//报错，没有声明b
+console.log(b);//&amp;#x62A5;&amp;#x9519;&amp;#xFF0C;&amp;#x6CA1;&amp;#x6709;&amp;#x58F0;&amp;#x660E;b
 {
     var a = 1;
-    let b = 2;//只对代码块内区域有效
-}
-console.log(a);//1
-console.log(b);//报错，没有声明b
-let赋值
-var c = [];
-for (var i = 0; i">
+    l">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ES6">
 <meta property="og:url" content="http://yoursite.com/2016/08/27/ES6/index.html">
 <meta property="og:site_name" content="Ballon'blog">
-<meta property="og:description" content="let、constlet不存在变量提升
+<meta property="og:description" content="let&amp;#x3001;constlet&amp;#x4E0D;&amp;#x5B58;&amp;#x5728;&amp;#x53D8;&amp;#x91CF;&amp;#x63D0;&amp;#x5347;
 console.log(a);//undefined
-console.log(b);//报错，没有声明b
+console.log(b);//&amp;#x62A5;&amp;#x9519;&amp;#xFF0C;&amp;#x6CA1;&amp;#x6709;&amp;#x58F0;&amp;#x660E;b
 {
     var a = 1;
-    let b = 2;//只对代码块内区域有效
-}
-console.log(a);//1
-console.log(b);//报错，没有声明b
-let赋值
-var c = [];
-for (var i = 0; i">
+    l">
 <meta property="og:updated_time" content="2016-08-28T16:38:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES6">
-<meta name="twitter:description" content="let、constlet不存在变量提升
+<meta name="twitter:description" content="let&amp;#x3001;constlet&amp;#x4E0D;&amp;#x5B58;&amp;#x5728;&amp;#x53D8;&amp;#x91CF;&amp;#x63D0;&amp;#x5347;
 console.log(a);//undefined
-console.log(b);//报错，没有声明b
+console.log(b);//&amp;#x62A5;&amp;#x9519;&amp;#xFF0C;&amp;#x6CA1;&amp;#x6709;&amp;#x58F0;&amp;#x660E;b
 {
     var a = 1;
-    let b = 2;//只对代码块内区域有效
-}
-console.log(a);//1
-console.log(b);//报错，没有声明b
-let赋值
-var c = [];
-for (var i = 0; i">
+    l">
 
 
 
@@ -311,16 +293,16 @@ for (var i = 0; i">
       
 
       
-        <h2 id="let_u3001const"><a href="#let_u3001const" class="headerlink" title="let、const"></a>let、const</h2><p>let不存在变量提升</p>
+        <h2 id="let_u3001const"><a href="#let_u3001const" class="headerlink" title="let&#x3001;const"></a>let&#x3001;const</h2><p>let&#x4E0D;&#x5B58;&#x5728;&#x53D8;&#x91CF;&#x63D0;&#x5347;</p>
 <pre><code>console.log(a);//undefined
-console.log(b);//报错，没有声明b
+console.log(b);//&#x62A5;&#x9519;&#xFF0C;&#x6CA1;&#x6709;&#x58F0;&#x660E;b
 {
     var a = 1;
-    let b = 2;//只对代码块内区域有效
+    let b = 2;//&#x53EA;&#x5BF9;&#x4EE3;&#x7801;&#x5757;&#x5185;&#x533A;&#x57DF;&#x6709;&#x6548;
 }
 console.log(a);//1
-console.log(b);//报错，没有声明b
-</code></pre><p>let赋值</p>
+console.log(b);//&#x62A5;&#x9519;&#xFF0C;&#x6CA1;&#x6709;&#x58F0;&#x660E;b
+</code></pre><p>let&#x8D4B;&#x503C;</p>
 <pre><code>var c = [];
 for (var i = 0; i &lt; 10; i++) {
     c[i] = function () {
@@ -336,39 +318,39 @@ for (let j = 0; j &lt; 10; j++) {
     }
 }
 d[5]();//5
-</code></pre><p>let暂时性死区(TDZ)</p>
+</code></pre><p>let&#x6682;&#x65F6;&#x6027;&#x6B7B;&#x533A;(TDZ)</p>
 <pre><code>if (true) {
-  // TDZ开始
+  // TDZ&#x5F00;&#x59CB;
   tmp = &apos;abc&apos;; // ReferenceError
   console.log(tmp); // ReferenceError
 
-  let tmp; // TDZ结束
+  let tmp; // TDZ&#x7ED3;&#x675F;
   console.log(tmp); // undefined
 
   tmp = 123;
   console.log(tmp); // 123
 }
-</code></pre><p>有些“死区”比较隐蔽，不太容易发现。<br>    function bar(x = y, y = 2) {<br>      return [x, y];<br>    }</p>
-<pre><code>bar(); // 报错
-</code></pre><p>上面代码中，调用bar函数之所以报错（某些实现可能不报错），是因为参数x默认值等于另一个参数y，而此时y还没有声明，属于”死区“。如果y的默认值是x，就不会报错，因为此时x已经声明了。</p>
+</code></pre><p>&#x6709;&#x4E9B;&#x201C;&#x6B7B;&#x533A;&#x201D;&#x6BD4;&#x8F83;&#x9690;&#x853D;&#xFF0C;&#x4E0D;&#x592A;&#x5BB9;&#x6613;&#x53D1;&#x73B0;&#x3002;<br>    function bar(x = y, y = 2) {<br>      return [x, y];<br>    }</p>
+<pre><code>bar(); // &#x62A5;&#x9519;
+</code></pre><p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x8C03;&#x7528;bar&#x51FD;&#x6570;&#x4E4B;&#x6240;&#x4EE5;&#x62A5;&#x9519;&#xFF08;&#x67D0;&#x4E9B;&#x5B9E;&#x73B0;&#x53EF;&#x80FD;&#x4E0D;&#x62A5;&#x9519;&#xFF09;&#xFF0C;&#x662F;&#x56E0;&#x4E3A;&#x53C2;&#x6570;x&#x9ED8;&#x8BA4;&#x503C;&#x7B49;&#x4E8E;&#x53E6;&#x4E00;&#x4E2A;&#x53C2;&#x6570;y&#xFF0C;&#x800C;&#x6B64;&#x65F6;y&#x8FD8;&#x6CA1;&#x6709;&#x58F0;&#x660E;&#xFF0C;&#x5C5E;&#x4E8E;&#x201D;&#x6B7B;&#x533A;&#x201C;&#x3002;&#x5982;&#x679C;y&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#x662F;x&#xFF0C;&#x5C31;&#x4E0D;&#x4F1A;&#x62A5;&#x9519;&#xFF0C;&#x56E0;&#x4E3A;&#x6B64;&#x65F6;x&#x5DF2;&#x7ECF;&#x58F0;&#x660E;&#x4E86;&#x3002;</p>
 <pre><code>function bar(x = 2, y = x) {
   return [x, y];
 }
 bar(); // [2, 2]
-</code></pre><p>let不允许在相同作用域内，重复声明同一个变量。</p>
-<pre><code>// 报错
+</code></pre><p>let&#x4E0D;&#x5141;&#x8BB8;&#x5728;&#x76F8;&#x540C;&#x4F5C;&#x7528;&#x57DF;&#x5185;&#xFF0C;&#x91CD;&#x590D;&#x58F0;&#x660E;&#x540C;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x3002;</p>
+<pre><code>// &#x62A5;&#x9519;
 function () {
   let a = 10;
   var a = 1;
 }
 
-// 报错
+// &#x62A5;&#x9519;
 function () {
   let a = 10;
   let a = 1;
 }
-</code></pre><h3 id="ES5_u5757_u7EA7_u4F5C_u7528_u57DF_u7684_u5F0A_u7AEF"><a href="#ES5_u5757_u7EA7_u4F5C_u7528_u57DF_u7684_u5F0A_u7AEF" class="headerlink" title="ES5块级作用域的弊端"></a>ES5块级作用域的弊端</h3><p>ES5只有全局作用域和函数作用域，没有块级作用域，这带来很多不合理的场景。</p>
-<p>第一种场景，内层变量可能会覆盖外层变量。</p>
+</code></pre><h3 id="ES5_u5757_u7EA7_u4F5C_u7528_u57DF_u7684_u5F0A_u7AEF"><a href="#ES5_u5757_u7EA7_u4F5C_u7528_u57DF_u7684_u5F0A_u7AEF" class="headerlink" title="ES5&#x5757;&#x7EA7;&#x4F5C;&#x7528;&#x57DF;&#x7684;&#x5F0A;&#x7AEF;"></a>ES5&#x5757;&#x7EA7;&#x4F5C;&#x7528;&#x57DF;&#x7684;&#x5F0A;&#x7AEF;</h3><p>ES5&#x53EA;&#x6709;&#x5168;&#x5C40;&#x4F5C;&#x7528;&#x57DF;&#x548C;&#x51FD;&#x6570;&#x4F5C;&#x7528;&#x57DF;&#xFF0C;&#x6CA1;&#x6709;&#x5757;&#x7EA7;&#x4F5C;&#x7528;&#x57DF;&#xFF0C;&#x8FD9;&#x5E26;&#x6765;&#x5F88;&#x591A;&#x4E0D;&#x5408;&#x7406;&#x7684;&#x573A;&#x666F;&#x3002;</p>
+<p>&#x7B2C;&#x4E00;&#x79CD;&#x573A;&#x666F;&#xFF0C;&#x5185;&#x5C42;&#x53D8;&#x91CF;&#x53EF;&#x80FD;&#x4F1A;&#x8986;&#x76D6;&#x5916;&#x5C42;&#x53D8;&#x91CF;&#x3002;</p>
 <pre><code>var tmp = new Date();
 
 function f() {
@@ -379,8 +361,8 @@ function f() {
 }
 
 f(); // undefined
-</code></pre><p>上面代码中，函数f执行后，输出结果为undefined，原因在于变量提升，导致内层的tmp变量覆盖了外层的tmp变量。</p>
-<p>第二种场景，用来计数的循环变量泄露为全局变量。</p>
+</code></pre><p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x51FD;&#x6570;f&#x6267;&#x884C;&#x540E;&#xFF0C;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x4E3A;undefined&#xFF0C;&#x539F;&#x56E0;&#x5728;&#x4E8E;&#x53D8;&#x91CF;&#x63D0;&#x5347;&#xFF0C;&#x5BFC;&#x81F4;&#x5185;&#x5C42;&#x7684;tmp&#x53D8;&#x91CF;&#x8986;&#x76D6;&#x4E86;&#x5916;&#x5C42;&#x7684;tmp&#x53D8;&#x91CF;&#x3002;</p>
+<p>&#x7B2C;&#x4E8C;&#x79CD;&#x573A;&#x666F;&#xFF0C;&#x7528;&#x6765;&#x8BA1;&#x6570;&#x7684;&#x5FAA;&#x73AF;&#x53D8;&#x91CF;&#x6CC4;&#x9732;&#x4E3A;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x3002;</p>
 <pre><code>var s = &apos;hello&apos;;
 
 for (var i = 0; i &lt; s.length; i++) {
@@ -388,48 +370,48 @@ for (var i = 0; i &lt; s.length; i++) {
 }
 
 console.log(i); // 5
-</code></pre><p>上面代码中，变量i只用来控制循环，但是循环结束后，它并没有消失，泄露成了全局变量。</p>
-<h3 id="ES6_u5757_u7EA7_u4F5C_u7528_u57DF"><a href="#ES6_u5757_u7EA7_u4F5C_u7528_u57DF" class="headerlink" title="ES6块级作用域"></a>ES6块级作用域</h3><pre><code>function f1() {
+</code></pre><p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x53D8;&#x91CF;i&#x53EA;&#x7528;&#x6765;&#x63A7;&#x5236;&#x5FAA;&#x73AF;&#xFF0C;&#x4F46;&#x662F;&#x5FAA;&#x73AF;&#x7ED3;&#x675F;&#x540E;&#xFF0C;&#x5B83;&#x5E76;&#x6CA1;&#x6709;&#x6D88;&#x5931;&#xFF0C;&#x6CC4;&#x9732;&#x6210;&#x4E86;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x3002;</p>
+<h3 id="ES6_u5757_u7EA7_u4F5C_u7528_u57DF"><a href="#ES6_u5757_u7EA7_u4F5C_u7528_u57DF" class="headerlink" title="ES6&#x5757;&#x7EA7;&#x4F5C;&#x7528;&#x57DF;"></a>ES6&#x5757;&#x7EA7;&#x4F5C;&#x7528;&#x57DF;</h3><pre><code>function f1() {
   let n = 5;
   if (true) {
     let n = 10;
   }
   console.log(n); // 5
 }
-</code></pre><p>上面的函数有两个代码块，都声明了变量n，运行后输出5。这表示外层代码块不受内层代码块的影响。如果使用var定义变量n，最后输出的值就是10。</p>
+</code></pre><p>&#x4E0A;&#x9762;&#x7684;&#x51FD;&#x6570;&#x6709;&#x4E24;&#x4E2A;&#x4EE3;&#x7801;&#x5757;&#xFF0C;&#x90FD;&#x58F0;&#x660E;&#x4E86;&#x53D8;&#x91CF;n&#xFF0C;&#x8FD0;&#x884C;&#x540E;&#x8F93;&#x51FA;5&#x3002;&#x8FD9;&#x8868;&#x793A;&#x5916;&#x5C42;&#x4EE3;&#x7801;&#x5757;&#x4E0D;&#x53D7;&#x5185;&#x5C42;&#x4EE3;&#x7801;&#x5757;&#x7684;&#x5F71;&#x54CD;&#x3002;&#x5982;&#x679C;&#x4F7F;&#x7528;var&#x5B9A;&#x4E49;&#x53D8;&#x91CF;n&#xFF0C;&#x6700;&#x540E;&#x8F93;&#x51FA;&#x7684;&#x503C;&#x5C31;&#x662F;10&#x3002;</p>
 <pre><code>{{{{
-	  {let insane = 'Hello World'}
-	  console.log(insane); // 报错
+	  {let insane = &apos;Hello World&apos;}
+	  console.log(insane); // &#x62A5;&#x9519;
 	}}}};
-</code></pre><p>上面代码使用了一个五层的块级作用域。外层作用域无法读取内层作用域的变量。</p>
+</code></pre><p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x4F7F;&#x7528;&#x4E86;&#x4E00;&#x4E2A;&#x4E94;&#x5C42;&#x7684;&#x5757;&#x7EA7;&#x4F5C;&#x7528;&#x57DF;&#x3002;&#x5916;&#x5C42;&#x4F5C;&#x7528;&#x57DF;&#x65E0;&#x6CD5;&#x8BFB;&#x53D6;&#x5185;&#x5C42;&#x4F5C;&#x7528;&#x57DF;&#x7684;&#x53D8;&#x91CF;&#x3002;</p>
 <pre><code>{{{{
-	  let insane = 'Hello World';
-	  {let insane = 'Hello World'}
+	  let insane = &apos;Hello World&apos;;
+	  {let insane = &apos;Hello World&apos;}
 	}}}};
-</code></pre><p>内层作用域可以定义外层作用域的同名变量。</p>
-<pre><code>// IIFE写法
+</code></pre><p>&#x5185;&#x5C42;&#x4F5C;&#x7528;&#x57DF;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x5916;&#x5C42;&#x4F5C;&#x7528;&#x57DF;&#x7684;&#x540C;&#x540D;&#x53D8;&#x91CF;&#x3002;</p>
+<pre><code>// IIFE&#x5199;&#x6CD5;
 (function () {
   var tmp = ...;
   ...
 }());
 
-// 块级作用域写法
+// &#x5757;&#x7EA7;&#x4F5C;&#x7528;&#x57DF;&#x5199;&#x6CD5;
 {
   let tmp = ...;
   ...
 }
-</code></pre><p>块级作用域的出现，实际上使得获得广泛应用的立即执行匿名函数（IIFE）不再必要了。</p>
-<p>并且ES6规定，块级作用域之中，函数声明语句的行为类似于let，在块级作用域之外不可引用。</p>
+</code></pre><p>&#x5757;&#x7EA7;&#x4F5C;&#x7528;&#x57DF;&#x7684;&#x51FA;&#x73B0;&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#x4F7F;&#x5F97;&#x83B7;&#x5F97;&#x5E7F;&#x6CDB;&#x5E94;&#x7528;&#x7684;&#x7ACB;&#x5373;&#x6267;&#x884C;&#x533F;&#x540D;&#x51FD;&#x6570;&#xFF08;IIFE&#xFF09;&#x4E0D;&#x518D;&#x5FC5;&#x8981;&#x4E86;&#x3002;</p>
+<p>&#x5E76;&#x4E14;ES6&#x89C4;&#x5B9A;&#xFF0C;&#x5757;&#x7EA7;&#x4F5C;&#x7528;&#x57DF;&#x4E4B;&#x4E2D;&#xFF0C;&#x51FD;&#x6570;&#x58F0;&#x660E;&#x8BED;&#x53E5;&#x7684;&#x884C;&#x4E3A;&#x7C7B;&#x4F3C;&#x4E8E;let&#xFF0C;&#x5728;&#x5757;&#x7EA7;&#x4F5C;&#x7528;&#x57DF;&#x4E4B;&#x5916;&#x4E0D;&#x53EF;&#x5F15;&#x7528;&#x3002;</p>
 <pre><code>function f() { console.log(&apos;I am outside!&apos;); }
 (function () {
   if (false) {
-    // 重复声明一次函数f
+    // &#x91CD;&#x590D;&#x58F0;&#x660E;&#x4E00;&#x6B21;&#x51FD;&#x6570;f
     function f() { console.log(&apos;I am inside!&apos;); }
   }
   f();
 }());//i am outside!
-</code></pre><p>考虑到环境导致的行为差异太大，应该避免在块级作用域内声明函数。如果确实需要，也应该写成函数表达式，而不是函数声明语句。</p>
-<pre><code>// 函数声明语句
+</code></pre><p>&#x8003;&#x8651;&#x5230;&#x73AF;&#x5883;&#x5BFC;&#x81F4;&#x7684;&#x884C;&#x4E3A;&#x5DEE;&#x5F02;&#x592A;&#x5927;&#xFF0C;&#x5E94;&#x8BE5;&#x907F;&#x514D;&#x5728;&#x5757;&#x7EA7;&#x4F5C;&#x7528;&#x57DF;&#x5185;&#x58F0;&#x660E;&#x51FD;&#x6570;&#x3002;&#x5982;&#x679C;&#x786E;&#x5B9E;&#x9700;&#x8981;&#xFF0C;&#x4E5F;&#x5E94;&#x8BE5;&#x5199;&#x6210;&#x51FD;&#x6570;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x51FD;&#x6570;&#x58F0;&#x660E;&#x8BED;&#x53E5;&#x3002;</p>
+<pre><code>// &#x51FD;&#x6570;&#x58F0;&#x660E;&#x8BED;&#x53E5;
 {
   let a = &apos;secret&apos;;
   function f() {
@@ -437,20 +419,20 @@ console.log(i); // 5
   }
 }
 
-// 函数表达式
+// &#x51FD;&#x6570;&#x8868;&#x8FBE;&#x5F0F;
 {
   let a = &apos;secret&apos;;
   let f = function () {
     return a;
   };
 }
-</code></pre><h3 id="const"><a href="#const" class="headerlink" title="const"></a>const</h3><p>const声明的变量不得改变值，这意味着，const一旦声明变量，就必须立即初始化，不能留到以后赋值。其他的规则与let相似。</p>
+</code></pre><h3 id="const"><a href="#const" class="headerlink" title="const"></a>const</h3><p>const&#x58F0;&#x660E;&#x7684;&#x53D8;&#x91CF;&#x4E0D;&#x5F97;&#x6539;&#x53D8;&#x503C;&#xFF0C;&#x8FD9;&#x610F;&#x5473;&#x7740;&#xFF0C;const&#x4E00;&#x65E6;&#x58F0;&#x660E;&#x53D8;&#x91CF;&#xFF0C;&#x5C31;&#x5FC5;&#x987B;&#x7ACB;&#x5373;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x4E0D;&#x80FD;&#x7559;&#x5230;&#x4EE5;&#x540E;&#x8D4B;&#x503C;&#x3002;&#x5176;&#x4ED6;&#x7684;&#x89C4;&#x5219;&#x4E0E;let&#x76F8;&#x4F3C;&#x3002;</p>
 <pre><code>const PI = 3.1415;
 PI // 3.1415
 
 PI = 3;
 // TypeError: Assignment to constant variable.
-</code></pre><p>对于复合类型的变量，变量名不指向数据，而是指向数据所在的地址。const命令只是保证变量名指向的地址不变，并不保证该地址的数据不变，所以将一个对象声明为常量必须非常小心。</p>
+</code></pre><p>&#x5BF9;&#x4E8E;&#x590D;&#x5408;&#x7C7B;&#x578B;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x53D8;&#x91CF;&#x540D;&#x4E0D;&#x6307;&#x5411;&#x6570;&#x636E;&#xFF0C;&#x800C;&#x662F;&#x6307;&#x5411;&#x6570;&#x636E;&#x6240;&#x5728;&#x7684;&#x5730;&#x5740;&#x3002;const&#x547D;&#x4EE4;&#x53EA;&#x662F;&#x4FDD;&#x8BC1;&#x53D8;&#x91CF;&#x540D;&#x6307;&#x5411;&#x7684;&#x5730;&#x5740;&#x4E0D;&#x53D8;&#xFF0C;&#x5E76;&#x4E0D;&#x4FDD;&#x8BC1;&#x8BE5;&#x5730;&#x5740;&#x7684;&#x6570;&#x636E;&#x4E0D;&#x53D8;&#xFF0C;&#x6240;&#x4EE5;&#x5C06;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x58F0;&#x660E;&#x4E3A;&#x5E38;&#x91CF;&#x5FC5;&#x987B;&#x975E;&#x5E38;&#x5C0F;&#x5FC3;&#x3002;</p>
 <pre><code>const foo = {};
 foo.prop = 123;
 
@@ -458,15 +440,15 @@ foo.prop
 // 123
 
 foo = {}; // TypeError: &quot;foo&quot; is read-only
-</code></pre><p>上面代码中，常量foo储存的是一个地址，这个地址指向一个对象。不可变的只是这个地址，即不能把foo指向另一个地址，但对象本身是可变的，所以依然可以为其添加新属性。</p>
-<p>如果真的想将对象冻结，应该使用Object.freeze方法。</p>
+</code></pre><p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x5E38;&#x91CF;foo&#x50A8;&#x5B58;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x5730;&#x5740;&#xFF0C;&#x8FD9;&#x4E2A;&#x5730;&#x5740;&#x6307;&#x5411;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x3002;&#x4E0D;&#x53EF;&#x53D8;&#x7684;&#x53EA;&#x662F;&#x8FD9;&#x4E2A;&#x5730;&#x5740;&#xFF0C;&#x5373;&#x4E0D;&#x80FD;&#x628A;foo&#x6307;&#x5411;&#x53E6;&#x4E00;&#x4E2A;&#x5730;&#x5740;&#xFF0C;&#x4F46;&#x5BF9;&#x8C61;&#x672C;&#x8EAB;&#x662F;&#x53EF;&#x53D8;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x4F9D;&#x7136;&#x53EF;&#x4EE5;&#x4E3A;&#x5176;&#x6DFB;&#x52A0;&#x65B0;&#x5C5E;&#x6027;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x771F;&#x7684;&#x60F3;&#x5C06;&#x5BF9;&#x8C61;&#x51BB;&#x7ED3;&#xFF0C;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;Object.freeze&#x65B9;&#x6CD5;&#x3002;</p>
 <pre><code>const foo = Object.freeze({});
 
-// 常规模式时，下面一行不起作用；
-// 严格模式时，该行会报错
+// &#x5E38;&#x89C4;&#x6A21;&#x5F0F;&#x65F6;&#xFF0C;&#x4E0B;&#x9762;&#x4E00;&#x884C;&#x4E0D;&#x8D77;&#x4F5C;&#x7528;&#xFF1B;
+// &#x4E25;&#x683C;&#x6A21;&#x5F0F;&#x65F6;&#xFF0C;&#x8BE5;&#x884C;&#x4F1A;&#x62A5;&#x9519;
 foo.prop = 123;
-</code></pre><p>上面代码中，常量foo指向一个冻结的对象，所以添加新属性不起作用，严格模式时还会报错。</p>
-<p>除了将对象本身冻结，对象的属性也应该冻结。下面是一个将对象彻底冻结的函数。</p>
+</code></pre><p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x5E38;&#x91CF;foo&#x6307;&#x5411;&#x4E00;&#x4E2A;&#x51BB;&#x7ED3;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x6240;&#x4EE5;&#x6DFB;&#x52A0;&#x65B0;&#x5C5E;&#x6027;&#x4E0D;&#x8D77;&#x4F5C;&#x7528;&#xFF0C;&#x4E25;&#x683C;&#x6A21;&#x5F0F;&#x65F6;&#x8FD8;&#x4F1A;&#x62A5;&#x9519;&#x3002;</p>
+<p>&#x9664;&#x4E86;&#x5C06;&#x5BF9;&#x8C61;&#x672C;&#x8EAB;&#x51BB;&#x7ED3;&#xFF0C;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#x4E5F;&#x5E94;&#x8BE5;&#x51BB;&#x7ED3;&#x3002;&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x5C06;&#x5BF9;&#x8C61;&#x5F7B;&#x5E95;&#x51BB;&#x7ED3;&#x7684;&#x51FD;&#x6570;&#x3002;</p>
 <pre><code>var constantize = (obj) =&gt; {
   Object.freeze(obj);
   Object.keys(obj).forEach( (key, value) =&gt; {
@@ -475,17 +457,17 @@ foo.prop = 123;
     }
   });
 };
-</code></pre><h3 id="u5168_u5C40_u53D8_u91CF_u5C5E_u6027"><a href="#u5168_u5C40_u53D8_u91CF_u5C5E_u6027" class="headerlink" title="全局变量属性"></a>全局变量属性</h3><p>未声明的全局变量，自动成为全局对象window的属性，这被认为是JavaScript语言最大的设计败笔之一。这样的设计带来了两个很大的问题，首先是没法在编译时就报出变量未声明的错误，只有运行时才能知道，其次程序员很容易不知不觉地就创建了全局变量（比如打字出错）。另一方面，从语义上讲，语言的顶层对象是一个有实体含义的对象，也是不合适的。</p>
-<p>ES6为了改变这一点，一方面规定，为了保持兼容性，var命令和function命令声明的全局变量，依旧是全局对象的属性；另一方面规定，let命令、const命令、class命令声明的全局变量，不属于全局对象的属性。也就是说，从ES6开始，全局变量将逐步与全局对象的属性脱钩。</p>
+</code></pre><h3 id="u5168_u5C40_u53D8_u91CF_u5C5E_u6027"><a href="#u5168_u5C40_u53D8_u91CF_u5C5E_u6027" class="headerlink" title="&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x5C5E;&#x6027;"></a>&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x5C5E;&#x6027;</h3><p>&#x672A;&#x58F0;&#x660E;&#x7684;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#xFF0C;&#x81EA;&#x52A8;&#x6210;&#x4E3A;&#x5168;&#x5C40;&#x5BF9;&#x8C61;window&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x8FD9;&#x88AB;&#x8BA4;&#x4E3A;&#x662F;JavaScript&#x8BED;&#x8A00;&#x6700;&#x5927;&#x7684;&#x8BBE;&#x8BA1;&#x8D25;&#x7B14;&#x4E4B;&#x4E00;&#x3002;&#x8FD9;&#x6837;&#x7684;&#x8BBE;&#x8BA1;&#x5E26;&#x6765;&#x4E86;&#x4E24;&#x4E2A;&#x5F88;&#x5927;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x9996;&#x5148;&#x662F;&#x6CA1;&#x6CD5;&#x5728;&#x7F16;&#x8BD1;&#x65F6;&#x5C31;&#x62A5;&#x51FA;&#x53D8;&#x91CF;&#x672A;&#x58F0;&#x660E;&#x7684;&#x9519;&#x8BEF;&#xFF0C;&#x53EA;&#x6709;&#x8FD0;&#x884C;&#x65F6;&#x624D;&#x80FD;&#x77E5;&#x9053;&#xFF0C;&#x5176;&#x6B21;&#x7A0B;&#x5E8F;&#x5458;&#x5F88;&#x5BB9;&#x6613;&#x4E0D;&#x77E5;&#x4E0D;&#x89C9;&#x5730;&#x5C31;&#x521B;&#x5EFA;&#x4E86;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#xFF08;&#x6BD4;&#x5982;&#x6253;&#x5B57;&#x51FA;&#x9519;&#xFF09;&#x3002;&#x53E6;&#x4E00;&#x65B9;&#x9762;&#xFF0C;&#x4ECE;&#x8BED;&#x4E49;&#x4E0A;&#x8BB2;&#xFF0C;&#x8BED;&#x8A00;&#x7684;&#x9876;&#x5C42;&#x5BF9;&#x8C61;&#x662F;&#x4E00;&#x4E2A;&#x6709;&#x5B9E;&#x4F53;&#x542B;&#x4E49;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x4E5F;&#x662F;&#x4E0D;&#x5408;&#x9002;&#x7684;&#x3002;</p>
+<p>ES6&#x4E3A;&#x4E86;&#x6539;&#x53D8;&#x8FD9;&#x4E00;&#x70B9;&#xFF0C;&#x4E00;&#x65B9;&#x9762;&#x89C4;&#x5B9A;&#xFF0C;&#x4E3A;&#x4E86;&#x4FDD;&#x6301;&#x517C;&#x5BB9;&#x6027;&#xFF0C;var&#x547D;&#x4EE4;&#x548C;function&#x547D;&#x4EE4;&#x58F0;&#x660E;&#x7684;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#xFF0C;&#x4F9D;&#x65E7;&#x662F;&#x5168;&#x5C40;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#xFF1B;&#x53E6;&#x4E00;&#x65B9;&#x9762;&#x89C4;&#x5B9A;&#xFF0C;let&#x547D;&#x4EE4;&#x3001;const&#x547D;&#x4EE4;&#x3001;class&#x547D;&#x4EE4;&#x58F0;&#x660E;&#x7684;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#xFF0C;&#x4E0D;&#x5C5E;&#x4E8E;&#x5168;&#x5C40;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x4ECE;ES6&#x5F00;&#x59CB;&#xFF0C;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x5C06;&#x9010;&#x6B65;&#x4E0E;&#x5168;&#x5C40;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#x8131;&#x94A9;&#x3002;</p>
 <pre><code>var a = 1;
-// 如果在Node的REPL环境，可以写成global.a
-// 或者采用通用方法，写成this.a
+// &#x5982;&#x679C;&#x5728;Node&#x7684;REPL&#x73AF;&#x5883;&#xFF0C;&#x53EF;&#x4EE5;&#x5199;&#x6210;global.a
+// &#x6216;&#x8005;&#x91C7;&#x7528;&#x901A;&#x7528;&#x65B9;&#x6CD5;&#xFF0C;&#x5199;&#x6210;this.a
 window.a // 1
 
 let b = 1;
 window.b // undefined
-</code></pre><p>上面代码中，全局变量a由var命令声明，所以它是全局对象的属性；全局变量b由let命令声明，所以它不是全局对象的属性，返回undefined。</p>
-<h2 id="u53D8_u91CF_u7684_u89E3_u6784_u8D4B_u503C"><a href="#u53D8_u91CF_u7684_u89E3_u6784_u8D4B_u503C" class="headerlink" title="变量的解构赋值"></a>变量的解构赋值</h2><h3 id="u6570_u7EC4_u7684_u89E3_u6784_u8D4B_u503C"><a href="#u6570_u7EC4_u7684_u89E3_u6784_u8D4B_u503C" class="headerlink" title="数组的解构赋值"></a>数组的解构赋值</h3><pre><code>let [foo, [[bar], baz]] = [1, [[2], 3]];
+</code></pre><p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x5168;&#x5C40;&#x53D8;&#x91CF;a&#x7531;var&#x547D;&#x4EE4;&#x58F0;&#x660E;&#xFF0C;&#x6240;&#x4EE5;&#x5B83;&#x662F;&#x5168;&#x5C40;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#xFF1B;&#x5168;&#x5C40;&#x53D8;&#x91CF;b&#x7531;let&#x547D;&#x4EE4;&#x58F0;&#x660E;&#xFF0C;&#x6240;&#x4EE5;&#x5B83;&#x4E0D;&#x662F;&#x5168;&#x5C40;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x8FD4;&#x56DE;undefined&#x3002;</p>
+<h2 id="u53D8_u91CF_u7684_u89E3_u6784_u8D4B_u503C"><a href="#u53D8_u91CF_u7684_u89E3_u6784_u8D4B_u503C" class="headerlink" title="&#x53D8;&#x91CF;&#x7684;&#x89E3;&#x6784;&#x8D4B;&#x503C;"></a>&#x53D8;&#x91CF;&#x7684;&#x89E3;&#x6784;&#x8D4B;&#x503C;</h2><h3 id="u6570_u7EC4_u7684_u89E3_u6784_u8D4B_u503C"><a href="#u6570_u7EC4_u7684_u89E3_u6784_u8D4B_u503C" class="headerlink" title="&#x6570;&#x7EC4;&#x7684;&#x89E3;&#x6784;&#x8D4B;&#x503C;"></a>&#x6570;&#x7EC4;&#x7684;&#x89E3;&#x6784;&#x8D4B;&#x503C;</h3><pre><code>let [foo, [[bar], baz]] = [1, [[2], 3]];
 foo // 1
 bar // 2
 baz // 3
@@ -505,12 +487,12 @@ let [x, y, ...z] = [&apos;a&apos;];
 x // &quot;a&quot;
 y // undefined
 z // []
-</code></pre><p>本质上，这种写法属于“模式匹配”，只要等号两边的模式相同，左边的变量就会被赋予对应的值。下面是一些使用嵌套数组进行解构的例子。</p>
-<p>如果解构不成功，变量的值就等于undefined。</p>
+</code></pre><p>&#x672C;&#x8D28;&#x4E0A;&#xFF0C;&#x8FD9;&#x79CD;&#x5199;&#x6CD5;&#x5C5E;&#x4E8E;&#x201C;&#x6A21;&#x5F0F;&#x5339;&#x914D;&#x201D;&#xFF0C;&#x53EA;&#x8981;&#x7B49;&#x53F7;&#x4E24;&#x8FB9;&#x7684;&#x6A21;&#x5F0F;&#x76F8;&#x540C;&#xFF0C;&#x5DE6;&#x8FB9;&#x7684;&#x53D8;&#x91CF;&#x5C31;&#x4F1A;&#x88AB;&#x8D4B;&#x4E88;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x3002;&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E9B;&#x4F7F;&#x7528;&#x5D4C;&#x5957;&#x6570;&#x7EC4;&#x8FDB;&#x884C;&#x89E3;&#x6784;&#x7684;&#x4F8B;&#x5B50;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x89E3;&#x6784;&#x4E0D;&#x6210;&#x529F;&#xFF0C;&#x53D8;&#x91CF;&#x7684;&#x503C;&#x5C31;&#x7B49;&#x4E8E;undefined&#x3002;</p>
 <pre><code>var [foo] = [];
 var [bar, foo] = [1];
 foo //undefined
-</code></pre><p>另一种情况是不完全解构，即等号左边的模式，只匹配一部分的等号右边的数组。这种情况下，解构依然可以成功。</p>
+</code></pre><p>&#x53E6;&#x4E00;&#x79CD;&#x60C5;&#x51B5;&#x662F;&#x4E0D;&#x5B8C;&#x5168;&#x89E3;&#x6784;&#xFF0C;&#x5373;&#x7B49;&#x53F7;&#x5DE6;&#x8FB9;&#x7684;&#x6A21;&#x5F0F;&#xFF0C;&#x53EA;&#x5339;&#x914D;&#x4E00;&#x90E8;&#x5206;&#x7684;&#x7B49;&#x53F7;&#x53F3;&#x8FB9;&#x7684;&#x6570;&#x7EC4;&#x3002;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x89E3;&#x6784;&#x4F9D;&#x7136;&#x53EF;&#x4EE5;&#x6210;&#x529F;&#x3002;</p>
 <pre><code>let [x, y] = [1, 2, 3];
 x // 1
 y // 2
@@ -519,35 +501,35 @@ let [a, [b], d] = [1, [2, 3], 4];
 a // 1
 b // 2
 d // 4
-</code></pre><p>如果等号的右边不是数组（或者严格地说，不是可遍历的结构，参见《Iterator》一章），那么将会报错。</p>
-<pre><code>// 报错
+</code></pre><p>&#x5982;&#x679C;&#x7B49;&#x53F7;&#x7684;&#x53F3;&#x8FB9;&#x4E0D;&#x662F;&#x6570;&#x7EC4;&#xFF08;&#x6216;&#x8005;&#x4E25;&#x683C;&#x5730;&#x8BF4;&#xFF0C;&#x4E0D;&#x662F;&#x53EF;&#x904D;&#x5386;&#x7684;&#x7ED3;&#x6784;&#xFF0C;&#x53C2;&#x89C1;&#x300A;Iterator&#x300B;&#x4E00;&#x7AE0;&#xFF09;&#xFF0C;&#x90A3;&#x4E48;&#x5C06;&#x4F1A;&#x62A5;&#x9519;&#x3002;</p>
+<pre><code>// &#x62A5;&#x9519;
 let [foo] = 1;
 let [foo] = false;
 let [foo] = NaN;
 let [foo] = undefined;
 let [foo] = null;
 let [foo] = {};
-</code></pre><p>解构赋值允许指定默认值</p>
+</code></pre><p>&#x89E3;&#x6784;&#x8D4B;&#x503C;&#x5141;&#x8BB8;&#x6307;&#x5B9A;&#x9ED8;&#x8BA4;&#x503C;</p>
 <pre><code>var [foo = true] = [];
 foo // true
 
 [x, y = &apos;b&apos;] = [&apos;a&apos;]; // x=&apos;a&apos;, y=&apos;b&apos;
 [x, y = &apos;b&apos;] = [&apos;a&apos;, undefined]; // x=&apos;a&apos;, y=&apos;b&apos;
-</code></pre><p>注意，ES6内部使用严格相等运算符（===），判断一个位置是否有值。所以，如果一个数组成员不严格等于undefined，默认值是不会生效的。</p>
+</code></pre><p>&#x6CE8;&#x610F;&#xFF0C;ES6&#x5185;&#x90E8;&#x4F7F;&#x7528;&#x4E25;&#x683C;&#x76F8;&#x7B49;&#x8FD0;&#x7B97;&#x7B26;&#xFF08;===&#xFF09;&#xFF0C;&#x5224;&#x65AD;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;&#x662F;&#x5426;&#x6709;&#x503C;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x6210;&#x5458;&#x4E0D;&#x4E25;&#x683C;&#x7B49;&#x4E8E;undefined&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x662F;&#x4E0D;&#x4F1A;&#x751F;&#x6548;&#x7684;&#x3002;</p>
 <pre><code>var [x = 1] = [undefined];
 x // 1
 
 var [x = 1] = [null];
 x // null
-</code></pre><h3 id="u5BF9_u8C61_u7684_u89E3_u6784_u8D4B_u503C"><a href="#u5BF9_u8C61_u7684_u89E3_u6784_u8D4B_u503C" class="headerlink" title="对象的解构赋值"></a>对象的解构赋值</h3><p>对象的解构与数组有一个重要的不同。数组的元素是按次序排列的，变量的取值由它的位置决定；而对象的属性没有次序，变量必须与属性同名，才能取到正确的值。</p>
+</code></pre><h3 id="u5BF9_u8C61_u7684_u89E3_u6784_u8D4B_u503C"><a href="#u5BF9_u8C61_u7684_u89E3_u6784_u8D4B_u503C" class="headerlink" title="&#x5BF9;&#x8C61;&#x7684;&#x89E3;&#x6784;&#x8D4B;&#x503C;"></a>&#x5BF9;&#x8C61;&#x7684;&#x89E3;&#x6784;&#x8D4B;&#x503C;</h3><p>&#x5BF9;&#x8C61;&#x7684;&#x89E3;&#x6784;&#x4E0E;&#x6570;&#x7EC4;&#x6709;&#x4E00;&#x4E2A;&#x91CD;&#x8981;&#x7684;&#x4E0D;&#x540C;&#x3002;&#x6570;&#x7EC4;&#x7684;&#x5143;&#x7D20;&#x662F;&#x6309;&#x6B21;&#x5E8F;&#x6392;&#x5217;&#x7684;&#xFF0C;&#x53D8;&#x91CF;&#x7684;&#x53D6;&#x503C;&#x7531;&#x5B83;&#x7684;&#x4F4D;&#x7F6E;&#x51B3;&#x5B9A;&#xFF1B;&#x800C;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#x6CA1;&#x6709;&#x6B21;&#x5E8F;&#xFF0C;&#x53D8;&#x91CF;&#x5FC5;&#x987B;&#x4E0E;&#x5C5E;&#x6027;&#x540C;&#x540D;&#xFF0C;&#x624D;&#x80FD;&#x53D6;&#x5230;&#x6B63;&#x786E;&#x7684;&#x503C;&#x3002;</p>
 <pre><code>var { bar, foo } = { foo: &quot;aaa&quot;, bar: &quot;bbb&quot; };
 foo // &quot;aaa&quot;
 bar // &quot;bbb&quot;
 
 var { baz } = { foo: &quot;aaa&quot;, bar: &quot;bbb&quot; };
 baz // undefined
-</code></pre><p>上面代码的第一个例子，等号左边的两个变量的次序，与等号右边两个同名属性的次序不一致，但是对取值完全没有影响。第二个例子的变量没有对应的同名属性，导致取不到值，最后等于undefined。</p>
-<p>如果变量名与属性名不一致，必须写成下面这样。</p>
+</code></pre><p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;&#x7B49;&#x53F7;&#x5DE6;&#x8FB9;&#x7684;&#x4E24;&#x4E2A;&#x53D8;&#x91CF;&#x7684;&#x6B21;&#x5E8F;&#xFF0C;&#x4E0E;&#x7B49;&#x53F7;&#x53F3;&#x8FB9;&#x4E24;&#x4E2A;&#x540C;&#x540D;&#x5C5E;&#x6027;&#x7684;&#x6B21;&#x5E8F;&#x4E0D;&#x4E00;&#x81F4;&#xFF0C;&#x4F46;&#x662F;&#x5BF9;&#x53D6;&#x503C;&#x5B8C;&#x5168;&#x6CA1;&#x6709;&#x5F71;&#x54CD;&#x3002;&#x7B2C;&#x4E8C;&#x4E2A;&#x4F8B;&#x5B50;&#x7684;&#x53D8;&#x91CF;&#x6CA1;&#x6709;&#x5BF9;&#x5E94;&#x7684;&#x540C;&#x540D;&#x5C5E;&#x6027;&#xFF0C;&#x5BFC;&#x81F4;&#x53D6;&#x4E0D;&#x5230;&#x503C;&#xFF0C;&#x6700;&#x540E;&#x7B49;&#x4E8E;undefined&#x3002;</p>
+<p>&#x5982;&#x679C;&#x53D8;&#x91CF;&#x540D;&#x4E0E;&#x5C5E;&#x6027;&#x540D;&#x4E0D;&#x4E00;&#x81F4;&#xFF0C;&#x5FC5;&#x987B;&#x5199;&#x6210;&#x4E0B;&#x9762;&#x8FD9;&#x6837;&#x3002;</p>
 <pre><code>var { foo: baz } = { foo: &apos;aaa&apos;, bar: &apos;bbb&apos; };
 baz // &quot;aaa&quot;
 
@@ -555,25 +537,25 @@ let obj = { first: &apos;hello&apos;, last: &apos;world&apos; };
 let { first: f, last: l } = obj;
 f // &apos;hello&apos;
 l // &apos;world&apos;
-</code></pre><p>也就是说，对象的解构赋值的内部机制，是先找到同名属性，然后再赋给对应的变量。真正被赋值的是后者，而不是前者。</p>
+</code></pre><p>&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x5BF9;&#x8C61;&#x7684;&#x89E3;&#x6784;&#x8D4B;&#x503C;&#x7684;&#x5185;&#x90E8;&#x673A;&#x5236;&#xFF0C;&#x662F;&#x5148;&#x627E;&#x5230;&#x540C;&#x540D;&#x5C5E;&#x6027;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x8D4B;&#x7ED9;&#x5BF9;&#x5E94;&#x7684;&#x53D8;&#x91CF;&#x3002;&#x771F;&#x6B63;&#x88AB;&#x8D4B;&#x503C;&#x7684;&#x662F;&#x540E;&#x8005;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x524D;&#x8005;&#x3002;</p>
 <pre><code>var { foo: baz } = { foo: &quot;aaa&quot;, bar: &quot;bbb&quot; };
 baz // &quot;aaa&quot;
 foo // error: foo is not defined
-</code></pre><p>上面代码中，真正被赋值的是变量baz，而不是模式foo。</p>
-<p>注意，采用这种写法时，变量的声明和赋值是一体的。对于let和const来说，变量不能重新声明，所以一旦赋值的变量以前声明过，就会报错。</p>
+</code></pre><p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x771F;&#x6B63;&#x88AB;&#x8D4B;&#x503C;&#x7684;&#x662F;&#x53D8;&#x91CF;baz&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x6A21;&#x5F0F;foo&#x3002;</p>
+<p>&#x6CE8;&#x610F;&#xFF0C;&#x91C7;&#x7528;&#x8FD9;&#x79CD;&#x5199;&#x6CD5;&#x65F6;&#xFF0C;&#x53D8;&#x91CF;&#x7684;&#x58F0;&#x660E;&#x548C;&#x8D4B;&#x503C;&#x662F;&#x4E00;&#x4F53;&#x7684;&#x3002;&#x5BF9;&#x4E8E;let&#x548C;const&#x6765;&#x8BF4;&#xFF0C;&#x53D8;&#x91CF;&#x4E0D;&#x80FD;&#x91CD;&#x65B0;&#x58F0;&#x660E;&#xFF0C;&#x6240;&#x4EE5;&#x4E00;&#x65E6;&#x8D4B;&#x503C;&#x7684;&#x53D8;&#x91CF;&#x4EE5;&#x524D;&#x58F0;&#x660E;&#x8FC7;&#xFF0C;&#x5C31;&#x4F1A;&#x62A5;&#x9519;&#x3002;</p>
 <pre><code>let foo;
 let {foo} = {foo: 1}; // SyntaxError: Duplicate declaration &quot;foo&quot;
 
 let baz;
 let {bar: baz} = {bar: 1}; // SyntaxError: Duplicate declaration &quot;baz&quot;
-</code></pre><p>上面代码中，解构赋值的变量都会重新声明，所以报错了。不过，因为var命令允许重新声明，所以这个错误只会在使用let和const命令时出现。如果没有第二个let命令，上面的代码就不会报错。</p>
+</code></pre><p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x89E3;&#x6784;&#x8D4B;&#x503C;&#x7684;&#x53D8;&#x91CF;&#x90FD;&#x4F1A;&#x91CD;&#x65B0;&#x58F0;&#x660E;&#xFF0C;&#x6240;&#x4EE5;&#x62A5;&#x9519;&#x4E86;&#x3002;&#x4E0D;&#x8FC7;&#xFF0C;&#x56E0;&#x4E3A;var&#x547D;&#x4EE4;&#x5141;&#x8BB8;&#x91CD;&#x65B0;&#x58F0;&#x660E;&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x4E2A;&#x9519;&#x8BEF;&#x53EA;&#x4F1A;&#x5728;&#x4F7F;&#x7528;let&#x548C;const&#x547D;&#x4EE4;&#x65F6;&#x51FA;&#x73B0;&#x3002;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x7B2C;&#x4E8C;&#x4E2A;let&#x547D;&#x4EE4;&#xFF0C;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x5C31;&#x4E0D;&#x4F1A;&#x62A5;&#x9519;&#x3002;</p>
 <pre><code>let foo;
-({foo} = {foo: 1}); // 成功
+({foo} = {foo: 1}); // &#x6210;&#x529F;
 
 let baz;
-({bar: baz} = {bar: 1}); // 成功
-</code></pre><p>上面代码中，let命令下面一行的圆括号是必须的，否则会报错。因为解析器会将起首的大括号，理解成一个代码块，而不是赋值语句。</p>
-<p>和数组一样，解构也可以用于嵌套结构的对象。</p>
+({bar: baz} = {bar: 1}); // &#x6210;&#x529F;
+</code></pre><p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;let&#x547D;&#x4EE4;&#x4E0B;&#x9762;&#x4E00;&#x884C;&#x7684;&#x5706;&#x62EC;&#x53F7;&#x662F;&#x5FC5;&#x987B;&#x7684;&#xFF0C;&#x5426;&#x5219;&#x4F1A;&#x62A5;&#x9519;&#x3002;&#x56E0;&#x4E3A;&#x89E3;&#x6790;&#x5668;&#x4F1A;&#x5C06;&#x8D77;&#x9996;&#x7684;&#x5927;&#x62EC;&#x53F7;&#xFF0C;&#x7406;&#x89E3;&#x6210;&#x4E00;&#x4E2A;&#x4EE3;&#x7801;&#x5757;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x8D4B;&#x503C;&#x8BED;&#x53E5;&#x3002;</p>
+<p>&#x548C;&#x6570;&#x7EC4;&#x4E00;&#x6837;&#xFF0C;&#x89E3;&#x6784;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x5D4C;&#x5957;&#x7ED3;&#x6784;&#x7684;&#x5BF9;&#x8C61;&#x3002;</p>
 <pre><code>var obj = {
   p: [
     &apos;Hello&apos;,
@@ -584,7 +566,7 @@ let baz;
 var { p: [x, { y }] } = obj;
 x // &quot;Hello&quot;
 y // &quot;World&quot;
-</code></pre><p>注意，这时p是模式，不是变量，因此不会被赋值。</p>
+</code></pre><p>&#x6CE8;&#x610F;&#xFF0C;&#x8FD9;&#x65F6;p&#x662F;&#x6A21;&#x5F0F;&#xFF0C;&#x4E0D;&#x662F;&#x53D8;&#x91CF;&#xFF0C;&#x56E0;&#x6B64;&#x4E0D;&#x4F1A;&#x88AB;&#x8D4B;&#x503C;&#x3002;</p>
 <pre><code>var node = {
   loc: {
     start: {
@@ -598,8 +580,8 @@ var { loc: { start: { line }} } = node;
 line // 1
 loc  // error: loc is undefined
 start // error: start is undefined
-</code></pre><p>上面代码中，只有line是变量，loc和start都是模式，不会被赋值。</p>
-<p>对象的解构也可以指定默认值。</p>
+</code></pre><p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x53EA;&#x6709;line&#x662F;&#x53D8;&#x91CF;&#xFF0C;loc&#x548C;start&#x90FD;&#x662F;&#x6A21;&#x5F0F;&#xFF0C;&#x4E0D;&#x4F1A;&#x88AB;&#x8D4B;&#x503C;&#x3002;</p>
+<p>&#x5BF9;&#x8C61;&#x7684;&#x89E3;&#x6784;&#x4E5F;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x9ED8;&#x8BA4;&#x503C;&#x3002;</p>
 <pre><code>var {x = 3} = {};
 x // 3
 
@@ -615,20 +597,20 @@ y // 5
 
 var { message: msg = &apos;Something went wrong&apos; } = {};
 msg // &quot;Something went wrong&quot;
-</code></pre><p>由于数组本质是特殊的对象，因此可以对数组进行对象属性的解构。</p>
+</code></pre><p>&#x7531;&#x4E8E;&#x6570;&#x7EC4;&#x672C;&#x8D28;&#x662F;&#x7279;&#x6B8A;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x56E0;&#x6B64;&#x53EF;&#x4EE5;&#x5BF9;&#x6570;&#x7EC4;&#x8FDB;&#x884C;&#x5BF9;&#x8C61;&#x5C5E;&#x6027;&#x7684;&#x89E3;&#x6784;&#x3002;</p>
 <pre><code>var arr = [1, 2, 3];
 var {0 : first, [arr.length - 1] : last} = arr;
 first // 1
 last // 3
-</code></pre><p>上面代码对数组进行对象结构。数组arr的0键对应的值是1，[arr.length - 1]就是2键，对应的值是3。方括号这种写法，属于“属性名表达式”，参见《对象的扩展》一章。</p>
-<h3 id="u5B57_u7B26_u4E32_u7684_u89E3_u6784_u8D4B_u503C"><a href="#u5B57_u7B26_u4E32_u7684_u89E3_u6784_u8D4B_u503C" class="headerlink" title="字符串的解构赋值"></a>字符串的解构赋值</h3><p>字符串也可以解构赋值。这是因为此时，字符串被转换成了一个类似数组的对象。</p>
+</code></pre><p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x5BF9;&#x6570;&#x7EC4;&#x8FDB;&#x884C;&#x5BF9;&#x8C61;&#x7ED3;&#x6784;&#x3002;&#x6570;&#x7EC4;arr&#x7684;0&#x952E;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x662F;1&#xFF0C;[arr.length - 1]&#x5C31;&#x662F;2&#x952E;&#xFF0C;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x662F;3&#x3002;&#x65B9;&#x62EC;&#x53F7;&#x8FD9;&#x79CD;&#x5199;&#x6CD5;&#xFF0C;&#x5C5E;&#x4E8E;&#x201C;&#x5C5E;&#x6027;&#x540D;&#x8868;&#x8FBE;&#x5F0F;&#x201D;&#xFF0C;&#x53C2;&#x89C1;&#x300A;&#x5BF9;&#x8C61;&#x7684;&#x6269;&#x5C55;&#x300B;&#x4E00;&#x7AE0;&#x3002;</p>
+<h3 id="u5B57_u7B26_u4E32_u7684_u89E3_u6784_u8D4B_u503C"><a href="#u5B57_u7B26_u4E32_u7684_u89E3_u6784_u8D4B_u503C" class="headerlink" title="&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x89E3;&#x6784;&#x8D4B;&#x503C;"></a>&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x89E3;&#x6784;&#x8D4B;&#x503C;</h3><p>&#x5B57;&#x7B26;&#x4E32;&#x4E5F;&#x53EF;&#x4EE5;&#x89E3;&#x6784;&#x8D4B;&#x503C;&#x3002;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x6B64;&#x65F6;&#xFF0C;&#x5B57;&#x7B26;&#x4E32;&#x88AB;&#x8F6C;&#x6362;&#x6210;&#x4E86;&#x4E00;&#x4E2A;&#x7C7B;&#x4F3C;&#x6570;&#x7EC4;&#x7684;&#x5BF9;&#x8C61;&#x3002;</p>
 <pre><code>const [a, b, c, d, e] = &apos;hello&apos;;
 a // &quot;h&quot;
 b // &quot;e&quot;
 c // &quot;l&quot;
 d // &quot;l&quot;
 e // &quot;o&quot;
-</code></pre><p>类似数组的对象都有一个length属性，因此还可以对这个属性解构赋值。</p>
+</code></pre><p>&#x7C7B;&#x4F3C;&#x6570;&#x7EC4;&#x7684;&#x5BF9;&#x8C61;&#x90FD;&#x6709;&#x4E00;&#x4E2A;length&#x5C5E;&#x6027;&#xFF0C;&#x56E0;&#x6B64;&#x8FD8;&#x53EF;&#x4EE5;&#x5BF9;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x89E3;&#x6784;&#x8D4B;&#x503C;&#x3002;</p>
 <pre><code>let {length : len} = &apos;hello&apos;;
 len // 5
 </code></pre>
