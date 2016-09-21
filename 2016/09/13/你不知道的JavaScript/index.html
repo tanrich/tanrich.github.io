@@ -1,0 +1,822 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="&amp;#x2013;
+title:&amp;#x4F60;&amp;#x4E0D;&amp;#x77E5;&amp;#x9053;&amp;#x7684;JavaScript&amp;#x4F5C;&amp;#x7528;&amp;#x57DF;&amp;#x548C;&amp;#x95ED;&amp;#x5305;&amp;#x5F02;&amp;#x5E38;ReferenceError &amp;#x540C;&amp;#x4F5C;&amp;#x7528;&amp;#x57DF;&amp;#x5224;&amp;#x522B;&amp;#x5931;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ricky's blog">
+<meta property="og:url" content="http://yoursite.com/2016/09/13/你不知道的JavaScript/index.html">
+<meta property="og:site_name" content="Ricky's blog">
+<meta property="og:description" content="&amp;#x2013;
+title:&amp;#x4F60;&amp;#x4E0D;&amp;#x77E5;&amp;#x9053;&amp;#x7684;JavaScript&amp;#x4F5C;&amp;#x7528;&amp;#x57DF;&amp;#x548C;&amp;#x95ED;&amp;#x5305;&amp;#x5F02;&amp;#x5E38;ReferenceError &amp;#x540C;&amp;#x4F5C;&amp;#x7528;&amp;#x57DF;&amp;#x5224;&amp;#x522B;&amp;#x5931;">
+<meta property="og:updated_time" content="2016-09-21T12:31:20.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ricky's blog">
+<meta name="twitter:description" content="&amp;#x2013;
+title:&amp;#x4F60;&amp;#x4E0D;&amp;#x77E5;&amp;#x9053;&amp;#x7684;JavaScript&amp;#x4F5C;&amp;#x7528;&amp;#x57DF;&amp;#x548C;&amp;#x95ED;&amp;#x5305;&amp;#x5F02;&amp;#x5E38;ReferenceError &amp;#x540C;&amp;#x4F5C;&amp;#x7528;&amp;#x57DF;&amp;#x5224;&amp;#x522B;&amp;#x5931;">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title>  | Ricky's blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Ricky's blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">welcome</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-13T09:52:29+08:00" content="2016-09-13">
+              2016-09-13
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/13/你不知道的JavaScript/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/13/你不知道的JavaScript/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>&#x2013;</p>
+<h2 id="title_3A_u4F60_u4E0D_u77E5_u9053_u7684JavaScript"><a href="#title_3A_u4F60_u4E0D_u77E5_u9053_u7684JavaScript" class="headerlink" title="title:&#x4F60;&#x4E0D;&#x77E5;&#x9053;&#x7684;JavaScript"></a>title:&#x4F60;&#x4E0D;&#x77E5;&#x9053;&#x7684;JavaScript</h2><h1 id="u4F5C_u7528_u57DF_u548C_u95ED_u5305"><a href="#u4F5C_u7528_u57DF_u548C_u95ED_u5305" class="headerlink" title="&#x4F5C;&#x7528;&#x57DF;&#x548C;&#x95ED;&#x5305;"></a>&#x4F5C;&#x7528;&#x57DF;&#x548C;&#x95ED;&#x5305;</h1><h3 id="u5F02_u5E38"><a href="#u5F02_u5E38" class="headerlink" title="&#x5F02;&#x5E38;"></a>&#x5F02;&#x5E38;</h3><p>ReferenceError &#x540C;&#x4F5C;&#x7528;&#x57DF;&#x5224;&#x522B;&#x5931;&#x8D25;&#x76F8;&#x5173;&#xFF0C;&#x800C;TypeError&#x5219;&#x4EE3;&#x8868;&#x4F5C;&#x7528;&#x57DF;&#x5224;&#x522B;&#x6210;&#x529F;&#x4E86;&#xFF0C;&#x4F46;&#x662F;&#x5BF9;&#x7ED3;&#x679C;&#x7684;&#x64CD;&#x4F5C;&#x662F;&#x975E;&#x6CD5;&#x6216;&#x8005;&#x4E0D;&#x5408;&#x7406;&#x7684;&#x3002;</p>
+<h3 id="try/catch"><a href="#try/catch" class="headerlink" title="try/catch"></a>try/catch</h3><pre><code>try{
+    undefined();//&#x5236;&#x9020;&#x4E00;&#x4E2A;&#x975E;&#x6CD5;&#x64CD;&#x4F5C;&#x5F3A;&#x884C;&#x5236;&#x9020;&#x4E00;&#x4E2A;&#x5F02;&#x5E38;
+}
+catch(err){
+    console.log(err);//&#x53EF;&#x4EE5;&#x629B;&#x51FA;&#x9519;&#x8BEF;
+}
+console.log(err);err not found
+</code></pre><p>&#x53EF;&#x89C1;err&#x4EC5;&#x5B58;&#x5728;&#x4E0E;catch&#x5206;&#x53E5;&#x5185;&#x90E8;&#xFF0C;&#x522B;&#x5904;&#x5F15;&#x7528;&#x4F1A;&#x629B;&#x51FA;&#x9519;&#x8BEF;&#x3002;</p>
+<h3 id="u533F_u540D"><a href="#u533F_u540D" class="headerlink" title="&#x533F;&#x540D;"></a>&#x533F;&#x540D;</h3><pre><code>setTimeout(function(){
+    console.log(&quot;1&quot;);
+},1000)
+</code></pre><p>&#x533F;&#x540D;&#x51FD;&#x6570;&#x7684;&#x7F3A;&#x70B9;&#xFF1A;</p>
+<ol>
+<li>&#x533F;&#x540D;&#x51FD;&#x6570;&#x5728;&#x6808;&#x8FFD;&#x8E2A;&#x4E2D;&#x4E0D;&#x4F1A;&#x663E;&#x793A;&#x6709;&#x610F;&#x4E49;&#x7684;&#x51FD;&#x6570;&#x540D;&#xFF0C;&#x4F7F;&#x5F97;&#x8C03;&#x8BD5;&#x5F88;&#x56F0;&#x96BE;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x6CA1;&#x6709;&#x51FD;&#x6570;&#x540D;&#xFF0C;&#x5F53;&#x51FD;&#x6570;&#x9700;&#x8981;&#x5F15;&#x7528;&#x81EA;&#x8EAB;&#x65F6;&#x53EA;&#x80FD;&#x4F7F;&#x7528;&#x5DF2;&#x7ECF;&#x8FC7;&#x671F;&#x7684;&#x3002;argument.callee&#x3002;&#x6BD4;&#x5982;&#x5728;&#x9012;&#x5F52;&#x4E2D;&#x3002;&#x53E6;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x9700;&#x8981;&#x5F15;&#x7528;&#x81EA;&#x8EAB;&#x7684;&#x674E;&#x5B50;&#xFF0C;&#x662F;&#x5728;&#x4E8B;&#x4EF6;&#x89E6;&#x53D1;&#x540E;&#x4E8B;&#x4EF6;&#x76D1;&#x542C;&#x5668;&#x9700;&#x8981;&#x89E3;&#x7ED1;&#x81EA;&#x8EAB;&#x3002;</li>
+<li>&#x533F;&#x540D;&#x51FD;&#x6570;&#x7701;&#x7565;&#x4E86;&#x5BF9;&#x4E8E;&#x51FD;&#x6570;&#x53EF;&#x8BFB;&#x6027;&#x3001;&#x53EF;&#x7406;&#x89E3;&#x6027;&#x5F88;&#x91CD;&#x8981;&#x7684;&#x51FD;&#x6570;&#x540D;&#x3002;&#x4E00;&#x4E2A;&#x63CF;&#x8FF0;&#x6027;&#x7684;&#x540D;&#x79F0;&#x53EF;&#x4EE5;&#x8BA9;&#x4EE3;&#x7801;&#x4E0D;&#x8A00;&#x81EA;&#x660E;&#x3002;</li>
+</ol>
+<h3 id="u51FD_u6570_u4F18_u5148"><a href="#u51FD_u6570_u4F18_u5148" class="headerlink" title="&#x51FD;&#x6570;&#x4F18;&#x5148;"></a>&#x51FD;&#x6570;&#x4F18;&#x5148;</h3><pre><code>foo();//1
+
+var foo;
+
+function foo (){
+    console.log(1);
+}
+
+foo = function(){
+    console.log(2);
+}
+</code></pre><p>var foo &#x5C3D;&#x7BA1;&#x51FA;&#x73B0;&#x5728;function foo()&#x2026;&#x4E4B;&#x524D;&#xFF0C;&#x4F46;&#x4ED6;&#x662F;&#x91CD;&#x590D;&#x58F0;&#x660E;&#xFF0C;&#x56E0;&#x4E3A;&#x51FD;&#x6570;&#x58F0;&#x660E;&#x4F1A;&#x88AB;&#x63D0;&#x5347;&#x5230;&#x666E;&#x901A;&#x53D8;&#x91CF;&#x4E4B;&#x524D;&#x3002;</p>
+<pre><code>foo();//b
+
+var a = true;
+if(a){
+    function foo(){console.log(&quot;a&quot;)};
+}
+else{
+    function foo(){console.log(&quot;b&quot;)};
+}
+</code></pre><p>&#x8FD9;&#x79CD;&#x884C;&#x4E3A;&#x5E76;&#x4E0D;&#x53EF;&#x9760;&#xFF0C;&#x5E94;&#x8BE5;&#x5C3D;&#x91CF;&#x907F;&#x514D;&#x5728;&#x5757;&#x5185;&#x90E8;&#x58F0;&#x660E;&#x51FD;&#x6570;&#x3002;</p>
+<h3 id="u5FAA_u73AF_u95ED_u5305"><a href="#u5FAA_u73AF_u95ED_u5305" class="headerlink" title="&#x5FAA;&#x73AF;&#x95ED;&#x5305;"></a>&#x5FAA;&#x73AF;&#x95ED;&#x5305;</h3><pre><code>for(var i=0;i&lt;5;i++){
+    setTimeout(function(){
+        console.log(i);
+    },1000);
+}
+//5,5,5,5,5
+
+var a = [];
+for(var i=0;i&lt;5;i++){
+    a[i] = function(){
+        console.log(i);
+    }
+}
+a[0];//5
+
+for(var i=0;i&lt;5;i++){
+    console.log(i);
+}
+//0,1,2,3,4
+</code></pre><ul>
+<li><p>setTimeout&#x51FD;&#x6570;&#x662F;&#x5EF6;&#x8FDF;&#x51FD;&#x6570;&#xFF0C;&#x5EF6;&#x8FDF;&#x51FD;&#x6570;&#x7684;&#x56DE;&#x8C03;&#x4F1A;&#x5728;&#x5FAA;&#x73AF;&#x7ED3;&#x675F;&#x65F6;&#x624D;&#x6267;&#x884C;&#x3002;</p>
+</li>
+<li><p>a[0]&#x662F;&#x5728;&#x6700;&#x540E;&#x8C03;&#x7528;&#x6267;&#x884C;&#x7684;&#x3002;</p>
+</li>
+</ul>
+<p>&#x4E3A;&#x4EC0;&#x4E48;&#x6700;&#x540E;&#x8C03;&#x7528;&#x4F1A;&#x5BFC;&#x81F4;&#x8FD9;&#x6837;&#x7684;&#x95EE;&#x9898;&#xFF1F;&#x5BFC;&#x81F4;&#x8FD9;&#x6837;&#x7684;&#x7F3A;&#x9677;&#x662F;&#x6211;&#x4EEC;&#x8BD5;&#x56FE;&#x5047;&#x8BBE;&#x5FAA;&#x73AF;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x8FED;&#x4EE3;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x90FD;&#x4F1A;&#x7ED9;&#x81EA;&#x5DF1;&#x201C;&#x6355;&#x83B7;&#x201D;&#x4E00;&#x4E2A;i&#x7684;&#x526F;&#x672C;&#x3002;&#x4F46;&#x662F;&#x6839;&#x636E;&#x4F5C;&#x7528;&#x57DF;&#x7684;&#x5DE5;&#x4F5C;&#x539F;&#x7406;&#xFF0C;&#x5B9E;&#x9645;&#x60C5;&#x51B5;&#x662F;&#x5C3D;&#x7BA1;&#x5FAA;&#x73AF;&#x4E2D;&#x7684;&#x4E94;&#x4E2A;&#x51FD;&#x6570;&#x662F;&#x5728;&#x5404;&#x4E2A;&#x8FED;&#x4EE3;&#x4E2D;&#x5206;&#x522B;&#x5B9A;&#x4E49;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x4ED6;&#x4EEC;&#x90FD;&#x88AB;&#x5C01;&#x95ED;&#x5728;&#x4E00;&#x4E2A;&#x5171;&#x4EAB;&#x7684;&#x5168;&#x5C40;&#x4F5C;&#x7528;&#x57DF;&#x4E2D;&#xFF0C;&#x56E0;&#x6B64;&#x5B9E;&#x9645;&#x4E0A;&#x53EA;&#x6709;&#x4E00;&#x4E2A;i&#x3002;</p>
+<p><strong>&#x89E3;&#x51B3;&#x529E;&#x6CD5;&#xFF08;&#x6700;&#x7B80;&#x5355;&#x7684;&#x662F;&#x7528;let&#xFF09;</strong></p>
+<pre><code>for (var i=1; i&lt;=5; i++) { (function(j) {
+    setTimeout( function timer() { console.log( j );
+         }, j*1000 );
+     })( i );
+}    
+</code></pre><p>&#x5728;&#x8FED;&#x4EE3;&#x5185;&#x4F7F;&#x7528; IIFE &#x4F1A;&#x4E3A;&#x6BCF;&#x4E2A;&#x8FED;&#x4EE3;&#x90FD;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x4F5C;&#x7528;&#x57DF;,&#x4F7F;&#x5F97;&#x5EF6;&#x8FDF;&#x51FD;&#x6570;&#x7684;&#x56DE;&#x8C03;&#x53EF;&#x4EE5;&#x5C06;&#x65B0;&#x7684;&#x4F5C;&#x7528;&#x57DF;&#x5C01;&#x95ED;&#x5728;&#x6BCF;&#x4E2A;&#x8FED;&#x4EE3;&#x5185;&#x90E8;,&#x6BCF;&#x4E2A;&#x8FED;&#x4EE3;&#x4E2D;&#x90FD;&#x4F1A;&#x542B;&#x6709;&#x4E00;&#x4E2A;&#x5177;&#x6709;&#x6B63;&#x786E;&#x503C;&#x7684;&#x53D8;&#x91CF;&#x4F9B;&#x6211;&#x4EEC;&#x8BBF;&#x95EE;&#x3002;</p>
+<h3 id="u73B0_u4EE3_u6A21_u5757_u673A_u5236"><a href="#u73B0_u4EE3_u6A21_u5757_u673A_u5236" class="headerlink" title="&#x73B0;&#x4EE3;&#x6A21;&#x5757;&#x673A;&#x5236;"></a>&#x73B0;&#x4EE3;&#x6A21;&#x5757;&#x673A;&#x5236;</h3><pre><code>var MyModules = (function Manager() {
+    var modules = {};
+    function define(name, deps, impl) {
+        for (var i=0; i&lt;deps.length; i++) {
+             deps[i] = modules[deps[i]];
+         }
+         modules[name] = impl.apply( impl, deps );
+     }
+    function get(name) { 
+        return modules[name];
+    }
+    return {
+        define: define,
+        get: get 
+    };
+})();
+</code></pre><p>&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x7684;&#x6838;&#x5FC3;&#x662F; modules[name] = impl.apply(impl, deps)&#x3002;&#x4E3A;&#x4E86;&#x6A21;&#x5757;&#x7684;&#x5B9A;&#x4E49;&#x5F15;&#x5165;&#x4E86;&#x5305;&#x88C5; &#x51FD;&#x6570;(&#x53EF;&#x4EE5;&#x4F20;&#x5165;&#x4EFB;&#x4F55;&#x4F9D;&#x8D56;),&#x5E76;&#x4E14;&#x5C06;&#x8FD4;&#x56DE;&#x503C;,&#x4E5F;&#x5C31;&#x662F;&#x6A21;&#x5757;&#x7684; API,&#x50A8;&#x5B58;&#x5728;&#x4E00;&#x4E2A;&#x6839;&#x636E;&#x540D;&#x5B57;&#x6765;&#x7BA1; &#x7406;&#x7684;&#x6A21;&#x5757;&#x5217;&#x8868;&#x4E2D;&#x3002;</p>
+<pre><code>MyModules.define( &quot;bar&quot;, [], function() { function hello(who) {
+    return &quot;Let me introduce: &quot; + who; }
+    return {
+        hello: hello
+    }; 
+});
+MyModules.define( &quot;foo&quot;, [&quot;bar&quot;], function(bar) {
+    var hungry = &quot;hippo&quot;;
+    function awesome() {
+        console.log( bar.hello( hungry ).toUpperCase() );
+    }
+    return {
+        awesome: awesome
+    }; 
+});
+var bar = MyModules.get( &quot;bar&quot; );
+var foo = MyModules.get( &quot;foo&quot; );
+console.log(bar.hello( &quot;hippo&quot;)); // Let me introduce: hippo
+foo.awesome(); // LET ME INTRODUCE: HIPPO
+</code></pre><h3 id="u672A_u6765_u7684_u6A21_u5757_u673A_u5236"><a href="#u672A_u6765_u7684_u6A21_u5757_u673A_u5236" class="headerlink" title="&#x672A;&#x6765;&#x7684;&#x6A21;&#x5757;&#x673A;&#x5236;"></a>&#x672A;&#x6765;&#x7684;&#x6A21;&#x5757;&#x673A;&#x5236;</h3><pre><code>//bar.js
+function hello(who) {
+    return &quot;Let me introduce: &quot; + who;
+}
+export hello; 
+
+//foo.js
+// &#x4EC5;&#x4ECE; &quot;bar&quot; &#x6A21;&#x5757;&#x5BFC;&#x5165; hello() 
+import hello from &quot;bar&quot;;
+var hungry = &quot;hippo&quot;;
+function awesome() { 
+    console.log(
+         hello( hungry ).toUpperCase()
+   );
+}
+export awesome;
+
+//baz.js
+// &#x5BFC;&#x5165;&#x5B8C;&#x6574;&#x7684; &quot;foo&quot; &#x548C; &quot;bar&quot; &#x6A21;&#x5757;
+module foo from &quot;foo&quot;;
+module bar from &quot;bar&quot;;
+console.log(
+     bar.hello( &quot;rhino&quot; )
+ ); // Let me introduce: rhino
+foo.awesome(); // LET ME INTRODUCE: HIPPO
+</code></pre><h1 id="this_u548C_u6E90_u6027_u5BF9_u8C61"><a href="#this_u548C_u6E90_u6027_u5BF9_u8C61" class="headerlink" title="this&#x548C;&#x6E90;&#x6027;&#x5BF9;&#x8C61;"></a>this&#x548C;&#x6E90;&#x6027;&#x5BF9;&#x8C61;</h1><h3 id="u9690_u5F0F_u4F20_u9012"><a href="#u9690_u5F0F_u4F20_u9012" class="headerlink" title="&#x9690;&#x5F0F;&#x4F20;&#x9012;"></a>&#x9690;&#x5F0F;&#x4F20;&#x9012;</h3><pre><code>function speak(){
+    var greeting =  &quot;hello,I am &quot; + this.name;
+    console.log(greeting);
+}
+var person1 = {    
+    name:&quot;ming&quot;
+}
+var person2 = {
+    name:&quot;zhang&quot;
+}
+speak.call(person1);
+</code></pre><p>&#x7136;&#x800C;,this &#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x79CD;&#x66F4;&#x4F18;&#x96C5;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x9690;&#x5F0F;&#x201C;&#x4F20;&#x9012;&#x201D;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x5F15;&#x7528;,&#x56E0;&#x6B64;&#x53EF;&#x4EE5;&#x5C06; API &#x8BBE;&#x8BA1;<br>&#x5F97;&#x66F4;&#x52A0;&#x7B80;&#x6D01;&#x5E76;&#x4E14;&#x6613;&#x4E8E;&#x590D;&#x7528;&#x3002;</p>
+<h3 id="u9690_u5F0F_u7ED1_u5B9A"><a href="#u9690_u5F0F_u7ED1_u5B9A" class="headerlink" title="&#x9690;&#x5F0F;&#x7ED1;&#x5B9A;"></a>&#x9690;&#x5F0F;&#x7ED1;&#x5B9A;</h3><pre><code>function foo(){
+    console.log(this.a);
+}
+var boj = {
+    a:2,
+    foo:foo
+}
+obj.foo();//2
+</code></pre><p>&#x9996;&#x5148;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F; foo() &#x7684;&#x58F0;&#x660E;&#x65B9;&#x5F0F;,&#x53CA;&#x5176;&#x4E4B;&#x540E;&#x662F;&#x5982;&#x4F55;&#x88AB;&#x5F53;&#x4F5C;&#x5F15;&#x7528;&#x5C5E;&#x6027;&#x6DFB;&#x52A0;&#x5230; obj &#x4E2D;&#x7684;&#x3002; &#x4F46;&#x662F;&#x65E0;&#x8BBA;&#x662F;&#x76F4;&#x63A5;&#x5728; obj &#x4E2D;&#x5B9A;&#x4E49;&#x8FD8;&#x662F;&#x5148;&#x5B9A;&#x4E49;&#x518D;&#x6DFB;&#x52A0;&#x4E3A;&#x5F15;&#x7528;&#x5C5E;&#x6027;,&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x4E25;&#x683C;&#x6765;&#x8BF4;&#x90FD;&#x4E0D;&#x5C5E;&#x4E8E; obj &#x5BF9;&#x8C61;&#x3002;</p>
+<p>&#x7136;&#x800C;,&#x8C03;&#x7528;&#x4F4D;&#x7F6E;&#x4F1A;&#x4F7F;&#x7528; obj &#x4E0A;&#x4E0B;&#x6587;&#x6765;&#x5F15;&#x7528;&#x51FD;&#x6570;,&#x56E0;&#x6B64;&#x4F60;&#x53EF;&#x4EE5;&#x8BF4;&#x51FD;&#x6570;&#x88AB;&#x8C03;&#x7528;&#x65F6; obj &#x5BF9;&#x8C61;&#x201C;&#x62E5; &#x6709;&#x201D;&#x6216;&#x8005;&#x201C;&#x5305;&#x542B;&#x201D;&#x5B83;&#x3002;</p>
+<p>&#x65E0;&#x8BBA;&#x4F60;&#x5982;&#x4F55;&#x79F0;&#x547C;&#x8FD9;&#x4E2A;&#x6A21;&#x5F0F;,&#x5F53; foo() &#x88AB;&#x8C03;&#x7528;&#x65F6;,&#x5B83;&#x7684;&#x843D;&#x811A;&#x70B9;&#x786E;&#x5B9E;&#x6307;&#x5411; obj &#x5BF9;&#x8C61;&#x3002;&#x5F53;&#x51FD;&#x6570;&#x5F15; &#x7528;&#x6709;&#x4E0A;&#x4E0B;&#x6587;&#x5BF9;&#x8C61;&#x65F6;,&#x9690;&#x5F0F;&#x7ED1;&#x5B9A;&#x89C4;&#x5219;&#x4F1A;&#x628A;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x4E2D;&#x7684; this &#x7ED1;&#x5B9A;&#x5230;&#x8FD9;&#x4E2A;&#x4E0A;&#x4E0B;&#x6587;&#x5BF9;&#x8C61;&#x3002;<span style="color:red">&#x56E0;&#x4E3A;&#x8C03; &#x7528; foo() &#x65F6; this &#x88AB;&#x7ED1;&#x5B9A;&#x5230; obj,&#x56E0;&#x6B64; this.a &#x548C; obj.a &#x662F;&#x4E00;&#x6837;&#x7684;&#x3002;</span></p>
+<p><strong>&#x5BF9;&#x8C61;&#x5C5E;&#x6027;&#x5F15;&#x7528;&#x94FE;&#x4E2D;&#x53EA;&#x6709;&#x6700;&#x9876;&#x5C42;&#x6216;&#x8005;&#x8BF4;&#x6700;&#x540E;&#x4E00;&#x5C42;&#x4F1A;&#x5F71;&#x54CD;&#x8C03;&#x7528;&#x4F4D;&#x7F6E;&#x3002;</strong>&#x4E3E;&#x4F8B;&#x6765;&#x8BF4;:</p>
+<pre><code>function foo(){
+    console.log(this.a);
+}
+var obj = {
+    a:2,
+    foo:foo
+}
+var obj1 = {
+    a:42,
+    obj:obj
+}
+obj1.obj.foo();//2
+</code></pre><h3 id="u9690_u5F0F_u4E22_u5931"><a href="#u9690_u5F0F_u4E22_u5931" class="headerlink" title="&#x9690;&#x5F0F;&#x4E22;&#x5931;"></a>&#x9690;&#x5F0F;&#x4E22;&#x5931;</h3><p>&#x4E00;&#x4E2A;&#x6700;&#x5E38;&#x89C1;&#x7684; this &#x7ED1;&#x5B9A;&#x95EE;&#x9898;&#x5C31;&#x662F;&#x88AB;&#x9690;&#x5F0F;&#x7ED1;&#x5B9A;&#x7684;&#x51FD;&#x6570;&#x4F1A;&#x4E22;&#x5931;&#x7ED1;&#x5B9A;&#x5BF9;&#x8C61;,&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x5B83;&#x4F1A;&#x5E94;&#x7528;&#x9ED8;&#x8BA4;&#x7ED1;&#x5B9A;,&#x4ECE;&#x800C;&#x628A; this &#x7ED1;&#x5B9A;&#x5230;&#x5168;&#x5C40;&#x5BF9;&#x8C61;&#x6216;&#x8005; undefined &#x4E0A;,&#x53D6;&#x51B3;&#x4E8E;&#x662F;&#x5426;&#x662F;&#x4E25;&#x683C;&#x6A21;&#x5F0F;&#x3002;</p>
+<pre><code>function foo(){
+    console.log(this.a);
+}
+var obj = {
+    a:2,
+    foo:foo
+}
+var bar = obj.foo;
+var a = 42;
+
+bar();//42
+</code></pre><p>&#x867D;&#x7136; bar &#x662F; obj.foo &#x7684;&#x4E00;&#x4E2A;&#x5F15;&#x7528;,&#x4F46;&#x662F;&#x5B9E;&#x9645;&#x4E0A;,&#x5B83;&#x5F15;&#x7528;&#x7684;&#x662F; foo &#x51FD;&#x6570;&#x672C;&#x8EAB;,&#x56E0;&#x6B64;&#x6B64;&#x65F6;&#x7684; bar() &#x5176;&#x5B9E;&#x662F;&#x4E00;&#x4E2A;&#x4E0D;&#x5E26;&#x4EFB;&#x4F55;&#x4FEE;&#x9970;&#x7684;&#x51FD;&#x6570;&#x8C03;&#x7528;,&#x56E0;&#x6B64;&#x5E94;&#x7528;&#x4E86;&#x9ED8;&#x8BA4;&#x7ED1;&#x5B9A;&#x3002;</p>
+<p>&#x82E5;&#x5728;&#x4E0A;&#x9762;&#x8FD9;&#x4E2A;&#x7528;&#x51FD;&#x6570;&#x8C03;&#x7528;&#xFF0C;&#x7ED3;&#x679C;&#x662F;&#x4E00;&#x6837;&#x7684;&#xFF1A;</p>
+<pre><code>function doSomething(fn){
+    fn();
+}
+doSomething(obj.foo);//42
+</code></pre><p><strong>&#x53C2;&#x6570;&#x4F20;&#x9012;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x4E00;&#x79CD;&#x9690;&#x5F0F;&#x8D4B;&#x503C;</strong>,&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x4F20;&#x5165;&#x51FD;&#x6570;&#x65F6;&#x4E5F;&#x4F1A;&#x88AB;&#x9690;&#x5F0F;&#x8D4B;&#x503C;,&#x6240;&#x4EE5;&#x7ED3;&#x679C;&#x548C;&#x4E0A;&#x4E00; &#x4E2A;&#x4F8B;&#x5B50;&#x4E00;&#x6837;&#x3002;</p>
+<h3 id="u786C_u7ED1_u5B9A"><a href="#u786C_u7ED1_u5B9A" class="headerlink" title="&#x786C;&#x7ED1;&#x5B9A;"></a>&#x786C;&#x7ED1;&#x5B9A;</h3><pre><code>function foo(something){
+    console.log(this.a,something);
+    return this.a + something;
+}
+var obj = {
+    a:2
+};
+var bar = foo.bind(obj);
+var b = bar(3);//2,3
+console.log(b);//5
+</code></pre><h3 id="new_u7ED1_u5B9A"><a href="#new_u7ED1_u5B9A" class="headerlink" title="new&#x7ED1;&#x5B9A;"></a>new&#x7ED1;&#x5B9A;</h3><p>&#x4F7F;&#x7528; new &#x6765;&#x8C03;&#x7528;&#x51FD;&#x6570;,&#x6216;&#x8005;&#x8BF4;&#x53D1;&#x751F;&#x6784;&#x9020;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x65F6;,&#x4F1A;&#x81EA;&#x52A8;&#x6267;&#x884C;&#x4E0B;&#x9762;&#x7684;&#x64CD;&#x4F5C;&#x3002;</p>
+<ol>
+<li>&#x521B;&#x5EFA;(&#x6216;&#x8005;&#x8BF4;&#x6784;&#x9020;)&#x4E00;&#x4E2A;&#x5168;&#x65B0;&#x7684;&#x5BF9;&#x8C61;&#x3002;</li>
+<li>&#x8FD9;&#x4E2A;&#x65B0;&#x5BF9;&#x8C61;&#x4F1A;&#x88AB;&#x6267;&#x884C;[[&#x539F;&#x578B;]]&#x8FDE;&#x63A5;&#x3002;</li>
+<li>&#x8FD9;&#x4E2A;&#x65B0;&#x5BF9;&#x8C61;&#x4F1A;&#x7ED1;&#x5B9A;&#x5230;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x7684;this&#x3002;</li>
+<li><p>&#x5982;&#x679C;&#x51FD;&#x6570;&#x6CA1;&#x6709;&#x8FD4;&#x56DE;&#x5176;&#x4ED6;&#x5BF9;&#x8C61;,&#x90A3;&#x4E48;new&#x8868;&#x8FBE;&#x5F0F;&#x4E2D;&#x7684;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x4F1A;&#x81EA;&#x52A8;&#x8FD4;&#x56DE;&#x8FD9;&#x4E2A;&#x65B0;&#x5BF9;&#x8C61;&#x3002;</p>
+<pre><code>function foo(){
+    this.a = a;
+}
+var bar = new foo(2);
+console.log(bar.a);//2
+</code></pre></li>
+</ol>
+<p>&#x4F7F;&#x7528; new &#x6765;&#x8C03;&#x7528; foo(..) &#x65F6;,&#x6211;&#x4EEC;&#x4F1A;&#x6784;&#x9020;&#x4E00;&#x4E2A;&#x65B0;&#x5BF9;&#x8C61;&#x5E76;&#x628A;&#x5B83;&#x7ED1;&#x5B9A;&#x5230; foo(..) &#x8C03;&#x7528;&#x4E2D;&#x7684; this &#x4E0A;&#x3002;<strong>new &#x662F;&#x6700;&#x540E;&#x4E00;&#x79CD;&#x53EF;&#x4EE5;&#x5F71;&#x54CD;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x65F6; this &#x7ED1;&#x5B9A;&#x884C;&#x4E3A;&#x7684;&#x65B9;&#x6CD5;,&#x6211;&#x4EEC;&#x79F0;&#x4E4B;&#x4E3A; new &#x7ED1;&#x5B9A;&#x3002;</strong></p>
+<h3 id="u4F18_u5148_u7EA7"><a href="#u4F18_u5148_u7EA7" class="headerlink" title="&#x4F18;&#x5148;&#x7EA7;"></a>&#x4F18;&#x5148;&#x7EA7;</h3><p>new &gt; &#x663E;&#x793A;&#x7ED1;&#x5B9A;&#xFF08;&#x786C;&#x7ED1;&#x5B9A;&#x662F;&#x5176;&#x4E2D;&#x4E00;&#x79CD;&#xFF09;&gt; &#x9690;&#x5F62;&#x7ED1;&#x5B9A;</p>
+<h3 id="u5224_u65ADthis__u73B0_u5728_u6211_u4EEC_u53EF_u4EE5_u6839_u636E_u4F18_u5148_u7EA7_u6765_u5224_u65AD_u51FD_u6570_u5728_u67D0_u4E2A_u8C03_u7528_u4F4D_u7F6E_u5E94_u7528_u7684_u662F_u54EA_u6761_u89C4_u5219_u3002_u53EF_u4EE5_u6309_u7167_u4E0B_u9762_u7684"><a href="#u5224_u65ADthis__u73B0_u5728_u6211_u4EEC_u53EF_u4EE5_u6839_u636E_u4F18_u5148_u7EA7_u6765_u5224_u65AD_u51FD_u6570_u5728_u67D0_u4E2A_u8C03_u7528_u4F4D_u7F6E_u5E94_u7528_u7684_u662F_u54EA_u6761_u89C4_u5219_u3002_u53EF_u4EE5_u6309_u7167_u4E0B_u9762_u7684" class="headerlink" title="&#x5224;&#x65AD;this &#x73B0;&#x5728;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x4F18;&#x5148;&#x7EA7;&#x6765;&#x5224;&#x65AD;&#x51FD;&#x6570;&#x5728;&#x67D0;&#x4E2A;&#x8C03;&#x7528;&#x4F4D;&#x7F6E;&#x5E94;&#x7528;&#x7684;&#x662F;&#x54EA;&#x6761;&#x89C4;&#x5219;&#x3002;&#x53EF;&#x4EE5;&#x6309;&#x7167;&#x4E0B;&#x9762;&#x7684;"></a>&#x5224;&#x65AD;this &#x73B0;&#x5728;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x4F18;&#x5148;&#x7EA7;&#x6765;&#x5224;&#x65AD;&#x51FD;&#x6570;&#x5728;&#x67D0;&#x4E2A;&#x8C03;&#x7528;&#x4F4D;&#x7F6E;&#x5E94;&#x7528;&#x7684;&#x662F;&#x54EA;&#x6761;&#x89C4;&#x5219;&#x3002;&#x53EF;&#x4EE5;&#x6309;&#x7167;&#x4E0B;&#x9762;&#x7684;</h3><p>&#x987A;&#x5E8F;&#x6765;&#x8FDB;&#x884C;&#x5224;&#x65AD;:</p>
+<ol>
+<li><p>&#x51FD;&#x6570;&#x662F;&#x5426;&#x5728;new&#x4E2D;&#x8C03;&#x7528;(new&#x7ED1;&#x5B9A;)?&#x5982;&#x679C;&#x662F;&#x7684;&#x8BDD;this&#x7ED1;&#x5B9A;&#x7684;&#x662F;&#x65B0;&#x521B;&#x5EFA;&#x7684;&#x5BF9;&#x8C61;&#x3002;</p>
+<pre><code>var bar = new foo();
+</code></pre></li>
+<li><p>&#x51FD;&#x6570;&#x662F;&#x5426;&#x901A;&#x8FC7;call&#x3001;apply(&#x663E;&#x5F0F;&#x7ED1;&#x5B9A;)&#x6216;&#x8005;&#x786C;&#x7ED1;&#x5B9A;&#x8C03;&#x7528;?&#x5982;&#x679C;&#x662F;&#x7684;&#x8BDD;,this&#x7ED1;&#x5B9A;&#x7684;&#x662F; &#x6307;&#x5B9A;&#x7684;&#x5BF9;&#x8C61;&#x3002;</p>
+<pre><code>var bar = foo.call(obj2);
+</code></pre></li>
+<li><p>&#x51FD;&#x6570;&#x662F;&#x5426;&#x5728;&#x67D0;&#x4E2A;&#x4E0A;&#x4E0B;&#x6587;&#x5BF9;&#x8C61;&#x4E2D;&#x8C03;&#x7528;(&#x9690;&#x5F0F;&#x7ED1;&#x5B9A;)?&#x5982;&#x679C;&#x662F;&#x7684;&#x8BDD;,this &#x7ED1;&#x5B9A;&#x7684;&#x662F;&#x90A3;&#x4E2A;&#x4E0A; &#x4E0B;&#x6587;&#x5BF9;&#x8C61;&#x3002;</p>
+<pre><code>var bar = obj1.foo();
+</code></pre></li>
+<li><p>&#x5982;&#x679C;&#x90FD;&#x4E0D;&#x662F;&#x7684;&#x8BDD;,&#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x7ED1;&#x5B9A;&#x3002;&#x5982;&#x679C;&#x5728;&#x4E25;&#x683C;&#x6A21;&#x5F0F;&#x4E0B;,&#x5C31;&#x7ED1;&#x5B9A;&#x5230;undefined,&#x5426;&#x5219;&#x7ED1;&#x5B9A;&#x5230; &#x5168;&#x5C40;&#x5BF9;&#x8C61;&#x3002;</p>
+<pre><code>var bar = foo();
+</code></pre></li>
+</ol>
+<h3 id="u95F4_u63A5_u5F15_u7528"><a href="#u95F4_u63A5_u5F15_u7528" class="headerlink" title="&#x95F4;&#x63A5;&#x5F15;&#x7528;"></a>&#x95F4;&#x63A5;&#x5F15;&#x7528;</h3><pre><code>function foo(){
+        this.a = a;
+    }
+var a = 2;
+var o = {a:3,foo:foo};
+var p = {a:4};
+
+(o.foo = p.foo;)();//2
+</code></pre><p>&#x8D4B;&#x503C;&#x8868;&#x8FBE;&#x5F0F; p.foo = o.foo &#x7684;&#x8FD4;&#x56DE;&#x503C;&#x662F;&#x76EE;&#x6807;&#x51FD;&#x6570;&#x7684;&#x5F15;&#x7528;,&#x56E0;&#x6B64;&#x8C03;&#x7528;&#x4F4D;&#x7F6E;&#x662F; foo() &#x800C;&#x4E0D;&#x662F; p.foo() &#x6216;&#x8005; o.foo()&#x3002;&#x6839;&#x636E;&#x6211;&#x4EEC;&#x4E4B;&#x524D;&#x8BF4;&#x8FC7;&#x7684;,&#x8FD9;&#x91CC;&#x4F1A;&#x5E94;&#x7528;&#x9ED8;&#x8BA4;&#x7ED1;&#x5B9A;&#x3002;</p>
+<p><strong><em>&#x6CE8;&#x610F;:</em></strong> &#x5BF9;&#x4E8E;&#x9ED8;&#x8BA4;&#x7ED1;&#x5B9A;&#x6765;&#x8BF4;,&#x51B3;&#x5B9A; this &#x7ED1;&#x5B9A;&#x5BF9;&#x8C61;&#x7684;&#x5E76;&#x4E0D;&#x662F;&#x8C03;&#x7528;&#x4F4D;&#x7F6E;&#x662F;&#x5426;&#x5904;&#x4E8E;&#x4E25;&#x683C;&#x6A21;&#x5F0F;,&#x800C;&#x662F; &#x51FD;&#x6570;&#x4F53;&#x662F;&#x5426;&#x5904;&#x4E8E;&#x4E25;&#x683C;&#x6A21;&#x5F0F;&#x3002;<strong>&#x5982;&#x679C;&#x51FD;&#x6570;&#x4F53;&#x5904;&#x4E8E;&#x4E25;&#x683C;&#x6A21;&#x5F0F;,this &#x4F1A;&#x88AB;&#x7ED1;&#x5B9A;&#x5230; undefined,&#x5426;&#x5219; this &#x4F1A;&#x88AB;&#x7ED1;&#x5B9A;&#x5230;&#x5168;&#x5C40;&#x5BF9;&#x8C61;&#x3002;</strong></p>
+<h3 id="this_u8BCD_u6CD5"><a href="#this_u8BCD_u6CD5" class="headerlink" title="this&#x8BCD;&#x6CD5;"></a>this&#x8BCD;&#x6CD5;</h3><pre><code>function foo(){
+    //&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x7BAD;&#x5934;&#x51FD;&#x6570;
+    return (a) =&gt; {
+        //this&#x7EE7;&#x627F;foo()
+        console.log(a);
+    }
+}
+var  obj1 = {
+    a:2
+}
+var obj2 = {
+    a:3
+}
+var bar = foo.call(obj1);
+bar.call(obj2);//2
+</code></pre><p>foo() &#x5185;&#x90E8;&#x521B;&#x5EFA;&#x7684;&#x7BAD;&#x5934;&#x51FD;&#x6570;&#x4F1A;&#x6355;&#x83B7;&#x8C03;&#x7528;&#x65F6; foo() &#x7684; this&#x3002;&#x7531;&#x4E8E; foo() &#x7684; this &#x7ED1;&#x5B9A;&#x5230; obj1, bar(&#x5F15;&#x7528;&#x7BAD;&#x5934;&#x51FD;&#x6570;)&#x7684; this &#x4E5F;&#x4F1A;&#x7ED1;&#x5B9A;&#x5230; obj1,<strong>&#x7BAD;&#x5934;&#x51FD;&#x6570;&#x7684;&#x7ED1;&#x5B9A;&#x65E0;&#x6CD5;&#x88AB;&#x4FEE;&#x6539;&#x3002;(new &#x4E5F;&#x4E0D; &#x884C;!)</strong></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/08/28/正则表达式/" rel="next" title="正则表达式">
+                <i class="fa fa-chevron-left"></i> 正则表达式
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/09/13/你不知道的JavaScript/"
+           data-title="" data-url="http://yoursite.com/2016/09/13/你不知道的JavaScript/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Ricky" />
+          <p class="site-author-name" itemprop="name">Ricky</p>
+          <p class="site-description motion-element" itemprop="description">blog</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#title_3A_u4F60_u4E0D_u77E5_u9053_u7684JavaScript"><span class="nav-number">1.</span> <span class="nav-text">title:你不知道的JavaScript</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u4F5C_u7528_u57DF_u548C_u95ED_u5305"><span class="nav-number"></span> <span class="nav-text">作用域和闭包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u5F02_u5E38"><span class="nav-number">0.1.</span> <span class="nav-text">异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#try/catch"><span class="nav-number">0.2.</span> <span class="nav-text">try/catch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u533F_u540D"><span class="nav-number">0.3.</span> <span class="nav-text">匿名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u51FD_u6570_u4F18_u5148"><span class="nav-number">0.4.</span> <span class="nav-text">函数优先</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5FAA_u73AF_u95ED_u5305"><span class="nav-number">0.5.</span> <span class="nav-text">循环闭包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u73B0_u4EE3_u6A21_u5757_u673A_u5236"><span class="nav-number">0.6.</span> <span class="nav-text">现代模块机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u672A_u6765_u7684_u6A21_u5757_u673A_u5236"><span class="nav-number">0.7.</span> <span class="nav-text">未来的模块机制</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#this_u548C_u6E90_u6027_u5BF9_u8C61"><span class="nav-number"></span> <span class="nav-text">this和源性对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u9690_u5F0F_u4F20_u9012"><span class="nav-number">0.1.</span> <span class="nav-text">隐式传递</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u9690_u5F0F_u7ED1_u5B9A"><span class="nav-number">0.2.</span> <span class="nav-text">隐式绑定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u9690_u5F0F_u4E22_u5931"><span class="nav-number">0.3.</span> <span class="nav-text">隐式丢失</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u786C_u7ED1_u5B9A"><span class="nav-number">0.4.</span> <span class="nav-text">硬绑定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#new_u7ED1_u5B9A"><span class="nav-number">0.5.</span> <span class="nav-text">new绑定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u4F18_u5148_u7EA7"><span class="nav-number">0.6.</span> <span class="nav-text">优先级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5224_u65ADthis__u73B0_u5728_u6211_u4EEC_u53EF_u4EE5_u6839_u636E_u4F18_u5148_u7EA7_u6765_u5224_u65AD_u51FD_u6570_u5728_u67D0_u4E2A_u8C03_u7528_u4F4D_u7F6E_u5E94_u7528_u7684_u662F_u54EA_u6761_u89C4_u5219_u3002_u53EF_u4EE5_u6309_u7167_u4E0B_u9762_u7684"><span class="nav-number">0.7.</span> <span class="nav-text">判断this 现在我们可以根据优先级来判断函数在某个调用位置应用的是哪条规则。可以按照下面的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u95F4_u63A5_u5F15_u7528"><span class="nav-number">0.8.</span> <span class="nav-text">间接引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#this_u8BCD_u6CD5"><span class="nav-number">0.9.</span> <span class="nav-text">this词法</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ricky</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://github.com/">Github</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"babypig"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
