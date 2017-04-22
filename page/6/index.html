@@ -233,6 +233,134 @@
             
               
                 
+                <a class="post-title-link" href="/2016/03/29/pagejquery-ajax-POST-例子详解/" itemprop="url">
+                  pagejquery ajax POST 例子详解
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-29T19:43:19+08:00" content="2016-03-29">
+              2016-03-29
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/29/pagejquery-ajax-POST-例子详解/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/29/pagejquery-ajax-POST-例子详解/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <pre><code>function test(){
+$.ajax({
+        //&#x63D0;&#x4EA4;&#x6570;&#x636E;&#x7684;&#x7C7B;&#x578B; POST GET
+        type:&quot;POST&quot;,
+        //&#x63D0;&#x4EA4;&#x7684;&#x7F51;&#x5740;
+        url:&quot;testLogin.aspx&quot;,
+        //&#x63D0;&#x4EA4;&#x7684;&#x6570;&#x636E;
+        data:{Name:&quot;sanmao&quot;,Password:&quot;sanmaoword&quot;},
+        //&#x8FD4;&#x56DE;&#x6570;&#x636E;&#x7684;&#x683C;&#x5F0F;
+        datatype: &quot;html&quot;,//&quot;xml&quot;, &quot;html&quot;, &quot;script&quot;, &quot;json&quot;, &quot;jsonp&quot;, &quot;text&quot;.
+        //&#x5728;&#x8BF7;&#x6C42;&#x4E4B;&#x524D;&#x8C03;&#x7528;&#x7684;&#x51FD;&#x6570;
+        beforeSend:function(){$(&quot;#msg&quot;).html(&quot;logining&quot;);},
+        //&#x6210;&#x529F;&#x8FD4;&#x56DE;&#x4E4B;&#x540E;&#x8C03;&#x7528;&#x7684;&#x51FD;&#x6570;             
+        success:function(data){
+       $(&quot;#msg&quot;).html(decodeURI(data));            
+        }   ,
+        //&#x8C03;&#x7528;&#x6267;&#x884C;&#x540E;&#x8C03;&#x7528;&#x7684;&#x51FD;&#x6570;
+        complete: function(XMLHttpRequest, textStatus){
+           alert(XMLHttpRequest.responseText);
+           alert(textStatus);
+            //HideLoading();
+        },
+        //&#x8C03;&#x7528;&#x51FA;&#x9519;&#x6267;&#x884C;&#x7684;&#x51FD;&#x6570;
+        error: function(){
+            //&#x8BF7;&#x6C42;&#x51FA;&#x9519;&#x5904;&#x7406;
+        }         
+     });
+}
+</code></pre>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/03/21/JQuery-mouseover与mouseenter-mouseout与mouseleave的区别/" itemprop="url">
                   jQuery mouseover与mouseenter,mouseout与mouseleave的区别
                 </a>
@@ -316,119 +444,11 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/19/pagepageX-clientX-screenX-offsetX区别/" itemprop="url">
-                  pagepageX,clientX,screenX,offsetX区别
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-19T11:31:23+08:00" content="2016-03-19">
-              2016-03-19
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/03/19/pagepageX-clientX-screenX-offsetX区别/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/19/pagepageX-clientX-screenX-offsetX区别/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="pageX/pageY_3A"><a href="#pageX/pageY_3A" class="headerlink" title="pageX/pageY:"></a>pageX/pageY:</h3><p>&#x9F20;&#x6807;&#x76F8;&#x5BF9;&#x4E8E;&#x6574;&#x4E2A;&#x9875;&#x9762;&#x7684;X/Y&#x5750;&#x6807;&#x3002;<br>&#x6CE8;&#x610F;&#xFF0C;&#x6574;&#x4E2A;&#x9875;&#x9762;&#x7684;&#x610F;&#x601D;&#x5C31;&#x662F;&#x4F60;&#x6574;&#x4E2A;&#x7F51;&#x9875;&#x7684;&#x5168;&#x90E8;&#xFF0C;&#x6BD4;&#x5982;&#x8BF4;&#x7F51;&#x9875;&#x5F88;&#x5BBD;&#x5F88;&#x957F;&#xFF0C;&#x5BBD;2000px&#xFF0C;&#x9AD8;3000px&#xFF0C;&#x90A3;pageX,pageY&#x7684;&#x6700;&#x5927;&#x503C;&#x5C31;&#x662F;&#x5B83;&#x4EEC;&#x4E86;&#x3002;</p>
-<p>&#x7279;&#x522B;&#x8BF4;&#x660E;&#xFF1A;IE&#x4E0D;&#x652F;&#x6301;&#xFF01;</p>
-<h3 id="clientX/clientY_uFF1A"><a href="#clientX/clientY_uFF1A" class="headerlink" title="clientX/clientY&#xFF1A;"></a>clientX/clientY&#xFF1A;</h3><p>&#x4E8B;&#x4EF6;&#x53D1;&#x751F;&#x65F6;&#x9F20;&#x6807;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x5185;&#x5BB9;&#x533A;&#x57DF;&#x7684;X/Y&#x5750;&#x6807;&#xFF08;&#x4E0D;&#x5305;&#x542B;&#x6EDA;&#x52A8;&#x6761;&#xFF09;&#x3002;<br>&#x6D4F;&#x89C8;&#x5668;&#x5185;&#x5BB9;&#x533A;&#x57DF;&#x5373;&#x6D4F;&#x89C8;&#x5668;&#x7A97;&#x53E3;&#x4E2D;&#x7528;&#x6765;&#x663E;&#x793A;&#x7F51;&#x9875;&#x7684;&#x53EF;&#x89C6;&#x533A;&#x57DF;&#xFF0C;&#x6CE8;&#x610F;&#x8FD9;&#x4E2A;&#x53EF;&#x89C6;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x9700;&#x8981;&#x62D6;&#x52A8;&#x6EDA;&#x52A8;&#x6761;&#x624D;&#x80FD;&#x770B;&#x5230;&#x7684;&#x533A;&#x57DF;&#x4E0D;&#x7B97;&#x3002;<br>&#x5F53;&#x4F60;&#x5C06;&#x6D4F;&#x89C8;&#x5668;&#x7A97;&#x53E3;&#x7F29;&#x5C0F;&#x65F6;&#xFF0C;clientX/clientY&#x7684;&#x6700;&#x5927;&#x503C;&#x4E5F;&#x4F1A;&#x7F29;&#x5C0F;&#xFF0C;&#x4F46;&#x59CB;&#x7EC8;&#xFF0C;&#x5B83;&#x4EEC;&#x7684;&#x6700;&#x5927;&#x503C;&#x4E0D;&#x4F1A;&#x8D85;&#x8FC7;&#x4F60;&#x6D4F;&#x89C8;&#x5668;&#x53EF;&#x89C6;&#x533A;&#x57DF;&#x3002;</p>
-<p>&#x7279;&#x522B;&#x8BF4;&#x660E;&#xFF1A;IE&#x4E0B;&#x6B64;&#x5C5E;&#x6027;&#x4E0D;&#x89C4;&#x8303;&#xFF0C;&#x5B83;&#x4EEC;&#x7684;&#x6700;&#x5C0F;&#x503C;&#x4E0D;&#x662F;0&#x800C;&#x662F;2&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;IE&#x4E0B;&#x7684;clientX/clientY&#x6BD4;&#x706B;&#x72D0;&#x4E0B;&#x59CB;&#x7EC8;&#x5927;2px&#x3002;</p>
-<h3 id="screenX/screenY"><a href="#screenX/screenY" class="headerlink" title="screenX/screenY"></a>screenX/screenY</h3><p>&#x9F20;&#x6807;&#x5728;&#x5C4F;&#x5E55;&#x4E0A;&#x7684;&#x5750;&#x6807;&#x3002;screenX,screenY&#x7684;&#x6700;&#x5927;&#x503C;&#x4E0D;&#x4F1A;&#x8D85;&#x8FC7;&#x5C4F;&#x5E55;&#x5206;&#x8FA8;&#x7387;&#x3002;</p>
-<h3 id="offsetX/offsetY_3A"><a href="#offsetX/offsetY_3A" class="headerlink" title="offsetX/offsetY:"></a>offsetX/offsetY:</h3><p>&#x5F97;&#x51FA;&#x7684;&#x7ED3;&#x679C;&#x8DDF;pageX/pageY&#x4E00;&#x6837;&#xFF0C;&#x65E2;&#x7136;&#x5982;&#x6B64;&#xFF0C;&#x5B83;&#x6709;&#x4EC0;&#x4E48;&#x5B58;&#x5728;&#x4EF7;&#x503C;&#xFF1F;&#x56E0;&#x4E3A;&#xFF1A;</p>
-<p>&#x7279;&#x522B;&#x8BF4;&#x660E;&#xFF1A;&#x53EA;&#x6709;IE&#x652F;&#x6301;&#xFF01;&#x76F8;&#x5F53;&#x4E8E;IE&#x4E0B;&#x7684;pageX,pageY&#x3002;</p>
-<p>e.clientX + document.documentElement.scrollLeft -document.documentElement.clientLeft = e.pageX<br>e.clientY + document.documentElement.scrollTop  - document.documentElement.clientTop = e.pageY</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -469,7 +489,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-count">17</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
