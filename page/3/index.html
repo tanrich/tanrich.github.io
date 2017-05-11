@@ -233,6 +233,126 @@
             
               
                 
+                <a class="post-title-link" href="/2016/09/13/你不知道的JavaScript/" itemprop="url">
+                  你不知道的JavaScript
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-13T09:52:29+08:00" content="2016-09-13">
+              2016-09-13
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/13/你不知道的JavaScript/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/13/你不知道的JavaScript/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="u4F5C_u7528_u57DF_u548C_u95ED_u5305"><a href="#u4F5C_u7528_u57DF_u548C_u95ED_u5305" class="headerlink" title="&#x4F5C;&#x7528;&#x57DF;&#x548C;&#x95ED;&#x5305;"></a>&#x4F5C;&#x7528;&#x57DF;&#x548C;&#x95ED;&#x5305;</h1><h3 id="u5F02_u5E38"><a href="#u5F02_u5E38" class="headerlink" title="&#x5F02;&#x5E38;"></a>&#x5F02;&#x5E38;</h3><p>ReferenceError &#x540C;&#x4F5C;&#x7528;&#x57DF;&#x5224;&#x522B;&#x5931;&#x8D25;&#x76F8;&#x5173;&#xFF0C;&#x800C;TypeError&#x5219;&#x4EE3;&#x8868;&#x4F5C;&#x7528;&#x57DF;&#x5224;&#x522B;&#x6210;&#x529F;&#x4E86;&#xFF0C;&#x4F46;&#x662F;&#x5BF9;&#x7ED3;&#x679C;&#x7684;&#x64CD;&#x4F5C;&#x662F;&#x975E;&#x6CD5;&#x6216;&#x8005;&#x4E0D;&#x5408;&#x7406;&#x7684;&#x3002;</p>
+<h3 id="try/catch"><a href="#try/catch" class="headerlink" title="try/catch"></a>try/catch</h3><pre><code>try{
+    undefined();//&#x5236;&#x9020;&#x4E00;&#x4E2A;&#x975E;&#x6CD5;&#x64CD;&#x4F5C;&#x5F3A;&#x884C;&#x5236;&#x9020;&#x4E00;&#x4E2A;&#x5F02;&#x5E38;
+}
+catch(err){
+    console.log(err);//&#x53EF;&#x4EE5;&#x629B;&#x51FA;&#x9519;&#x8BEF;
+}
+console.log(err);err not found
+</code></pre><p>&#x53EF;&#x89C1;err&#x4EC5;&#x5B58;&#x5728;&#x4E0E;catch&#x5206;&#x53E5;&#x5185;&#x90E8;&#xFF0C;&#x522B;&#x5904;&#x5F15;&#x7528;&#x4F1A;&#x629B;&#x51FA;&#x9519;&#x8BEF;&#x3002;</p>
+<h3 id="u533F_u540D"><a href="#u533F_u540D" class="headerlink" title="&#x533F;&#x540D;"></a>&#x533F;&#x540D;</h3><pre><code>setTimeout(function(){
+    console.log(&quot;1&quot;);
+},1000)
+</code></pre><p>&#x533F;&#x540D;&#x51FD;&#x6570;&#x7684;&#x7F3A;&#x70B9;&#xFF1A;</p>
+<ol>
+<li>&#x533F;&#x540D;&#x51FD;&#x6570;&#x5728;&#x6808;&#x8FFD;&#x8E2A;&#x4E2D;&#x4E0D;&#x4F1A;&#x663E;&#x793A;&#x6709;&#x610F;&#x4E49;&#x7684;&#x51FD;&#x6570;&#x540D;&#xFF0C;&#x4F7F;&#x5F97;&#x8C03;&#x8BD5;&#x5F88;&#x56F0;&#x96BE;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x6CA1;&#x6709;&#x51FD;&#x6570;&#x540D;&#xFF0C;&#x5F53;&#x51FD;&#x6570;&#x9700;&#x8981;&#x5F15;&#x7528;&#x81EA;&#x8EAB;&#x65F6;&#x53EA;&#x80FD;&#x4F7F;&#x7528;&#x5DF2;&#x7ECF;&#x8FC7;&#x671F;&#x7684;&#x3002;argument.callee&#x3002;&#x6BD4;&#x5982;&#x5728;&#x9012;&#x5F52;&#x4E2D;&#x3002;&#x53E6;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x9700;&#x8981;&#x5F15;&#x7528;&#x81EA;&#x8EAB;&#x7684;&#x674E;&#x5B50;&#xFF0C;&#x662F;&#x5728;&#x4E8B;&#x4EF6;&#x89E6;&#x53D1;&#x540E;&#x4E8B;&#x4EF6;&#x76D1;&#x542C;&#x5668;&#x9700;&#x8981;&#x89E3;&#x7ED1;&#x81EA;&#x8EAB;&#x3002;</li>
+<li>&#x533F;&#x540D;&#x51FD;&#x6570;&#x7701;&#x7565;&#x4E86;&#x5BF9;&#x4E8E;&#x51FD;&#x6570;&#x53EF;&#x8BFB;&#x6027;&#x3001;&#x53EF;&#x7406;&#x89E3;&#x6027;&#x5F88;&#x91CD;&#x8981;&#x7684;&#x51FD;&#x6570;&#x540D;&#x3002;&#x4E00;&#x4E2A;&#x63CF;&#x8FF0;&#x6027;&#x7684;&#x540D;&#x79F0;&#x53EF;&#x4EE5;&#x8BA9;&#x4EE3;&#x7801;&#x4E0D;&#x8A00;&#x81EA;&#x660E;&#x3002;</li>
+</ol>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/13/你不知道的JavaScript/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/08/28/正则表达式/" itemprop="url">
                   正则表达式
                 </a>
@@ -378,131 +498,11 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/08/28/JS原型与原型链/" itemprop="url">
-                  JS原型与原型链
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-28T20:20:27+08:00" content="2016-08-28">
-              2016-08-28
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/08/28/JS原型与原型链/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/28/JS原型与原型链/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="u4E00-__u666E_u901A_u5BF9_u8C61_u4E0E_u51FD_u6570_u5BF9_u8C61"><a href="#u4E00-__u666E_u901A_u5BF9_u8C61_u4E0E_u51FD_u6570_u5BF9_u8C61" class="headerlink" title="&#x4E00;. &#x666E;&#x901A;&#x5BF9;&#x8C61;&#x4E0E;&#x51FD;&#x6570;&#x5BF9;&#x8C61;"></a>&#x4E00;. &#x666E;&#x901A;&#x5BF9;&#x8C61;&#x4E0E;&#x51FD;&#x6570;&#x5BF9;&#x8C61;</h3><p>  JavaScript &#x4E2D;&#xFF0C;&#x4E07;&#x7269;&#x7686;&#x5BF9;&#x8C61;&#xFF01;&#x4F46;&#x5BF9;&#x8C61;&#x4E5F;&#x662F;&#x6709;&#x533A;&#x522B;&#x7684;&#x3002;&#x5206;&#x4E3A;&#x666E;&#x901A;&#x5BF9;&#x8C61;&#x548C;&#x51FD;&#x6570;&#x5BF9;&#x8C61;&#xFF0C;Object &#xFF0C;Function &#x662F;JS&#x81EA;&#x5E26;&#x7684;&#x51FD;&#x6570;&#x5BF9;&#x8C61;&#x3002;&#x4E0B;&#x9762;&#x4E3E;&#x4F8B;&#x8BF4;&#x660E;</p>
-<pre><code>function f1(){};
-var f2 = function(){};
-var f3 = new Function(&apos;str&apos;,&apos;console.log(str)&apos;);
-
-var o3 = new f1();
-var o1 = {};
-var o2 =new Object();
-
-console.log(typeof Object); //function
-console.log(typeof Function); //function
-console.log(typeof o1); //object
-console.log(typeof o2); //object
-console.log(typeof o3); //object
-console.log(typeof f1); //function
-console.log(typeof f2); //function
-console.log(typeof f3); //function 
-</code></pre><p>  &#x5728;&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4E2D; o1 o2 o3 &#x4E3A;&#x666E;&#x901A;&#x5BF9;&#x8C61;&#xFF0C;f1 f2 f3 &#x4E3A;&#x51FD;&#x6570;&#x5BF9;&#x8C61;&#x3002;&#x600E;&#x4E48;&#x533A;&#x5206;&#xFF0C;&#x5176;&#x5B9E;&#x5F88;&#x7B80;&#x5355;&#xFF0C;<span style="color:red">&#x51E1;&#x662F;&#x901A;&#x8FC7; new Function() &#x521B;&#x5EFA;&#x7684;&#x5BF9;&#x8C61;&#x90FD;&#x662F;&#x51FD;&#x6570;&#x5BF9;&#x8C61;&#xFF0C;&#x5176;&#x4ED6;&#x7684;&#x90FD;&#x662F;&#x666E;&#x901A;&#x5BF9;&#x8C61;&#x3002;</span>f1,f2,&#x5F52;&#x6839;&#x7ED3;&#x5E95;&#x90FD;&#x662F;&#x901A;&#x8FC7; new Function()&#x7684;&#x65B9;&#x5F0F;&#x8FDB;&#x884C;&#x521B;&#x5EFA;&#x7684;&#x3002;Function Object &#x4E5F;&#x90FD;&#x662F;&#x901A;&#x8FC7; New Function()&#x521B;&#x5EFA;&#x7684;&#x3002;</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/08/28/JS原型与原型链/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -543,7 +543,7 @@ console.log(typeof f3); //function
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-count">19</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
