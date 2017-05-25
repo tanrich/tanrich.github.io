@@ -91,7 +91,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/05/14/mongodb/index.html">
 <meta property="og:site_name" content="Ricky's blog">
 <meta property="og:description" content="&amp;#x521B;&amp;#x5EFA; &amp;#x521B;&amp;#x5EFA;&amp;#x6570;&amp;#x636E;&amp;#x5E93;/&amp;#x5207;&amp;#x6362;&amp;#x6570;&amp;#x636E;&amp;#x5E93; use [&amp;#x6570;&amp;#x636E;&amp;#x5E93;&amp;#x540D;]  &amp;#x589E; &amp;#x65B0;&amp;#x589E;&amp;#x53C2;&amp;#x6570;  db.[&amp;#x8868;&amp;#x540">
-<meta property="og:updated_time" content="2017-05-16T01:41:20.000Z">
+<meta property="og:updated_time" content="2017-05-25T15:10:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mongodb">
 <meta name="twitter:description" content="&amp;#x521B;&amp;#x5EFA; &amp;#x521B;&amp;#x5EFA;&amp;#x6570;&amp;#x636E;&amp;#x5E93;/&amp;#x5207;&amp;#x6362;&amp;#x6570;&amp;#x636E;&amp;#x5E93; use [&amp;#x6570;&amp;#x636E;&amp;#x5E93;&amp;#x540D;]  &amp;#x589E; &amp;#x65B0;&amp;#x589E;&amp;#x53C2;&amp;#x6570;  db.[&amp;#x8868;&amp;#x540">
@@ -290,7 +290,6 @@
 <pre><code>db.[&#x8868;&#x540D;].createIndex({key:value})
 </code></pre></li>
 </ol>
-<a id="more"></a>
 <h4 id="u5220"><a href="#u5220" class="headerlink" title="&#x5220;"></a>&#x5220;</h4><ol>
 <li><p>&#x5220;&#x9664;&#x8868; </p>
 <pre><code>db.[&#x8868;&#x540D;].drop()
@@ -343,6 +342,9 @@ db.imooc.update({z:3},{$set:{y:4}})
 <li><p>&#x67E5;&#x8BE2;&#x7B26;&#x5408;&#x6807;&#x51C6;&#x53C2;&#x6570; </p>
 <pre><code>db.[&#x8868;&#x540D;].find({key: value})
 </code></pre></li>
+<li><p>&#x67E5;&#x8BE2;&#x662F;&#x5426;&#x5B58;&#x5728;&#x53C2;&#x6570;</p>
+<pre><code>db.[&#x8868;&#x540D;].find({key:{$exists:true}})        
+</code></pre></li>
 <li><p>&#x67E5;&#x8BE2;&#x6240;&#x6709;&#x53C2;&#x6570;&#x4E2A;&#x6570; </p>
 <pre><code>db.[&#x8868;&#x540D;].find().count()
 </code></pre></li>
@@ -376,13 +378,13 @@ db.[&#x8868;&#x540D;].createIndex({x:1})
 <pre><code>db.[&#x8868;&#x540D;].createIndex({x:1}, {expireAfterSeconds: time})
 
 // &#x6570;&#x636E;&#x63D2;&#x5165;&#x683C;&#x5F0F;&#xFF08;&#x5FC5;&#x987B;&#x4E3A;&#x65F6;&#x95F4;&#x6233;&#xFF09;
-// db.[&#x8868;&#x540D;].insert({x: new Date()})
+db.[&#x8868;&#x540D;].insert({x: new Date()})
 </code></pre></li>
 <li><p>&#x5168;&#x6587;&#x7D22;&#x5F15;</p>
 <pre><code>db.[&#x8868;&#x540D;].createIndex({key: &quot;text&quot;});
 
 // &#x6570;&#x636E;&#x67E5;&#x8BE2;&#x683C;&#x5F0F;
-// db.[&#x8868;&#x540D;].find({$text: {$search: value}})
+db.[&#x8868;&#x540D;].find({$text: {$search: value}})
 
 // value&#x4E3A;&#x591A;&#x4E2A;&#x65F6;
 // 1. value: &quot;aa bb cc&quot; &#x5305;&#x542B;aa&#x6216;&#x8005;bb&#x6216;&#x8005;cc
@@ -391,12 +393,41 @@ db.[&#x8868;&#x540D;].createIndex({x:1})
 </code></pre><ul>
 <li><p>&#x5168;&#x6587;&#x7D22;&#x5F15;&#x76F8;&#x4F3C;&#x5EA6;&#x67E5;&#x8BE2;(&#x914D;&#x5408;sort&#x80FD;&#x591F;&#x5F88;&#x597D;&#x7684;&#x8FDB;&#x884C;&#x6392;&#x5E8F;)</p>
 <pre><code>// &#x6570;&#x636E;&#x67E5;&#x8BE2;&#x683C;&#x5F0F;
-// db.[&#x8868;&#x540D;].find({$text: {$search:value}}, {score:{$meta:&quot;textScore&quot;}})) 
+db.[&#x8868;&#x540D;].find({$text: {$search:value}}, {score:{$meta:&quot;textScore&quot;}})) 
 //.sort({score:{$meta:&quot;textScore&quot;}}))
 </code></pre></li>
 </ul>
 </li>
 <li><p>&#x5730;&#x7406;&#x4F4D;&#x7F6E;&#x7D22;&#x5F15;</p>
+<ul>
+<li><p>2d&#x7D22;&#x5F15;&#xFF08;&#x5E73;&#x9762;&#x5730;&#x7406;&#x4F4D;&#x7F6E;&#x7D22;&#x5F15;&#xFF09;</p>
+<pre><code>db.[&#x8868;&#x540D;].createIndex({w:&quot;2d&quot;})
+
+// &#x6570;&#x636E;&#x63D2;&#x5165;&#x683C;&#x5F0F;
+// x &#x2208; [-180,180] y &#x2208; [-90,90]
+db.[&#x8868;&#x540D;].insert(w:[x,y])
+
+// &#x6570;&#x636E;&#x67E5;&#x8BE2;&#x683C;&#x5F0F;
+1. $near&#x67E5;&#x8BE2;
+    db.[&#x8868;&#x540D;].find({w:{$near:[x,y]}}) // &#x8FD4;&#x56DE;&#x6700;&#x8FD1;&#x7684;100&#x4E2A;&#x70B9;
+    db.[&#x8868;&#x540D;].find({w:{$near:[x,y],$maxDistance:value}})  // &#x8FD4;&#x56DE;&#x8DDD;&#x79BB;&#x6700;&#x8FD1;&#x7684;100&#x4E2A;&#x70B9;&#xFF0C;&#x6700;&#x8FDC;&#x8DDD;&#x79BB;&#x4E3A;value
+
+2. $goeWithin&#x67E5;&#x8BE2;    
+    db.[&#x8868;&#x540D;].find({w:{$geoWithin:{$box:[[x1,y1],[x2,y2]]}}}) // &#x4F4D;&#x4E8E;&#x77E9;&#x5F62;&#x72B6;&#x5185;&#x7684;&#x70B9;
+    db.[&#x8868;&#x540D;].find({w:{$geoWithin:{$center:[[x0,y0],r]}}}) // &#x4F4D;&#x4E8E;&#x5706;&#x5F62;&#x5185;&#x7684;&#x70B9;
+    db.[&#x8868;&#x540D;].find({w:{$geoWithin:{$polygon:[[x1,y1],[x2,y2]...]}}}) // &#x4F4D;&#x4E8E;&#x591A;&#x8FB9;&#x5F62;&#x5185;&#x7684;&#x70B9;
+3. geoNear
+
+    db.runCommand({
+        geoNear: [&#x8868;&#x540D;],
+        near: [x,y],
+        maxDistance: v1,
+        minDistance: v2, // &#x5BF9;2d&#x7D22;&#x5F15;&#x65E0;&#x6548;
+        num: v3 // &#x8FD4;&#x56DE;&#x6570;&#x76EE;
+    })    
+</code></pre></li>
+<li>2d sphere&#x7D22;&#x5F15; &#xFF08;&#x7403;&#x9762;&#x5730;&#x7406;&#x4F4D;&#x7F6E;&#x7D22;&#x5F15;&#xFF09;</li>
+</ul>
 </li>
 </ol>
 <h4 id="u7D22_u5F15_u5C5E_u6027"><a href="#u7D22_u5F15_u5C5E_u6027" class="headerlink" title="&#x7D22;&#x5F15;&#x5C5E;&#x6027;"></a>&#x7D22;&#x5F15;&#x5C5E;&#x6027;</h4><blockquote>
@@ -409,9 +440,13 @@ db.[&#x8868;&#x540D;].createIndex({x:1})
 <li><p>&#x552F;&#x4E00;&#x6027;(&#x53EF;&#x4F7F;insert&#x503C;&#x552F;&#x4E00;)</p>
 <pre><code>db.[&#x8868;&#x540D;].createIndex({},{unique:true/false})
 </code></pre></li>
-<li><p>&#x7A00;&#x758F;&#x6027;</p>
-</li>
-<li>&#x662F;&#x5426;&#x5B9A;&#x662F;&#x5220;&#x9664;</li>
+<li><p>&#x7A00;&#x758F;&#x6027;(&#x9ED8;&#x8BA4;false&#xFF0C;true&#x4E0D;&#x5FC5;&#x4E3A;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x5B57;&#x6BB5;&#x521B;&#x5EFA;&#x7D22;&#x5F15;)</p>
+<pre><code>// &#x6BD4;&#x5982;&#x7D22;&#x5F15;&#x4E3A;{x:1}
+// insert({y:1}) sparse:true &#x5219;&#x4E0D;&#x521B;&#x5EFA;&#x8BE5;&#x7D22;&#x5F15;
+
+db.[&#x8868;&#x540D;].createIndex({sparse: true/false})
+</code></pre></li>
+<li>&#x662F;&#x5426;&#x5B9A;&#x65F6;&#x5220;&#x9664;(&#x8FC7;&#x671F;&#x7D22;&#x5F15;)</li>
 </ol>
 
       
@@ -436,6 +471,10 @@ db.[&#x8868;&#x540D;].createIndex({x:1})
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/23/理解Web路由/" rel="next" title="理解Web路由">
+                <i class="fa fa-chevron-left"></i> 理解Web路由
+              </a>
             
           </div>
 
@@ -515,7 +554,7 @@ db.[&#x8868;&#x540D;].createIndex({x:1})
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">20</span>
+              <span class="site-state-item-count">21</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
