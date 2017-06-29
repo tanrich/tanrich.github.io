@@ -396,8 +396,7 @@
 
       
         
-          
-            <h4 id="u521B_u5EFA"><a href="#u521B_u5EFA" class="headerlink" title="&#x521B;&#x5EFA;"></a>&#x521B;&#x5EFA;</h4><ol>
+          <h4 id="u521B_u5EFA"><a href="#u521B_u5EFA" class="headerlink" title="&#x521B;&#x5EFA;"></a>&#x521B;&#x5EFA;</h4><ol>
 <li>&#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;/&#x5207;&#x6362;&#x6570;&#x636E;&#x5E93; use [&#x6570;&#x636E;&#x5E93;&#x540D;]</li>
 </ol>
 <h4 id="u589E"><a href="#u589E" class="headerlink" title="&#x589E;"></a>&#x589E;</h4><ol>
@@ -408,166 +407,11 @@
 <pre><code>db.[&#x8868;&#x540D;].createIndex({key:value})
 </code></pre></li>
 </ol>
-<h4 id="u5220"><a href="#u5220" class="headerlink" title="&#x5220;"></a>&#x5220;</h4><ol>
-<li><p>&#x5220;&#x9664;&#x8868; </p>
-<pre><code>db.[&#x8868;&#x540D;].drop()
-</code></pre></li>
-<li><p>&#x5220;&#x9664;&#x6307;&#x5B9A;&#x53C2;&#x6570;(&#x9ED8;&#x8BA4;&#x6240;&#x6709;&#x8BB0;&#x5F55;) </p>
-<pre><code>db.[&#x8868;&#x540D;]. remove({key:value}) 
-</code></pre></li>
-<li><p>&#x5220;&#x9664;&#x7D22;&#x5F15; </p>
-<pre><code>db.[&#x8868;&#x540D;].dropIndex({key:value}) 
-db.[&#x8868;&#x540D;].dropIndex(&#x7D22;&#x5F15;&#x540D;)
-</code></pre></li>
-</ol>
-<h4 id="u6539"><a href="#u6539" class="headerlink" title="&#x6539;"></a>&#x6539;</h4><blockquote>
-<p>db.[&#x8868;&#x540D;].update(<code>&lt;query&gt;</code>,<code>&lt;update&gt;</code>,<code>upsert: &lt;boolean&gt;</code>,<code>multi: &lt;boolean&gt;</code>,<code>writeConcern: &lt;document&gt;</code>)<br>query : update&#x7684;&#x67E5;&#x8BE2;&#x6761;&#x4EF6;</p>
-<p>upsert : &#x53EF;&#x9009;&#xFF0C;&#x66F4;&#x65B0;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x53C2;&#x6570;&#x65F6;&#xFF0C;true&#x4E3A;&#x63D2;&#x5165;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F;false</p>
-<p>multi : &#x53EF;&#x9009;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F;false&#xFF0C;&#x53EA;&#x66F4;&#x65B0;&#x627E;&#x5230;&#x7684;&#x7B2C;&#x4E00;&#x6761;&#x8BB0;&#x5F55;</p>
-<p>writeConcern :&#x53EF;&#x9009;&#xFF0C;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#x7684;&#x7EA7;&#x522B;</p>
-</blockquote>
-<ol>
-<li><p>&#x66F4;&#x65B0;&#x6307;&#x5B9A;&#x53C2;&#x6570;(&#x9ED8;&#x8BA4;&#x7B2C;&#x4E00;&#x6761;&#x8BB0;&#x5F55;) </p>
-<pre><code>db.[&#x8868;&#x540D;].update({key:oldValue}, {key:newValue})
-</code></pre></li>
-<li><p>&#x66F4;&#x65B0;&#x53C2;&#x6570;&#x90E8;&#x5206;&#x5185;&#x5BB9;(&#x9ED8;&#x8BA4;&#x7B2C;&#x4E00;&#x6761;&#x8BB0;&#x5F55;) </p>
-<pre><code>db.[&#x8868;&#x540D;].update({key:oldValue}, {$set:{key:newValue}})
-
-db.imooc.insert({x:1,y:2,z:3});
-
-// db.imooc.update({z:3},{y:4}); 
-// &#x8FD9;&#x6837;&#x64CD;&#x4F5C;&#x4F1A;&#x5BFC;&#x81F4;x,z&#x88AB;&#x8986;&#x76D6;&#xFF0C;&#x53EA;&#x6709;{y:4}
-
-db.imooc.update({z:3},{$set:{y:4}})
-</code></pre></li>
-<li><p>&#x66F4;&#x65B0;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x53C2;&#x6570;&#x8FDB;&#x884C;&#x81EA;&#x52A8;&#x521B;&#x5EFA; </p>
-<pre><code>db.[&#x8868;&#x540D;].update({key:oldValue}, {key:newValue}, true)
-</code></pre></li>
-<li><p>&#x66F4;&#x65B0;&#x6240;&#x6709;&#x6307;&#x5B9A;&#x53C2;&#x6570; </p>
-<pre><code>db.[&#x8868;&#x540D;].update({key:newValue}, {key:oldValue}, false, true)
-</code></pre></li>
-</ol>
-<h4 id="u67E5"><a href="#u67E5" class="headerlink" title="&#x67E5;"></a>&#x67E5;</h4><ol>
-<li><p>&#x67E5;&#x8BE2;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x8868; </p>
-<pre><code>show collections
-</code></pre></li>
-<li><p>&#x67E5;&#x8BE2;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x53C2;&#x6570; </p>
-<pre><code>db.[&#x8868;&#x540D;].findOne()
-</code></pre></li>
-<li><p>&#x67E5;&#x8BE2;&#x6240;&#x6709;&#x53C2;&#x6570; </p>
-<pre><code>db.[&#x8868;&#x540D;].find()
-</code></pre></li>
-<li><p>&#x67E5;&#x8BE2;&#x7B26;&#x5408;&#x6807;&#x51C6;&#x53C2;&#x6570; </p>
-<pre><code>db.[&#x8868;&#x540D;].find({key: value})
-</code></pre></li>
-<li><p>&#x67E5;&#x8BE2;&#x662F;&#x5426;&#x5B58;&#x5728;&#x53C2;&#x6570;</p>
-<pre><code>db.[&#x8868;&#x540D;].find({key:{$exists:true}})        
-</code></pre></li>
-<li><p>&#x67E5;&#x8BE2;&#x6240;&#x6709;&#x53C2;&#x6570;&#x4E2A;&#x6570; </p>
-<pre><code>db.[&#x8868;&#x540D;].find().count()
-</code></pre></li>
-<li><p>&#x67E5;&#x8BE2;&#x6240;&#x6709;&#x53C2;&#x6570;&#x5411;&#x540E;&#x504F;&#x79FB;&#x4E2A;&#x6570; </p>
-<pre><code>db.[&#x8868;&#x540D;].find().skip(number)
-</code></pre></li>
-<li><p>&#x67E5;&#x8BE2;&#x6240;&#x6709;&#x53C2;&#x6570;&#x8FD4;&#x56DE;&#x53C2;&#x6570;&#x4E2A;&#x6570;</p>
-<pre><code>db.[&#x8868;&#x540D;].find().limit(number)
-</code></pre></li>
-<li><p>&#x67E5;&#x8BE2;&#x6240;&#x6709;&#x53C2;&#x6570;&#x6392;&#x5E8F;&#x65B9;&#x5F0F; </p>
-<pre><code>db.[&#x8868;&#x540D;].find().sort({key:value})
-</code></pre></li>
-<li><p>&#x67E5;&#x8BE2;&#x73B0;&#x6709;&#x7D22;&#x5F15; </p>
-<pre><code>db.[&#x8868;&#x540D;].getIndexes()
-</code></pre></li>
-</ol>
-<h5 id="u7D22_u5F15_u7C7B_u578B"><a href="#u7D22_u5F15_u7C7B_u578B" class="headerlink" title="&#x7D22;&#x5F15;&#x7C7B;&#x578B;"></a>&#x7D22;&#x5F15;&#x7C7B;&#x578B;</h5><ol>
-<li><p>_id&#x7D22;&#x5F15;</p>
-</li>
-<li><p>&#x5355;&#x5EFA;&#x7D22;&#x5F15;</p>
-<pre><code>db.[&#x8868;&#x540D;].createIndex({x:1})
-</code></pre></li>
-<li><p>&#x591A;&#x952E;&#x7D22;&#x5F15;</p>
-<pre><code>// &#x6570;&#x636E;&#x683C;&#x5F0F;{x:[1,2,3,4]}
-db.[&#x8868;&#x540D;].createIndex({x:1})
-</code></pre></li>
-<li><p>&#x590D;&#x5408;&#x7D22;&#x5F15;</p>
-<pre><code>db.[&#x8868;&#x540D;].createIndex({x:1,y:1})
-</code></pre></li>
-<li><p>&#x8FC7;&#x671F;&#x7D22;&#x5F15;</p>
-<pre><code>db.[&#x8868;&#x540D;].createIndex({x:1}, {expireAfterSeconds: time})
-
-// &#x6570;&#x636E;&#x63D2;&#x5165;&#x683C;&#x5F0F;&#xFF08;&#x5FC5;&#x987B;&#x4E3A;&#x65F6;&#x95F4;&#x6233;&#xFF09;
-db.[&#x8868;&#x540D;].insert({x: new Date()})
-</code></pre></li>
-<li><p>&#x5168;&#x6587;&#x7D22;&#x5F15;</p>
-<pre><code>db.[&#x8868;&#x540D;].createIndex({key: &quot;text&quot;});
-
-// &#x6570;&#x636E;&#x67E5;&#x8BE2;&#x683C;&#x5F0F;
-db.[&#x8868;&#x540D;].find({$text: {$search: value}})
-
-// value&#x4E3A;&#x591A;&#x4E2A;&#x65F6;
-// 1. value: &quot;aa bb cc&quot; &#x5305;&#x542B;aa&#x6216;&#x8005;bb&#x6216;&#x8005;cc
-// 2. value: &quot;aa bb -cc&quot; &#x5305;&#x542B;aa&#x6216;&#x8005;bb&#x4E0D;&#x542B;cc
-// 3. value: &quot; \&quot;aa\&quot; \&quot;bb\&quot; \&quot;cc\&quot; &quot; &#x5305;&#x542B;aa&#x548C;bb&#x548C;cc
-</code></pre><ul>
-<li><p>&#x5168;&#x6587;&#x7D22;&#x5F15;&#x76F8;&#x4F3C;&#x5EA6;&#x67E5;&#x8BE2;(&#x914D;&#x5408;sort&#x80FD;&#x591F;&#x5F88;&#x597D;&#x7684;&#x8FDB;&#x884C;&#x6392;&#x5E8F;)</p>
-<pre><code>// &#x6570;&#x636E;&#x67E5;&#x8BE2;&#x683C;&#x5F0F;
-db.[&#x8868;&#x540D;].find({$text: {$search:value}}, {score:{$meta:&quot;textScore&quot;}})) 
-//.sort({score:{$meta:&quot;textScore&quot;}}))
-</code></pre></li>
-</ul>
-</li>
-<li><p>&#x5730;&#x7406;&#x4F4D;&#x7F6E;&#x7D22;&#x5F15;</p>
-<ul>
-<li><p>2d&#x7D22;&#x5F15;&#xFF08;&#x5E73;&#x9762;&#x5730;&#x7406;&#x4F4D;&#x7F6E;&#x7D22;&#x5F15;&#xFF09;</p>
-<pre><code>db.[&#x8868;&#x540D;].createIndex({w:&quot;2d&quot;})
-
-// &#x6570;&#x636E;&#x63D2;&#x5165;&#x683C;&#x5F0F;
-// x &#x2208; [-180,180] y &#x2208; [-90,90]
-db.[&#x8868;&#x540D;].insert(w:[x,y])
-
-// &#x6570;&#x636E;&#x67E5;&#x8BE2;&#x683C;&#x5F0F;
-1. $near&#x67E5;&#x8BE2;
-    db.[&#x8868;&#x540D;].find({w:{$near:[x,y]}}) // &#x8FD4;&#x56DE;&#x6700;&#x8FD1;&#x7684;100&#x4E2A;&#x70B9;
-    db.[&#x8868;&#x540D;].find({w:{$near:[x,y],$maxDistance:value}})  // &#x8FD4;&#x56DE;&#x8DDD;&#x79BB;&#x6700;&#x8FD1;&#x7684;100&#x4E2A;&#x70B9;&#xFF0C;&#x6700;&#x8FDC;&#x8DDD;&#x79BB;&#x4E3A;value
-
-2. $goeWithin&#x67E5;&#x8BE2;    
-    db.[&#x8868;&#x540D;].find({w:{$geoWithin:{$box:[[x1,y1],[x2,y2]]}}}) // &#x4F4D;&#x4E8E;&#x77E9;&#x5F62;&#x72B6;&#x5185;&#x7684;&#x70B9;
-    db.[&#x8868;&#x540D;].find({w:{$geoWithin:{$center:[[x0,y0],r]}}}) // &#x4F4D;&#x4E8E;&#x5706;&#x5F62;&#x5185;&#x7684;&#x70B9;
-    db.[&#x8868;&#x540D;].find({w:{$geoWithin:{$polygon:[[x1,y1],[x2,y2]...]}}}) // &#x4F4D;&#x4E8E;&#x591A;&#x8FB9;&#x5F62;&#x5185;&#x7684;&#x70B9;
-3. geoNear
-
-    db.runCommand({
-        geoNear: [&#x8868;&#x540D;],
-        near: [x,y],
-        maxDistance: v1,
-        minDistance: v2, // &#x5BF9;2d&#x7D22;&#x5F15;&#x65E0;&#x6548;
-        num: v3 // &#x8FD4;&#x56DE;&#x6570;&#x76EE;
-    })    
-</code></pre></li>
-<li>2d sphere&#x7D22;&#x5F15; &#xFF08;&#x7403;&#x9762;&#x5730;&#x7406;&#x4F4D;&#x7F6E;&#x7D22;&#x5F15;&#xFF09;</li>
-</ul>
-</li>
-</ol>
-<h4 id="u7D22_u5F15_u5C5E_u6027"><a href="#u7D22_u5F15_u5C5E_u6027" class="headerlink" title="&#x7D22;&#x5F15;&#x5C5E;&#x6027;"></a>&#x7D22;&#x5F15;&#x5C5E;&#x6027;</h4><blockquote>
-<p>db.[&#x8868;&#x540D;].createIndex({},{key:value})</p>
-</blockquote>
-<ol>
-<li><p>&#x540D;&#x5B57; </p>
-<pre><code>db.[&#x8868;&#x540D;].createIndex({},{name:value})
-</code></pre></li>
-<li><p>&#x552F;&#x4E00;&#x6027;(&#x53EF;&#x4F7F;insert&#x503C;&#x552F;&#x4E00;)</p>
-<pre><code>db.[&#x8868;&#x540D;].createIndex({},{unique:true/false})
-</code></pre></li>
-<li><p>&#x7A00;&#x758F;&#x6027;(&#x9ED8;&#x8BA4;false&#xFF0C;true&#x4E0D;&#x5FC5;&#x4E3A;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x5B57;&#x6BB5;&#x521B;&#x5EFA;&#x7D22;&#x5F15;)</p>
-<pre><code>// &#x6BD4;&#x5982;&#x7D22;&#x5F15;&#x4E3A;{x:1}
-// insert({y:1}) sparse:true &#x5219;&#x4E0D;&#x521B;&#x5EFA;&#x8BE5;&#x7D22;&#x5F15;
-
-db.[&#x8868;&#x540D;].createIndex({sparse: true/false})
-</code></pre></li>
-<li>&#x662F;&#x5426;&#x5B9A;&#x65F6;&#x5220;&#x9664;(&#x8FC7;&#x671F;&#x7D22;&#x5F15;)</li>
-</ol>
-
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/05/14/mongodb/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
