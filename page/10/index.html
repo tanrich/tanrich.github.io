@@ -86,12 +86,13 @@
 
 <meta name="description" content="blog">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Ricky's blog">
+<meta property="og:title" content="Ricky&#39;s blog">
 <meta property="og:url" content="http://yoursite.com/page/10/index.html">
-<meta property="og:site_name" content="Ricky's blog">
+<meta property="og:site_name" content="Ricky&#39;s blog">
 <meta property="og:description" content="blog">
+<meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ricky's blog">
+<meta name="twitter:title" content="Ricky&#39;s blog">
 <meta name="twitter:description" content="blog">
 
 
@@ -233,6 +234,180 @@
             
               
                 
+                <a class="post-title-link" href="/2016/03/18/page小球弹跳之原生js/" itemprop="url">
+                  page小球弹跳之原生js
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-18T21:52:29+08:00" content="2016-03-18">
+              2016-03-18
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/18/page小球弹跳之原生js/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/18/page小球弹跳之原生js/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;title&gt;Document&lt;/title&gt;
+&lt;style&gt;
+    *{padding:0;margin:0;}
+    #ball{
+        width: 20px;
+        height: 20px;
+        border-radius:50%;
+        border: 1px solid black;
+        background: black;
+        position: absolute;
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;ball&quot; style=&quot;top: 0px;left: 0px&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;script&gt;
+    var ball = document.getElementById(&apos;ball&apos;);
+    var    speedno = 0;
+    var xspeed = 0.8;
+    var yspeed = 0;
+    function animate(move) {
+        lastdown = parseFloat(ball.style.top) + move;
+        flashdown();
+    }
+    animate(320);
+
+    function flashdown(){
+        yspeed = yspeed + 0.015;
+        console.log(xspeed);
+        ball.style.top = parseFloat(ball.style.top) + yspeed + &apos;px&apos;;
+        ball.style.left = parseFloat(ball.style.left) + xspeed + &apos;px&apos;;
+        //console.log(ball.style.left)
+        if (parseFloat(ball.style.top) &lt; lastdown) {
+            setTimeout(flashdown, 1);
+        }
+        else{
+            if (yspeed == 0.015) {
+                var stop = setInterval(function(){
+                    xspeed = xspeed - 0.007;
+                    ball.style.left = parseFloat(ball.style.left) + xspeed + &apos;px&apos;;
+                    console.log(xspeed)
+                    if (xspeed &lt;=0 ) {
+                        clearInterval(stop);
+                    }
+                },1);
+
+            }
+            else{
+                speedno = -yspeed + 0.5;
+                flashup();
+            }
+
+        }    
+    }
+    function flashup(){
+        speedno = speedno + 0.015;
+        ball.style.top = parseFloat(ball.style.top) + speedno + &apos;px&apos;;
+        ball.style.left = parseFloat(ball.style.left) + xspeed + &apos;px&apos;;
+        if (speedno &lt; 0) {
+            setTimeout(flashup,1);
+        }
+        else{
+            yspeed = 0;
+            flashdown();
+        }
+    }
+&lt;/script&gt;
+&lt;/html&gt;
+</code></pre><p><a href="/../pages/&#x5C0F;&#x7403;&#x5F39;&#x8DF3;&#x4E4B;&#x539F;&#x751F;js.html">&#x70B9;&#x51FB;&#x67E5;&#x770B;&#x8BE6;&#x60C5;</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/03/18/JQ之-offset-和-position-的用法与区别/" itemprop="url">
                   JQ之offset和position的用法与区别
                 </a>
@@ -322,145 +497,6 @@ alert(position.left);
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/02/14/canvas七巧板/" itemprop="url">
-                  canvas七巧板
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-02-14T17:36:07+08:00" content="2016-02-14">
-              2016-02-14
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/02/14/canvas七巧板/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/14/canvas七巧板/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;&#x4E03;&#x5DE7;&#x677F;&lt;/title&gt;
-
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;canvas id=&quot;canvas&quot; width=&quot;800&quot; height=&quot;800&quot; style=&quot;border: 1px solid black;display: block;margin: 0 auto;&quot;&gt;&#x4E0D;&#x652F;&#x6301;canvas&lt;/canvas&gt;
-&lt;/body&gt;
-&lt;script&gt;
-    var tangram = [
-    {p:[{x:0,y:0},{x:800,y:0},{x:400,y:400}],color:&quot;#caff67&quot;},
-    {p:[{x:0,y:0},{x:400,y:400},{x:0,y:800}],color:&quot;#67becf&quot;},
-    {p:[{x:800,y:0},{x:800,y:400},{x:600,y:600}],color:&quot;#ef3d61&quot;},
-    {p:[{x:600,y:200},{x:600,y:600},{x:400,y:400}],color:&quot;#f9f51a&quot;},
-    {p:[{x:400,y:400},{x:600,y:600},{x:400,y:800},{x:200,y:600}],color:&quot;#a594c0&quot;},
-    {p:[{x:200,y:600},{x:400,y:800},{x:0,y:800}],color:&quot;#fa8ecc&quot;},
-    {p:[{x:800,y:400},{x:800,y:800},{x:400,y:800}],color:&quot;#f6ca29&quot;}
-    ]
-
-    var canvas = document.getElementById(&apos;canvas&apos;);
-    var context = canvas.getContext(&quot;2d&quot;);
-    for (var i = 0; i &lt; tangram.length; i++) {
-        draw(tangram[i],context);
-    };
-    function draw (piece,ctx) {
-        ctx.beginPath();
-        ctx.moveTo(piece.p[0].x,piece.p[0].y);
-        for (var i = 1; i &lt; piece.p.length; i++) {
-            ctx.lineTo(piece.p[i].x,piece.p[i].y);
-    };
-    ctx.closePath();
-    ctx.fillStyle = piece.color;
-    ctx.fill();
-}
-&lt;/script&gt;
-&lt;/html&gt;    
-</code></pre><p><a href="/../pages/tangram.html">&#x70B9;&#x51FB;&#x67E5;&#x770B;&#x8BE6;&#x60C5;</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -506,7 +542,7 @@ alert(position.left);
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-count">22</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
